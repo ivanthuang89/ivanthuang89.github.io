@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Morpheus — Ivan Huang</title>
+<title>Ivan Huang — Performance Media</title>
+<meta name="description" content="VP of Performance Media. I run the team and build the infrastructure that makes it outperform.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -184,14 +185,14 @@ footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-b
     <h2>See the platform in motion</h2>
     <p>Campaign pacing against targets. Publisher performance across 130+ outlets. Full creative intelligence on 5,000+ ad placements. AI planning agent. Media buy matching. ~95 seconds.</p>
   </div>
-  <div class="demo-player">
-    <div class="demo-cta">
-      <a class="play-btn" href="https://claude.ai/artifact/RDZBRJ7EBSawBjfMzyFEdN" target="_blank" rel="noopener" aria-label="Watch demo">
-        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-      </a>
-      <h3>Watch the product demo</h3>
-      <p>Opens in a new tab &nbsp;·&nbsp; unmute for sound design</p>
-    </div>
+  <div class="demo-player" style="position:relative;width:100%;aspect-ratio:16/9;background:#000;overflow:hidden;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);">
+    <iframe
+      style="position:absolute;inset:0;width:100%;height:100%;border:none;"
+      src="https://www.youtube.com/embed/Xwl0vKHphgw?rel=0&modestbranding=1&color=white"
+      title="Morpheus product demo"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen loading="lazy">
+    </iframe>
   </div>
   <p class="demo-note">Screens recreated with illustrative data. Real publisher names anonymized.</p>
 </section>
@@ -234,84 +235,21 @@ footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-b
     </div>
   </div>
 
-  <!-- ADOPTION CHART — CIP vs CPT vs Morpheus, real data -->
-  <div class="chart-wrap fi">
-    <div class="chart-title">
-      Monthly visits, Jul–Nov 2026
-      <div class="legend">
-        <div class="leg-item"><div class="leg-dot" style="background:var(--teal)"></div>CIP (productized)</div>
-        <div class="leg-item"><div class="leg-dot" style="background:var(--blue)"></div>CPT (prior leader)</div>
-        <div class="leg-item"><div class="leg-dot" style="background:var(--dim)"></div>Morpheus (internal)</div>
+  <!-- ADOPTION CHART - interactive -->
+  <div class="chart-wrap fi" style="margin-top:48px;">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:12px;">
+      <div style="font-size:13px;font-weight:500;color:var(--mid);">Monthly visits, Jul–Nov 2026 &nbsp;<span style="color:var(--dim);font-weight:400;">— hover to explore</span></div>
+      <div style="display:flex;gap:20px;flex-wrap:wrap;">
+        <div style="display:flex;align-items:center;gap:7px;font-size:12px;color:var(--mid);"><div style="width:10px;height:10px;border-radius:50%;background:#4FE0AE;flex-shrink:0;"></div>CIP (productized)</div>
+        <div style="display:flex;align-items:center;gap:7px;font-size:12px;color:var(--mid);"><div style="width:10px;height:10px;border-radius:50%;background:#3B82F6;flex-shrink:0;"></div>CPT (prior leader)</div>
+        <div style="display:flex;align-items:center;gap:7px;font-size:12px;color:var(--mid);"><div style="width:10px;height:10px;border-radius:50%;background:#52525B;flex-shrink:0;"></div>Morpheus (internal)</div>
       </div>
     </div>
-    <div class="chart-svg-wrap">
-      <svg id="adoption-chart" viewBox="0 0 900 300" style="width:100%;height:auto;overflow:visible;" xmlns="http://www.w3.org/2000/svg">
-        <!-- Grid lines -->
-        <line x1="80" y1="20" x2="880" y2="20" stroke="#1E2328" stroke-width="1"/>
-        <line x1="80" y1="80" x2="880" y2="80" stroke="#1E2328" stroke-width="1"/>
-        <line x1="80" y1="140" x2="880" y2="140" stroke="#1E2328" stroke-width="1"/>
-        <line x1="80" y1="200" x2="880" y2="200" stroke="#1E2328" stroke-width="1"/>
-        <line x1="80" y1="260" x2="880" y2="260" stroke="#262B30" stroke-width="1"/>
-        <!-- Y axis labels -->
-        <text x="70" y="24" text-anchor="end" font-size="11" fill="#4A5158">6,500</text>
-        <text x="70" y="84" text-anchor="end" font-size="11" fill="#4A5158">5,000</text>
-        <text x="70" y="144" text-anchor="end" font-size="11" fill="#4A5158">3,000</text>
-        <text x="70" y="204" text-anchor="end" font-size="11" fill="#4A5158">1,000</text>
-        <text x="70" y="264" text-anchor="end" font-size="11" fill="#4A5158">0</text>
-        <!-- X axis labels -->
-        <text x="160" y="285" text-anchor="middle" font-size="11" fill="#4A5158">Jul</text>
-        <text x="310" y="285" text-anchor="middle" font-size="11" fill="#4A5158">Aug</text>
-        <text x="460" y="285" text-anchor="middle" font-size="11" fill="#4A5158">Sep</text>
-        <text x="610" y="285" text-anchor="middle" font-size="11" fill="#4A5158">Oct</text>
-        <text x="760" y="285" text-anchor="middle" font-size="11" fill="#4A5158">Nov*</text>
-        <!-- Scale: max 6500, range 240px (20 to 260), so px = 20 + (1 - v/6500)*240 -->
-        <!-- CPT: 735, 644, 644, 1033, 788 -->
-        <!-- y = 260 - (v/6500)*240 -->
-        <!-- CPT line: blue -->
-        <polyline
-          points="160,233 310,237 460,237 610,222 760,231"
-          fill="none" stroke="#3B82F6" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" opacity="0.7"/>
-        <circle cx="160" cy="233" r="4" fill="#3B82F6"/>
-        <circle cx="310" cy="237" r="4" fill="#3B82F6"/>
-        <circle cx="460" cy="237" r="4" fill="#3B82F6"/>
-        <circle cx="610" cy="222" r="4" fill="#3B82F6"/>
-        <circle cx="760" cy="231" r="4" fill="#3B82F6"/>
-        <!-- Morpheus: 381, 603, 493, 223, 165 — dim -->
-        <polyline
-          points="160,247 310,238 460,242 610,252 760,254"
-          fill="none" stroke="#4A5158" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="5 3"/>
-        <circle cx="160" cy="247" r="3" fill="#4A5158"/>
-        <circle cx="310" cy="238" r="3" fill="#4A5158"/>
-        <circle cx="460" cy="242" r="3" fill="#4A5158"/>
-        <circle cx="610" cy="252" r="3" fill="#4A5158"/>
-        <circle cx="760" cy="254" r="3" fill="#4A5158"/>
-        <!-- CIP: 919, 983, 1731, 6375, 6134 — teal, the hero line -->
-        <polyline
-          id="cip-line"
-          points="160,226 310,224 460,196 610,25 760,34"
-          fill="none" stroke="#4FE0AE" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
-        <circle cx="160" cy="226" r="5" fill="#4FE0AE"/>
-        <circle cx="310" cy="224" r="5" fill="#4FE0AE"/>
-        <circle cx="460" cy="196" r="5" fill="#4FE0AE"/>
-        <circle cx="610" cy="25" r="6" fill="#4FE0AE" stroke="#0A0C0E" stroke-width="2"/>
-        <circle cx="760" cy="34" r="5" fill="#4FE0AE"/>
-        <!-- CIP data labels -->
-        <text x="160" y="218" text-anchor="middle" font-size="10" fill="#4FE0AE" font-weight="600">919</text>
-        <text x="310" y="216" text-anchor="middle" font-size="10" fill="#4FE0AE" font-weight="600">983</text>
-        <text x="460" y="188" text-anchor="middle" font-size="10" fill="#4FE0AE" font-weight="600">1,731</text>
-        <text x="610" y="17" text-anchor="middle" font-size="11" fill="#4FE0AE" font-weight="700">6,375</text>
-        <text x="760" y="26" text-anchor="middle" font-size="10" fill="#4FE0AE" font-weight="600">6,134</text>
-        <!-- CPT data labels -->
-        <text x="160" y="244" text-anchor="middle" font-size="9" fill="#3B82F6">735</text>
-        <text x="610" y="215" text-anchor="middle" font-size="9" fill="#3B82F6">1,033</text>
-        <!-- Crossover annotation -->
-        <line x1="610" y1="20" x2="610" y2="260" stroke="#262B30" stroke-width="1" stroke-dasharray="4 3"/>
-        <text x="618" y="38" font-size="10" fill="#9BA3AA">6× crossover</text>
-        <text x="618" y="50" font-size="10" fill="#9BA3AA">Oct 2026</text>
-        <!-- Nov asterisk note -->
-        <text x="880" y="285" text-anchor="end" font-size="10" fill="#4A5158">*Nov through 24th</text>
-      </svg>
+    <div style="background:var(--bg2);border:1px solid var(--rule);border-radius:12px;padding:28px 28px 20px;position:relative;">
+      <canvas id="chart-canvas" style="width:100%;display:block;cursor:crosshair;" height="260"></canvas>
+      <div id="chart-tooltip" style="position:absolute;background:var(--bg);border:1px solid var(--rule2);border-radius:8px;padding:12px 16px;font-size:12px;line-height:1.9;pointer-events:none;opacity:0;transition:opacity .15s;z-index:10;min-width:170px;box-shadow:0 8px 24px rgba(0,0,0,.5);"></div>
     </div>
+    <div style="font-size:11px;color:var(--dim);margin-top:10px;">*November through the 24th</div>
   </div>
 </section>
 
@@ -433,7 +371,7 @@ footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-b
   </div>
   <div class="footer-actions">
     <a href="https://www.linkedin.com/in/ivanthuang/" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="mailto:ivan@ivanthuang.com" class="cta">Get in touch</a>
+    <a href="mailto:ivanhuang89@gmail.com" class="cta">Get in touch</a>
   </div>
   <p class="footer-note">Screens in the demo are recreated with illustrative data. Real issuer and investor data replaced with fictional names and numbers consistent with the platform's actual scale and performance.</p>
 </footer>
@@ -444,5 +382,160 @@ const obs = new IntersectionObserver(entries => {
 }, { threshold: .08 });
 document.querySelectorAll('.fi').forEach(el => obs.observe(el));
 </script>
+
+<script>
+(function(){
+  var canvas = document.getElementById('chart-canvas');
+  var tooltip = document.getElementById('chart-tooltip');
+  if(!canvas) return;
+
+  var dpr = window.devicePixelRatio || 1;
+  var DATA = {
+    months: ['Jul 2026','Aug 2026','Sep 2026','Oct 2026','Nov 2026*'],
+    series: [
+      {label:'CIP',      color:'#4FE0AE', values:[919,983,1731,6375,6134], r:5},
+      {label:'CPT',      color:'#3B82F6', values:[735,644,644,1033,788],   r:4},
+      {label:'Morpheus', color:'#52525B', values:[381,603,493,223,165],    r:3}
+    ]
+  };
+
+  var PAD = {top:24,right:20,bottom:40,left:60};
+  var W=0, H=260;
+
+  function getW(){ return canvas.parentElement.clientWidth - 56; }
+
+  function xScale(i){ return PAD.left + (i/(DATA.months.length-1))*(W-PAD.left-PAD.right); }
+  function yScale(v){ return PAD.top + (H-PAD.top-PAD.bottom)*(1-v/7000); }
+
+  function draw(hoverIdx){
+    hoverIdx = hoverIdx === undefined ? -1 : hoverIdx;
+    var ctx = canvas.getContext('2d');
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    ctx.scale(dpr,dpr);
+
+    // grid
+    [0,1000,2000,3500,5000,7000].forEach(function(v){
+      var y = yScale(v);
+      ctx.beginPath();
+      ctx.strokeStyle = v===0 ? '#27272A' : '#1C1C1F';
+      ctx.lineWidth=1;
+      ctx.moveTo(PAD.left,y); ctx.lineTo(W-PAD.right,y);
+      ctx.stroke();
+      ctx.fillStyle='#52525B';
+      ctx.font='11px Inter,sans-serif';
+      ctx.textAlign='right';
+      ctx.fillText(v>=1000?(v/1000)+'K':v, PAD.left-8, y+4);
+    });
+
+    // x labels
+    ctx.fillStyle='#52525B';
+    ctx.textAlign='center';
+    DATA.months.forEach(function(m,i){
+      ctx.fillText(m, xScale(i), H-8);
+    });
+
+    // hover rule
+    if(hoverIdx>=0){
+      ctx.beginPath();
+      ctx.strokeStyle='#3F3F46';
+      ctx.lineWidth=1;
+      ctx.setLineDash([4,3]);
+      ctx.moveTo(xScale(hoverIdx),PAD.top);
+      ctx.lineTo(xScale(hoverIdx),H-PAD.bottom);
+      ctx.stroke();
+      ctx.setLineDash([]);
+    }
+
+    // series
+    DATA.series.forEach(function(s){
+      var spts = s.values.map(function(v,i){ return {x:xScale(i),y:yScale(v)}; });
+
+      // smooth line
+      ctx.beginPath();
+      ctx.strokeStyle=s.color;
+      ctx.lineWidth = s===DATA.series[0] ? 2.5 : 1.8;
+      ctx.lineJoin='round'; ctx.lineCap='round';
+      spts.forEach(function(p,i){
+        if(i===0){ ctx.moveTo(p.x,p.y); return; }
+        var prev=spts[i-1], cpx=(prev.x+p.x)/2;
+        ctx.bezierCurveTo(cpx,prev.y,cpx,p.y,p.x,p.y);
+      });
+      ctx.stroke();
+
+      // dots
+      spts.forEach(function(p,i){
+        var r = (hoverIdx===i) ? s.r+2 : s.r;
+        ctx.beginPath();
+        ctx.fillStyle=s.color;
+        ctx.arc(p.x,p.y,r,0,Math.PI*2);
+        ctx.fill();
+        if(hoverIdx===i){
+          ctx.beginPath();
+          ctx.strokeStyle='#09090B';
+          ctx.lineWidth=2;
+          ctx.arc(p.x,p.y,r,0,Math.PI*2);
+          ctx.stroke();
+        }
+      });
+    });
+
+    ctx.setTransform(1,0,0,1,0,0);
+  }
+
+  function findIdx(clientX){
+    var rect=canvas.getBoundingClientRect();
+    var mx=(clientX-rect.left);
+    var best=-1, bestD=50;
+    DATA.months.forEach(function(_,i){
+      var d=Math.abs(xScale(i)-mx);
+      if(d<bestD){bestD=d;best=i;}
+    });
+    return best;
+  }
+
+  function showTip(clientX,clientY,idx){
+    if(idx<0){tooltip.style.opacity=0;return;}
+    var html='<div style="font-size:11px;font-weight:600;color:#A1A1AA;letter-spacing:.06em;margin-bottom:8px;">'+DATA.months[idx].toUpperCase()+'</div>';
+    DATA.series.forEach(function(s){
+      html+='<div style="display:flex;align-items:center;gap:8px;padding:2px 0;">'
+        +'<div style="width:8px;height:8px;border-radius:50%;background:'+s.color+';flex-shrink:0;"></div>'
+        +'<span style="color:#A1A1AA;min-width:76px;">'+s.label+'</span>'
+        +'<strong style="color:#FAFAFA;margin-left:auto;">'+s.values[idx].toLocaleString()+'</strong>'
+        +'</div>';
+    });
+    tooltip.innerHTML=html;
+    tooltip.style.opacity=1;
+    var contRect=tooltip.parentElement.getBoundingClientRect();
+    var canRect=canvas.getBoundingClientRect();
+    var left=(clientX-contRect.left)+16;
+    if(left+190>contRect.width-28) left=(clientX-contRect.left)-200;
+    tooltip.style.left=Math.max(0,left)+'px';
+    tooltip.style.top=(clientY-contRect.top-60)+'px';
+  }
+
+  canvas.addEventListener('mousemove',function(e){
+    var idx=findIdx(e.clientX); draw(idx); showTip(e.clientX,e.clientY,idx);
+  });
+  canvas.addEventListener('mouseleave',function(){draw(-1);tooltip.style.opacity=0;});
+  canvas.addEventListener('touchmove',function(e){
+    e.preventDefault();
+    var t=e.touches[0]; var idx=findIdx(t.clientX);
+    draw(idx); showTip(t.clientX,t.clientY,idx);
+  },{passive:false});
+  canvas.addEventListener('touchend',function(){draw(-1);tooltip.style.opacity=0;});
+
+  function resize(){
+    W = getW();
+    canvas.style.width=W+'px';
+    canvas.style.height=H+'px';
+    canvas.width=W*dpr;
+    canvas.height=H*dpr;
+    draw(-1);
+  }
+  window.addEventListener('resize',resize);
+  resize();
+})();
+</script>
+
 </body>
 </html>
