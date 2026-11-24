@@ -222,7 +222,8 @@ blockquote cite{font-size:13px;font-style:normal;color:var(--mid);}
 .resume-section-head{font-size:11px;font-weight:700;color:#0066FF;letter-spacing:.1em;text-transform:uppercase;padding-bottom:12px;border-bottom:2px solid #0066FF;margin-bottom:32px;margin-top:48px;}
 .resume-section-head:first-of-type{margin-top:0;}
 .resume-role{margin-bottom:36px;}
-.resume-role-header{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:4px;}
+.resume-role-header{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:4px;}
+.resume-role-header-text{flex:1;min-width:0;} .resume-role-header-text{flex:1;}
 .resume-company{font-size:16px;font-weight:700;color:var(--text);letter-spacing:-.02em;}
 .resume-title{font-size:14px;color:var(--mid);}
 .resume-dates{font-size:13px;color:var(--dim);white-space:nowrap;}
@@ -384,6 +385,15 @@ footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-b
         <div class="work-card-tag"><span>●</span> 13 years</div>
         <h3>Career</h3>
         <p>Starcom → PHD → RPA → Stripes → jetfuel → dentsu MuteSix → DealMaker. VP and above since 2021, managing up to $100M+ in annual media spend and teams of 70+ across holdcos and independents.</p>
+        <div class="career-logo-strip">
+          <div class="career-logo-pill"><img src="https://logo.clearbit.com/starcom.com" alt="Starcom" onerror="this.style.display='none'">Starcom</div>
+          <div class="career-logo-pill"><img src="https://logo.clearbit.com/phdmedia.com" alt="PHD" onerror="this.style.display='none'">PHD</div>
+          <div class="career-logo-pill"><img src="https://logo.clearbit.com/rpa.com" alt="RPA" onerror="this.style.display='none'">RPA</div>
+          <div class="career-logo-pill"><img src="https://logo.clearbit.com/thestripes.co" alt="Stripes" onerror="this.style.display='none'">Stripes</div>
+          <div class="career-logo-pill"><img src="https://logo.clearbit.com/jetfuel.agency" alt="jetfuel" onerror="this.style.display='none'">jetfuel</div>
+          <div class="career-logo-pill"><img src="https://logo.clearbit.com/mutesix.com" alt="MuteSix" onerror="this.style.display='none'">MuteSix</div>
+          <div class="career-logo-pill"><img src="https://logo.clearbit.com/dealmaker.tech" alt="DealMaker" onerror="this.style.display='none'">DealMaker</div>
+        </div>
         <div class="work-card-arrow"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M5 12h14m-7-7 7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <div class="work-card-stat"><strong>5</strong> companies · VP+ since 2021</div>
       </div>
@@ -678,6 +688,19 @@ footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-b
         <div class="loop-step"><div class="loop-num">3</div><div class="loop-text"><h4>DV360 via Dandelion — GMP partner</h4><p>Full DV360 inventory (YouTube, display, CTV, audio, PMPs) through issuer-owned subclient seats. DealMaker as agency/manager. 15% on ad network spend. Bid Manager API pulls reporting into DealMaker dashboards. Saves $500K–$600K vs. direct at $2M spend.</p></div></div>
       </div>
     </div>
+    <div style="margin-top:36px;">
+      <div class="logo-strip-label">Network partners</div>
+      <div class="logo-strip">
+        <div class="logo-item logo-partner"><img class="logo-img" src="https://logo.clearbit.com/morningbrew.com" alt="Morning Brew" onerror="this.style.display='none'"><span class="logo-name">Morning Brew</span></div>
+        <div class="logo-item logo-partner"><img class="logo-img" src="https://logo.clearbit.com/1440.io" alt="1440" onerror="this.style.display='none'"><span class="logo-name">1440</span></div>
+        <div class="logo-item logo-partner"><img class="logo-img" src="https://logo.clearbit.com/beehiiv.com" alt="Beehiiv" onerror="this.style.display='none'"><span class="logo-name">Beehiiv</span></div>
+        <div class="logo-item logo-partner"><img class="logo-img" src="https://logo.clearbit.com/viantinc.com" alt="Viant" onerror="this.style.display='none'"><span class="logo-name">Viant</span></div>
+        <div class="logo-item logo-partner"><img class="logo-img" src="https://logo.clearbit.com/tvscientific.com" alt="TVScientific" onerror="this.style.display='none'"><span class="logo-name">TVScientific</span></div>
+        <div class="logo-item logo-partner"><img class="logo-img" src="https://logo.clearbit.com/tatari.tv" alt="Tatari" onerror="this.style.display='none'"><span class="logo-name">Tatari</span></div>
+        <div class="logo-item logo-partner"><img class="logo-img" src="https://logo.clearbit.com/birdseyepost.com" alt="BirdsEye Post" onerror="this.style.display='none'"><span class="logo-name">BirdsEye Post</span></div>
+        <div class="logo-item logo-partner"><img class="logo-img" src="https://logo.clearbit.com/google.com" alt="DV360/Google" onerror="this.style.display='none'"><span class="logo-name">DV360</span></div>
+      </div>
+    </div>
   </section>
 
   <section class="section fi">
@@ -853,7 +876,18 @@ footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-b
     </div>
   </section>
 
-  <section class="section fi" style="background:#F7F9FF;">
+    <section class="section fi" style="background:#F7F9FF;">
+    <div class="logo-strip-label">Platforms integrated in Morpheus</div>
+    <div class="logo-strip" style="margin-top:0;">
+      <div class="logo-item logo-partner"><img class="logo-img" src="https://logo.clearbit.com/meta.com" alt="Meta" onerror="this.style.display='none'"><span class="logo-name">Meta</span></div>
+      <div class="logo-item logo-partner"><img class="logo-img" src="https://logo.clearbit.com/google.com" alt="Google" onerror="this.style.display='none'"><span class="logo-name">Google</span></div>
+      <div class="logo-item logo-partner"><img class="logo-img" src="https://logo.clearbit.com/anthropic.com" alt="Anthropic" onerror="this.style.display='none'"><span class="logo-name">Anthropic</span></div>
+      <div class="logo-item logo-partner"><img class="logo-img" src="https://logo.clearbit.com/looker.com" alt="Looker" onerror="this.style.display='none'"><span class="logo-name">Looker</span></div>
+      <div class="logo-item logo-partner"><img class="logo-img" src="https://logo.clearbit.com/amazon.com" alt="AWS" onerror="this.style.display='none'"><span class="logo-name">AWS</span></div>
+      <div class="logo-item logo-partner"><img class="logo-img" src="https://logo.clearbit.com/notion.com" alt="Notion" onerror="this.style.display='none'"><span class="logo-name">Notion</span></div>
+    </div>
+  </section>
+<section class="section fi" style="background:#F7F9FF;">
     <h2 class="section-h">The pattern</h2>
     <p class="section-sub">Every workflow followed the same logic: identify where the team was spending time on something that shouldn't require a person, build the minimum viable automation, deploy it, and measure adoption.</p>
     <div class="build-grid">
@@ -936,7 +970,8 @@ footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-b
 
   <div class="resume-role">
     <div class="resume-role-header">
-      <div>
+      <img class="resume-role-logo" src="https://logo.clearbit.com/dealmaker.tech" alt="DealMaker" onerror="this.style.display='none'">
+      <div class="resume-role-header-text">
         <div class="resume-company">DealMaker</div>
         <div class="resume-title">VP, Head of Paid Media &amp; Retention</div>
       </div>
@@ -955,7 +990,8 @@ footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-b
 
   <div class="resume-role">
     <div class="resume-role-header">
-      <div>
+      <img class="resume-role-logo" src="https://logo.clearbit.com/dentsu.com" alt="dentsu (MuteSix)" onerror="this.style.display='none'">
+      <div class="resume-role-header-text">
         <div class="resume-company">dentsu (MuteSix)</div>
         <div class="resume-title">SVP, Head of Paid Media</div>
       </div>
@@ -971,7 +1007,8 @@ footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-b
 
   <div class="resume-role">
     <div class="resume-role-header">
-      <div>
+      <img class="resume-role-logo" src="https://logo.clearbit.com/jetfuel.agency" alt="jetfuel.agency" onerror="this.style.display='none'">
+      <div class="resume-role-header-text">
         <div class="resume-company">jetfuel.agency</div>
         <div class="resume-title">Head of Paid Media</div>
       </div>
@@ -986,7 +1023,8 @@ footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-b
 
   <div class="resume-role">
     <div class="resume-role-header">
-      <div>
+      <img class="resume-role-logo" src="https://logo.clearbit.com/thestripes.co" alt="Stripes Agency" onerror="this.style.display='none'">
+      <div class="resume-role-header-text">
         <div class="resume-company">Stripes Agency</div>
         <div class="resume-title">Group Director → Director, Performance Media</div>
       </div>
@@ -1000,7 +1038,8 @@ footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-b
 
   <div class="resume-role">
     <div class="resume-role-header">
-      <div>
+      <img class="resume-role-logo" src="https://logo.clearbit.com/rpa.com" alt="Rubin Postaer and Associates (RPA)" onerror="this.style.display='none'">
+      <div class="resume-role-header-text">
         <div class="resume-company">Rubin Postaer and Associates (RPA)</div>
         <div class="resume-title">Associate Director, Paid Social — American Honda Motors Company</div>
       </div>
@@ -1274,6 +1313,29 @@ document.addEventListener('DOMContentLoaded', () => {
 @media(min-width:961px){
   .mobile-nav{display:none;}
 }
+
+/* ── Logo strips ── */
+.logo-strip{display:flex;flex-wrap:wrap;align-items:center;gap:32px;margin-top:32px;}
+.logo-strip-label{font-size:11px;font-weight:600;color:var(--dim);letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px;}
+.logo-item{display:flex;flex-direction:column;align-items:center;gap:6px;opacity:.7;transition:opacity .2s;}
+.logo-item:hover{opacity:1;}
+.logo-img{width:36px;height:36px;object-fit:contain;border-radius:6px;filter:grayscale(100%);}
+.logo-item:hover .logo-img{filter:grayscale(0%);}
+.logo-name{font-size:10px;color:var(--dim);font-weight:500;text-align:center;}
+/* Employer logos — slightly larger */
+.logo-employer .logo-img{width:32px;height:32px;}
+/* Partner logos */
+.logo-partner .logo-img{width:28px;height:28px;}
+/* Logo row for resume roles */
+.resume-role-logo{width:28px;height:28px;object-fit:contain;border-radius:5px;border:1px solid var(--rule);flex-shrink:0;filter:grayscale(20%);}
+.resume-role-header{display:flex;align-items:center;gap:14px;}
+.resume-role-header-text{flex:1;}
+/* Home career strip */
+.career-logo-strip{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:28px;}
+.career-logo-pill{display:flex;align-items:center;gap:8px;padding:7px 12px;background:#fff;border:1px solid var(--rule);border-radius:8px;font-size:12px;font-weight:500;color:var(--mid);transition:border-color .15s,color .15s;}
+.career-logo-pill:hover{border-color:#0066FF;color:#0066FF;}
+.career-logo-pill img{width:18px;height:18px;object-fit:contain;border-radius:3px;}
+
 </style>
 <nav class="mobile-nav" id="mobile-nav">
   <button class="mobile-nav-btn active" id="mnav-home" onclick="showPage('home')">
