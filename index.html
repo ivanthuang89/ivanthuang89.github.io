@@ -3,394 +3,715 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Ivan Huang — Performance Media</title>
-<meta name="description" content="VP of Performance Media. I run the team and build the infrastructure that makes it outperform.">
+<title>Ivan Huang — Performance Media Leader</title>
+<meta name="description" content="VP Performance Media. I run the team and build the infrastructure that makes it outperform.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg:#0A0C0E; --bg2:#13161A; --rule:#1E2328; --rule2:#262B30;
-  --text:#F0F0EE; --mid:#9BA3AA; --dim:#4A5158;
-  --teal:#4FE0AE; --blue:#3B82F6; --gold:#E0A93F; --neg:#E5675E;
+:root{
+  --bg:#09090B;--bg2:#111113;--bg3:#18181B;
+  --rule:#27272A;--rule2:#3F3F46;
+  --text:#FAFAFA;--mid:#A1A1AA;--dim:#52525B;
+  --teal:#4FE0AE;--blue:#3B82F6;--gold:#F59E0B;
   color-scheme:dark;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;}
-body{min-height:100vh;}
-@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important;}}
-
-
-/* HEADSHOT */
-.headshot-wrap{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:28px;}
-.headshot{width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid #1E2328;}
-.headshot-name{font-size:12px;font-weight:500;color:#9BA3AA;letter-spacing:.08em;}
+html{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;scroll-behavior:smooth;}
+body{min-height:100vh;overflow-x:hidden;}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important;}}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 48px;display:flex;align-items:center;justify-content:space-between;background:linear-gradient(to bottom,rgba(10,12,14,.96) 0%,rgba(10,12,14,0) 100%);}
-.nav-logo{font-weight:600;font-size:15px;letter-spacing:-.03em;color:var(--text);}
-.nav-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--teal);vertical-align:3px;margin-left:2px;}
-.nav-links{display:flex;gap:32px;}
-.nav-links a{font-size:13px;color:var(--mid);text-decoration:none;transition:color .15s;}
-.nav-links a:hover{color:var(--text);}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 48px;height:60px;display:flex;align-items:center;justify-content:space-between;background:rgba(9,9,11,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--rule);}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-avatar{width:28px;height:28px;border-radius:50%;object-fit:cover;border:1px solid var(--rule2);}
+.nav-name{font-weight:600;font-size:14px;letter-spacing:-.02em;color:var(--text);}
+.nav-dot{width:5px;height:5px;border-radius:50%;background:var(--teal);}
+.nav-links{display:flex;gap:4px;}
+.nav-link{font-size:13px;color:var(--mid);text-decoration:none;padding:6px 14px;border-radius:6px;transition:color .15s,background .15s;cursor:pointer;border:none;background:none;}
+.nav-link:hover,.nav-link.active{color:var(--text);background:var(--bg3);}
+.nav-cta{font-size:13px;font-weight:600;text-decoration:none;padding:7px 18px;border-radius:6px;background:var(--teal);color:#09090B;transition:background .15s;}
+.nav-cta:hover{background:#3ecf9d;}
 
-/* HERO */
-.hero{padding:148px 80px 72px;text-align:center;border-bottom:1px solid var(--rule);}
-.eyebrow{font-size:12px;font-weight:500;color:var(--mid);letter-spacing:.08em;margin-bottom:28px;display:flex;align-items:center;justify-content:center;gap:12px;}
-.eyebrow::before,.eyebrow::after{content:'';display:block;width:28px;height:1px;background:var(--dim);}
-h1{font-family:'DM Serif Display',Georgia,serif;font-size:clamp(40px,6vw,88px);font-weight:400;line-height:1.05;letter-spacing:-.03em;color:var(--text);max-width:20ch;margin:0 auto;}
+/* PAGES */
+.page{display:none;padding-top:60px;}
+.page.active{display:block;}
+
+/* ── HOME PAGE ── */
+.hero{min-height:calc(100vh - 60px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 80px 60px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:40%;left:50%;transform:translate(-50%,-50%);width:900px;height:500px;background:radial-gradient(ellipse,rgba(79,224,174,.055) 0%,transparent 70%);pointer-events:none;}
+.hero-byline{display:flex;align-items:center;gap:12px;margin-bottom:36px;}
+.hero-avatar{width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid var(--rule2);}
+.hero-byline-text{font-size:13px;color:var(--mid);}
+.hero-byline-text strong{color:var(--text);font-weight:600;}
+h1{font-family:'DM Serif Display',Georgia,serif;font-size:clamp(44px,6.5vw,96px);font-weight:400;line-height:1.03;letter-spacing:-.035em;color:var(--text);max-width:18ch;margin:0 auto 32px;}
 h1 em{font-style:italic;color:var(--mid);}
-.hero-sub{margin:28px auto 0;font-size:17px;font-weight:300;line-height:1.7;color:var(--mid);max-width:52ch;}
+.hero-sub{font-size:18px;font-weight:300;line-height:1.75;color:var(--mid);max-width:52ch;margin:0 auto 48px;}
 .hero-sub strong{color:var(--text);font-weight:500;}
+.hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.btn-primary{font-size:14px;font-weight:600;text-decoration:none;padding:12px 28px;border-radius:8px;background:var(--teal);color:#09090B;transition:background .15s;display:flex;align-items:center;gap:8px;cursor:pointer;border:none;}
+.btn-primary:hover{background:#3ecf9d;}
+.btn-primary svg{width:16px;height:16px;fill:#09090B;}
+.btn-ghost{font-size:14px;font-weight:500;text-decoration:none;padding:12px 28px;border-radius:8px;border:1px solid var(--rule2);color:var(--mid);transition:border-color .15s,color .15s;cursor:pointer;background:none;}
+.btn-ghost:hover{border-color:var(--mid);color:var(--text);}
+.scroll-cue{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);color:var(--dim);font-size:11px;letter-spacing:.06em;display:flex;flex-direction:column;align-items:center;gap:6px;animation:bob 2s ease-in-out infinite;}
+.scroll-cue svg{width:16px;height:16px;stroke:var(--dim);fill:none;}
+@keyframes bob{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(5px);}}
 
 /* STAT RAIL */
-.stats{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--rule);}
-.stat{padding:32px 24px;border-right:1px solid var(--rule);display:flex;flex-direction:column;align-items:center;gap:6px;}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);}
+.stat{padding:32px 24px;border-right:1px solid var(--rule);display:flex;flex-direction:column;align-items:center;gap:7px;transition:background .2s;cursor:default;}
+.stat:hover{background:var(--bg2);}
 .stat:last-child{border-right:none;}
-.stat-n{font-family:'DM Serif Display',serif;font-size:48px;color:var(--teal);letter-spacing:-.04em;line-height:1;}
-.stat-l{font-size:12px;color:var(--dim);text-align:center;max-width:18ch;line-height:1.4;}
+.stat-n{font-family:'DM Serif Display',serif;font-size:52px;color:var(--teal);letter-spacing:-.045em;line-height:1;}
+.stat-l{font-size:12px;color:var(--dim);text-align:center;max-width:16ch;line-height:1.5;}
 
-/* DEMO */
-.demo{background:#060708;}
-.demo-lede{padding:64px 80px 48px;display:flex;align-items:flex-end;justify-content:space-between;gap:48px;flex-wrap:wrap;}
-.demo-lede h2{font-family:'DM Serif Display',serif;font-size:clamp(28px,3.5vw,48px);font-weight:400;letter-spacing:-.03em;line-height:1.1;max-width:16ch;}
-.demo-lede p{font-size:14px;color:var(--mid);max-width:44ch;line-height:1.7;flex-shrink:0;}
-.demo-player{position:relative;width:100%;aspect-ratio:16/9;background:#060708;overflow:hidden;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);}
-.demo-player::before{content:'';position:absolute;inset:0;z-index:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:64px 64px;}
-.demo-cta{position:relative;z-index:1;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;}
-.play-btn{width:76px;height:76px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;text-decoration:none;transition:transform .2s,background .2s;animation:pulse 2.4s ease-out infinite;}
-.play-btn:hover{transform:scale(1.08);background:#3ecf9d;animation:none;}
-.play-btn svg{width:28px;height:28px;fill:#0A0C0E;margin-left:4px;}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(79,224,174,.35);}60%{box-shadow:0 0 0 20px rgba(79,224,174,0);}100%{box-shadow:0 0 0 0 rgba(79,224,174,0);}}
-.demo-cta h3{font-size:17px;font-weight:500;color:var(--text);letter-spacing:-.01em;}
-.demo-cta p{font-size:13px;color:var(--dim);}
-.demo-note{padding:14px 80px;font-size:11px;color:var(--dim);border-bottom:1px solid var(--rule);}
+/* WORK GRID */
+.work-section{padding:80px;}
+.work-section-h{font-family:'DM Serif Display',serif;font-size:clamp(28px,3.5vw,44px);font-weight:400;letter-spacing:-.03em;margin-bottom:10px;}
+.work-section-sub{font-size:15px;color:var(--mid);max-width:52ch;line-height:1.65;margin-bottom:52px;}
+.work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border-radius:12px;overflow:hidden;}
+.work-card{background:var(--bg2);padding:40px;cursor:pointer;transition:background .2s;position:relative;overflow:hidden;}
+.work-card:hover{background:var(--bg3);}
+.work-card-tag{font-size:11px;font-weight:600;color:var(--dim);letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px;}
+.work-card-tag span{color:var(--teal);}
+.work-card h3{font-family:'DM Serif Display',serif;font-size:28px;font-weight:400;letter-spacing:-.025em;margin-bottom:12px;line-height:1.1;}
+.work-card p{font-size:13px;color:var(--mid);line-height:1.65;margin-bottom:24px;}
+.work-card-arrow{width:36px;height:36px;border-radius:50%;background:var(--bg3);border:1px solid var(--rule2);display:flex;align-items:center;justify-content:center;transition:background .15s,border-color .15s;}
+.work-card:hover .work-card-arrow{background:var(--teal);border-color:var(--teal);}
+.work-card-arrow svg{width:14px;height:14px;stroke:var(--mid);fill:none;transition:stroke .15s;}
+.work-card:hover .work-card-arrow svg{stroke:#09090B;}
+.work-card-stat{margin-top:20px;padding-top:20px;border-top:1px solid var(--rule);font-size:12px;color:var(--dim);}
+.work-card-stat strong{color:var(--teal);font-family:'DM Serif Display',serif;font-size:22px;display:block;margin-bottom:2px;}
+
+/* ── MORPHEUS PAGE ── */
+.page-header{padding:72px 80px 56px;border-bottom:1px solid var(--rule);}
+.page-header-back{font-size:12px;color:var(--dim);cursor:pointer;display:inline-flex;align-items:center;gap:6px;margin-bottom:24px;transition:color .15s;background:none;border:none;padding:0;}
+.page-header-back:hover{color:var(--text);}
+.page-header-back svg{width:14px;height:14px;stroke:currentColor;fill:none;}
+.page-header h2{font-family:'DM Serif Display',serif;font-size:clamp(36px,5vw,72px);font-weight:400;letter-spacing:-.035em;line-height:1.05;margin-bottom:16px;}
+.page-header p{font-size:16px;color:var(--mid);max-width:56ch;line-height:1.75;}
+.page-header p strong{color:var(--text);font-weight:500;}
+
+/* VIDEO */
+.video-wrap{position:relative;width:100%;aspect-ratio:16/9;background:#000;overflow:hidden;border-bottom:1px solid var(--rule);}
+.video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:none;}
+.video-caption{padding:14px 80px;font-size:12px;color:var(--dim);border-bottom:1px solid var(--rule);}
 
 /* SECTION SHELL */
 .section{padding:72px 80px;border-bottom:1px solid var(--rule);}
-.section-h{font-family:'DM Serif Display',serif;font-size:clamp(28px,3.5vw,44px);font-weight:400;letter-spacing:-.03em;margin-bottom:8px;}
-.section-sub{font-size:14px;color:var(--mid);max-width:52ch;line-height:1.65;margin-bottom:48px;}
+.section-h{font-family:'DM Serif Display',serif;font-size:clamp(26px,3vw,42px);font-weight:400;letter-spacing:-.03em;margin-bottom:10px;}
+.section-sub{font-size:15px;color:var(--mid);max-width:52ch;line-height:1.7;margin-bottom:52px;}
 
 /* EVIDENCE GRID */
-.ev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);}
-.ev-cell{background:var(--bg);padding:36px;}
-.ev-n{font-family:'DM Serif Display',serif;font-size:52px;letter-spacing:-.04em;line-height:1;margin-bottom:8px;}
+.ev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border-radius:12px;overflow:hidden;margin-bottom:64px;}
+.ev-cell{background:var(--bg2);padding:36px;transition:background .2s;}
+.ev-cell:hover{background:var(--bg3);}
+.ev-n{font-family:'DM Serif Display',serif;font-size:52px;letter-spacing:-.045em;line-height:1;margin-bottom:10px;}
 .ev-n span{color:var(--teal);}
-.ev-l{font-size:14px;font-weight:500;color:var(--text);margin-bottom:6px;}
-.ev-s{font-size:13px;color:var(--dim);line-height:1.55;}
+.ev-l{font-size:14px;font-weight:600;color:var(--text);margin-bottom:6px;}
+.ev-s{font-size:13px;color:var(--dim);line-height:1.6;}
 
-/* ADOPTION CHART */
-.chart-wrap{margin-top:48px;}
-.chart-title{font-size:13px;font-weight:500;color:var(--mid);margin-bottom:20px;display:flex;align-items:center;gap:24px;}
+/* CHART */
+.chart-wrap{margin-top:0;}
+.chart-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:12px;}
+.chart-title-text{font-size:14px;font-weight:500;color:var(--text);}
+.chart-sub{font-size:12px;color:var(--dim);}
 .legend{display:flex;gap:20px;flex-wrap:wrap;}
-.leg-item{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--mid);}
+.leg{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--mid);}
 .leg-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
-.chart-svg-wrap{width:100%;overflow:hidden;}
+.chart-outer{background:var(--bg2);border:1px solid var(--rule);border-radius:12px;padding:28px 28px 20px;position:relative;}
+#chart-canvas{width:100%;display:block;cursor:crosshair;}
+#chart-tooltip{position:absolute;background:var(--bg);border:1px solid var(--rule2);border-radius:8px;padding:12px 16px;font-size:12px;line-height:1.9;pointer-events:none;opacity:0;transition:opacity .15s;z-index:10;min-width:170px;box-shadow:0 8px 24px rgba(0,0,0,.5);}
 
-/* BUILD LOG — commit timeline */
-.build-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
-.build-bars{display:flex;flex-direction:column;gap:0;}
-.bar-row{display:grid;grid-template-columns:100px 1fr 48px;align-items:center;gap:12px;padding:8px 0;border-top:1px solid var(--rule);}
+/* BUILD */
+.build-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
+.bar-section-label{font-size:11px;font-weight:500;color:var(--mid);letter-spacing:.06em;text-transform:uppercase;margin-bottom:20px;}
+.bars{display:flex;flex-direction:column;gap:0;}
+.bar-row{display:grid;grid-template-columns:140px 1fr 52px;align-items:center;gap:14px;padding:10px 0;border-top:1px solid var(--rule);}
 .bar-row:last-child{border-bottom:1px solid var(--rule);}
-.bar-label{font-size:12px;color:var(--mid);}
-.bar-track{background:var(--bg2);border-radius:2px;height:8px;overflow:hidden;}
-.bar-fill{height:100%;border-radius:2px;background:var(--teal);transition:width 1s ease;}
-.bar-val{font-size:12px;color:var(--text);text-align:right;font-variant-numeric:tabular-nums;}
-
-/* WORKFLOW VISUAL */
-.wf-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative;margin-bottom:40px;}
-.wf-steps::before{content:'';position:absolute;top:28px;left:10%;right:10%;height:1px;background:var(--rule2);z-index:0;}
-.wf-step{display:flex;flex-direction:column;align-items:center;gap:12px;position:relative;z-index:1;}
-.wf-num{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600;background:var(--bg2);border:1px solid var(--rule2);color:var(--mid);transition:all .3s;}
-.wf-step.active .wf-num{background:var(--teal);color:#0A0C0E;border-color:var(--teal);}
-.wf-step-label{font-size:12px;color:var(--mid);text-align:center;max-width:9ch;line-height:1.4;}
-.wf-step.active .wf-step-label{color:var(--text);}
-.wf-detail{background:var(--bg2);border:1px solid var(--rule2);border-radius:8px;padding:24px 28px;display:grid;grid-template-columns:1fr 1fr;gap:16px 32px;}
-.wf-fact{display:flex;flex-direction:column;gap:4px;}
-.wf-fact-n{font-family:'DM Serif Display',serif;font-size:28px;color:var(--teal);letter-spacing:-.03em;line-height:1;}
-.wf-fact-l{font-size:12px;color:var(--dim);}
+.bar-label{font-size:13px;color:var(--mid);}
+.bar-track{background:var(--bg3);border-radius:3px;height:6px;overflow:hidden;}
+.bar-fill{height:100%;border-radius:3px;background:var(--teal);width:0%;transition:width .9s cubic-bezier(.16,1,.3,1);}
+.bar-val{font-size:12px;color:var(--dim);text-align:right;}
+.loop-label{font-size:11px;font-weight:500;color:var(--mid);letter-spacing:.06em;text-transform:uppercase;margin-bottom:20px;}
+.loop-steps{display:flex;flex-direction:column;gap:0;border:1px solid var(--rule);border-radius:12px;overflow:hidden;}
+.loop-step{display:flex;align-items:center;gap:16px;padding:16px 20px;border-bottom:1px solid var(--rule);background:var(--bg2);transition:background .2s;}
+.loop-step:last-child{border-bottom:none;}
+.loop-step:hover{background:var(--bg3);}
+.loop-num{width:28px;height:28px;border-radius:50%;background:var(--bg3);border:1px solid var(--rule2);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:var(--teal);flex-shrink:0;}
+.loop-text h4{font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px;}
+.loop-text p{font-size:12px;color:var(--dim);line-height:1.5;}
+.build-stats{margin-top:24px;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border-radius:10px;overflow:hidden;}
+.bs-cell{background:var(--bg2);padding:20px 24px;}
+.bs-n{font-family:'DM Serif Display',serif;font-size:32px;color:var(--teal);letter-spacing:-.03em;line-height:1;margin-bottom:4px;}
+.bs-l{font-size:12px;color:var(--dim);}
+.stack{margin-top:48px;padding-top:40px;border-top:1px solid var(--rule);}
+.stack-label{font-size:11px;font-weight:500;color:var(--mid);letter-spacing:.06em;text-transform:uppercase;margin-bottom:16px;}
+.stack-tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{padding:7px 14px;background:var(--bg2);border:1px solid var(--rule);border-radius:6px;font-size:13px;color:var(--mid);transition:border-color .15s,color .15s;}
+.tag:hover{border-color:var(--rule2);color:var(--text);}
 
 /* QUOTE */
-.quote{padding:80px;border-bottom:1px solid var(--rule);display:flex;justify-content:center;}
-blockquote{max-width:620px;}
-blockquote p{font-family:'DM Serif Display',serif;font-size:clamp(24px,3vw,36px);font-weight:400;font-style:italic;line-height:1.35;letter-spacing:-.02em;color:var(--text);margin-bottom:20px;}
-blockquote cite{font-size:13px;font-style:normal;color:var(--mid);}
+.quote-section{padding:80px;border-bottom:1px solid var(--rule);display:flex;justify-content:center;background:var(--bg2);}
+blockquote{max-width:640px;text-align:center;}
+blockquote p{font-family:'DM Serif Display',serif;font-size:clamp(22px,3vw,36px);font-weight:400;font-style:italic;line-height:1.3;letter-spacing:-.025em;color:var(--text);margin-bottom:24px;}
+blockquote cite{font-size:13px;font-style:normal;color:var(--dim);}
+
+/* ── MODELS PAGE ── */
+.models-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);margin:0;border-bottom:1px solid var(--rule);}
+.model-panel{background:var(--bg2);padding:56px;}
+.model-panel-label{font-size:11px;font-weight:600;color:var(--dim);letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px;}
+.model-panel h3{font-family:'DM Serif Display',serif;font-size:32px;font-weight:400;letter-spacing:-.025em;margin-bottom:14px;line-height:1.1;}
+.model-panel p{font-size:14px;color:var(--mid);line-height:1.75;margin-bottom:28px;}
+.model-panel p strong{color:var(--text);font-weight:500;}
+
+/* Scenario planner */
+.scenario-wrap{margin-top:8px;}
+.scenario-controls{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px;}
+.sc-group{display:flex;flex-direction:column;gap:6px;}
+.sc-label{font-size:11px;font-weight:500;color:var(--dim);letter-spacing:.05em;text-transform:uppercase;}
+.sc-input{background:var(--bg3);border:1px solid var(--rule2);border-radius:6px;padding:9px 14px;font-size:14px;color:var(--text);font-family:'Inter',sans-serif;width:100%;outline:none;transition:border-color .15s;}
+.sc-input:focus{border-color:var(--teal);}
+.scenario-tabs{display:flex;gap:6px;margin-bottom:20px;flex-wrap:wrap;}
+.sc-tab{padding:6px 14px;border-radius:6px;font-size:12px;font-weight:500;cursor:pointer;border:1px solid var(--rule2);color:var(--mid);background:var(--bg3);transition:all .15s;}
+.sc-tab.active{background:var(--teal);color:#09090B;border-color:var(--teal);}
+.scenario-results{background:var(--bg3);border-radius:10px;padding:24px;display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.sc-result{display:flex;flex-direction:column;gap:4px;}
+.sc-result-n{font-family:'DM Serif Display',serif;font-size:28px;letter-spacing:-.03em;line-height:1;}
+.sc-result-n.positive{color:var(--teal);}
+.sc-result-n.negative{color:#E5675E;}
+.sc-result-l{font-size:11px;color:var(--dim);}
+.sc-formula{margin-top:16px;padding-top:16px;border-top:1px solid var(--rule);font-size:12px;color:var(--dim);line-height:1.6;}
+
+/* Q2 Forecast viz */
+.forecast-wrap{margin-top:8px;}
+.forecast-tabs{display:flex;gap:6px;margin-bottom:20px;}
+.fc-tab{padding:6px 14px;border-radius:6px;font-size:12px;font-weight:500;cursor:pointer;border:1px solid var(--rule2);color:var(--mid);background:var(--bg3);transition:all .15s;}
+.fc-tab.active{background:var(--blue);color:#fff;border-color:var(--blue);}
+.channel-bars{display:flex;flex-direction:column;gap:0;}
+.ch-row{display:grid;grid-template-columns:140px 1fr 80px;align-items:center;gap:12px;padding:9px 0;border-top:1px solid var(--rule);}
+.ch-row:last-child{border-bottom:1px solid var(--rule);}
+.ch-label{font-size:12px;color:var(--mid);}
+.ch-track{background:var(--bg3);border-radius:3px;height:6px;overflow:hidden;}
+.ch-fill-blue{height:100%;border-radius:3px;background:var(--blue);width:0%;transition:width .8s cubic-bezier(.16,1,.3,1);}
+.ch-fill-gold{height:100%;border-radius:3px;background:var(--gold);width:0%;transition:width .8s cubic-bezier(.16,1,.3,1);}
+.ch-val{font-size:11px;color:var(--dim);text-align:right;}
+.forecast-summary{margin-top:24px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border-radius:10px;overflow:hidden;}
+.fs-cell{background:var(--bg3);padding:16px 20px;}
+.fs-n{font-family:'DM Serif Display',serif;font-size:24px;letter-spacing:-.03em;line-height:1;margin-bottom:4px;color:var(--teal);}
+.fs-l{font-size:11px;color:var(--dim);}
+.redact-note{font-size:11px;color:var(--dim);margin-top:16px;padding:10px 14px;background:var(--bg);border:1px solid var(--rule);border-radius:6px;}
+
+/* ── RESUME PAGE ── */
+.resume-wrap{max-width:860px;margin:0 auto;padding:72px 80px;}
+.resume-actions{display:flex;gap:10px;margin-bottom:48px;}
+.resume-print{font-size:13px;font-weight:500;text-decoration:none;padding:9px 20px;border-radius:6px;background:var(--teal);color:#09090B;cursor:pointer;border:none;transition:background .15s;}
+.resume-print:hover{background:#3ecf9d;}
+.resume-dl{font-size:13px;color:var(--mid);text-decoration:none;padding:9px 20px;border-radius:6px;border:1px solid var(--rule);transition:border-color .15s,color .15s;}
+.resume-dl:hover{border-color:var(--rule2);color:var(--text);}
+.resume-name{font-family:'DM Serif Display',serif;font-size:52px;font-weight:400;letter-spacing:-.04em;margin-bottom:4px;}
+.resume-contact{font-size:13px;color:var(--mid);margin-bottom:48px;display:flex;gap:20px;flex-wrap:wrap;}
+.resume-contact a{color:var(--mid);text-decoration:none;}
+.resume-contact a:hover{color:var(--teal);}
+.resume-section-head{font-size:11px;font-weight:600;color:var(--dim);letter-spacing:.1em;text-transform:uppercase;padding-bottom:12px;border-bottom:1px solid var(--rule);margin-bottom:32px;margin-top:48px;}
+.resume-section-head:first-of-type{margin-top:0;}
+.resume-role{margin-bottom:36px;}
+.resume-role-header{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:4px;}
+.resume-company{font-size:16px;font-weight:600;color:var(--text);letter-spacing:-.01em;}
+.resume-title{font-size:14px;color:var(--mid);}
+.resume-dates{font-size:13px;color:var(--dim);white-space:nowrap;}
+.resume-bullets{margin-top:12px;display:flex;flex-direction:column;gap:7px;padding-left:0;}
+.resume-bullets li{font-size:13px;color:var(--mid);line-height:1.65;list-style:none;padding-left:16px;position:relative;}
+.resume-bullets li::before{content:'—';position:absolute;left:0;color:var(--dim);}
+.resume-role-compact{margin-bottom:10px;}
+.resume-role-compact .resume-company{font-size:14px;}
+.resume-role-compact .resume-title{font-size:13px;}
+.resume-role-compact .resume-dates{font-size:12px;}
+.ref-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.ref-card{background:var(--bg2);border:1px solid var(--rule);border-radius:8px;padding:16px 20px;}
+.ref-name{font-size:14px;font-weight:500;color:var(--text);margin-bottom:3px;}
+.ref-title{font-size:12px;color:var(--dim);}
 
 /* FOOTER */
-footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;}
-.footer-id h3{font-size:18px;font-weight:500;letter-spacing:-.02em;margin-bottom:4px;}
-.footer-id p{font-size:13px;color:var(--mid);}
-.footer-actions{display:flex;gap:12px;}
-.footer-actions a{font-size:13px;color:var(--mid);text-decoration:none;padding:10px 20px;border:1px solid var(--rule);border-radius:4px;transition:border-color .15s,color .15s;}
-.footer-actions a:hover{border-color:var(--dim);color:var(--text);}
-.footer-actions a.cta{background:var(--teal);color:#0A0C0E;border-color:var(--teal);font-weight:600;}
-.footer-actions a.cta:hover{background:#3ecf9d;border-color:#3ecf9d;}
+footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;border-top:1px solid var(--rule);}
+.footer-left{display:flex;align-items:center;gap:14px;}
+.footer-avatar{width:38px;height:38px;border-radius:50%;object-fit:cover;border:1px solid var(--rule);}
+.footer-id h3{font-size:15px;font-weight:600;letter-spacing:-.02em;}
+.footer-id p{font-size:12px;color:var(--mid);margin-top:2px;}
+.footer-actions{display:flex;gap:10px;}
+.footer-actions a{font-size:13px;color:var(--mid);text-decoration:none;padding:8px 18px;border:1px solid var(--rule);border-radius:6px;transition:border-color .15s,color .15s;}
+.footer-actions a:hover{border-color:var(--rule2);color:var(--text);}
+.footer-actions a.cta{background:var(--teal);color:#09090B;border-color:var(--teal);font-weight:600;}
+.footer-actions a.cta:hover{background:#3ecf9d;}
 .footer-note{width:100%;font-size:11px;color:var(--dim);border-top:1px solid var(--rule);padding-top:20px;margin-top:4px;}
 
 /* FADE */
-.fi{opacity:0;transform:translateY(12px);transition:opacity .6s ease,transform .6s ease;}
+.fi{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease;}
 .fi.on{opacity:1;transform:translateY(0);}
 
 /* RESPONSIVE */
-@media(max-width:900px){
-  nav{padding:18px 24px;} .nav-links{display:none;}
-  .hero{padding:112px 24px 56px;}
+@media(max-width:960px){
+  nav{padding:0 20px;}
+  .nav-links .nav-link:not(.nav-link-mobile){display:none;}
+  .hero{padding:60px 24px 48px;}
   .stats{grid-template-columns:repeat(2,1fr);}
-  .stat:nth-child(2){border-right:none;} .stat:nth-child(3){border-top:1px solid var(--rule);}
-  .demo-lede{padding:40px 24px 32px;flex-direction:column;gap:16px;}
-  .demo-note{padding:12px 24px;}
+  .stat:nth-child(2){border-right:none;}
+  .stat:nth-child(3){border-top:1px solid var(--rule);}
+  .work-section{padding:48px 24px;}
+  .work-grid{grid-template-columns:1fr;}
+  .page-header{padding:40px 24px;}
+  .video-caption{padding:12px 24px;}
   .section{padding:48px 24px;}
   .ev-grid{grid-template-columns:1fr;}
   .build-grid{grid-template-columns:1fr;}
-  .wf-steps{grid-template-columns:1fr;} .wf-steps::before{display:none;}
-  .wf-detail{grid-template-columns:1fr;}
-  .quote{padding:56px 24px;}
-  footer{padding:40px 24px;}
+  .quote-section{padding:56px 24px;}
+  .models-grid{grid-template-columns:1fr;}
+  .model-panel{padding:36px 24px;}
+  .scenario-controls{grid-template-columns:1fr;}
+  .resume-wrap{padding:48px 24px;}
+  .ref-grid{grid-template-columns:1fr;}
+  footer{padding:36px 24px;}
+}
+
+@media print{
+  nav,footer,.resume-actions,.page:not(#page-resume){display:none!important;}
+  #page-resume{display:block!important;padding-top:0;}
+  .resume-wrap{padding:0;max-width:100%;}
+  body{background:#fff;color:#111;}
+  :root{--bg:#fff;--bg2:#f9f9f9;--bg3:#f3f3f3;--rule:#e5e5e5;--text:#111;--mid:#555;--dim:#888;--teal:#1a7a5e;}
 }
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="nav-logo">morpheus<span class="nav-dot"></span></div>
+  <a class="nav-logo" onclick="showPage('home')" href="#">
+    <img class="nav-avatar" src="data:image/jpeg;base64,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" alt="Ivan Huang">
+    <span class="nav-name">Ivan Huang</span>
+    <div class="nav-dot"></div>
+  </a>
   <div class="nav-links">
-    <a href="#demo">Demo</a>
-    <a href="#impact">Impact</a>
-    <a href="#build">How it was built</a>
-    <a href="#contact">Contact</a>
+    <button class="nav-link active" onclick="showPage('home')" id="nav-home">Home</button>
+    <button class="nav-link" onclick="showPage('morpheus')" id="nav-morpheus">Morpheus</button>
+    <button class="nav-link" onclick="showPage('models')" id="nav-models">Models</button>
+    <button class="nav-link" onclick="showPage('resume')" id="nav-resume">Resume</button>
   </div>
+  <a class="nav-cta" href="mailto:ivan.t.huang@gmail.com">Get in touch</a>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="headshot-wrap">
-    <img class="headshot" src="data:image/jpeg;base64,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" alt="Ivan Huang">
-    <span class="headshot-name">Ivan Huang &nbsp;·&nbsp; VP Performance Media</span>
-  </div>
-  <h1>I run performance media at scale. When the tools didn't exist, <em>I built them.</em></h1>
-  <p class="hero-sub">VP of Performance Media at DealMaker. I lead a 25-person cross-channel media org across paid social, search, and a 130-publisher placement network. I also built the analytics platform the team runs on — <strong>solo, from scratch, while doing the job.</strong> It became the company's most-used internal tool, then its #1 product.</p>
-</section>
+<!-- ══════════════ HOME ══════════════ -->
+<div id="page-home" class="page active">
+  <section class="hero">
+    <div class="hero-byline">
+      <img class="hero-avatar" src="data:image/jpeg;base64,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" alt="Ivan Huang">
+      <span class="hero-byline-text"><strong>Ivan Huang</strong> &nbsp;·&nbsp; VP Performance Media</span>
+    </div>
+    <h1>I run performance media at scale. <em>When the tools didn't exist, I built them.</em></h1>
+    <p class="hero-sub">
+      I lead cross-channel media organizations at the VP and SVP level — paid social, search, programmatic, publisher networks, and retention. I also build the infrastructure that makes those teams measurably better.
+    </p>
+    <div class="hero-actions">
+      <button class="btn-primary" onclick="showPage('morpheus')">
+        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        See Morpheus
+      </button>
+      <button class="btn-ghost" onclick="showPage('resume')">View Resume</button>
+    </div>
+    <div class="scroll-cue">
+      <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M12 5v14m-7-7 7 7 7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+  </section>
 
-<!-- STAT RAIL -->
-<div class="stats">
-  <div class="stat"><span class="stat-n">#1</span><span class="stat-l">of 15 internal apps at DealMaker</span></div>
-  <div class="stat"><span class="stat-n">6<span style="font-size:.65em;vertical-align:3px">×</span></span><span class="stat-l">visits vs the prior category leader</span></div>
-  <div class="stat"><span class="stat-n">16K</span><span class="stat-l">product visits in 5 months</span></div>
-  <div class="stat"><span class="stat-n">68<span style="font-size:.65em;vertical-align:3px">%</span></span><span class="stat-l">of all internal app traffic</span></div>
+  <div class="stats fi">
+    <div class="stat"><span class="stat-n">$90M+</span><span class="stat-l">annual paid media spend managed</span></div>
+    <div class="stat"><span class="stat-n">13yr</span><span class="stat-l">performance media career across holdcos and independents</span></div>
+    <div class="stat"><span class="stat-n">25</span><span class="stat-l">person org built and led at DealMaker</span></div>
+    <div class="stat"><span class="stat-n">3</span><span class="stat-l">production tools shipped as a VP, solo</span></div>
+  </div>
+
+  <section class="work-section fi">
+    <h2 class="work-section-h">Selected work</h2>
+    <p class="work-section-sub">Three case studies that show how I think, what I build, and the results I deliver.</p>
+    <div class="work-grid">
+      <div class="work-card" onclick="showPage('morpheus')">
+        <div class="work-card-tag"><span>●</span> Platform engineering</div>
+        <h3>Morpheus</h3>
+        <p>A full-stack performance media intelligence platform. Built solo as VP, shipping 666 commits across 9 months. Became the company's #1 internal tool, then its #1 product.</p>
+        <div class="work-card-arrow"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M5 12h14m-7-7 7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="work-card-stat"><strong>#1</strong> of 15 internal apps · 6× adoption growth</div>
+      </div>
+      <div class="work-card" onclick="showPage('models')">
+        <div class="work-card-tag"><span>●</span> Financial modeling</div>
+        <h3>Revenue &amp; Margin Models</h3>
+        <p>A 7-scenario media fee model built for the CFO, and a dual-view Q2 revenue forecast across 50+ client accounts with weekly pacing. Both used as company planning baselines.</p>
+        <div class="work-card-arrow"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M5 12h14m-7-7 7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="work-card-stat"><strong>$3.9M</strong> annual surplus projected vs. prior model</div>
+      </div>
+      <div class="work-card" onclick="showPage('resume')">
+        <div class="work-card-tag"><span>●</span> Career history</div>
+        <h3>13 Years in Performance Media</h3>
+        <p>From Starcom and PHD to dentsu MuteSix SVP to DealMaker VP — across holdcos, independents, and in-house orgs managing up to $100M+ in annual media spend.</p>
+        <div class="work-card-arrow"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M5 12h14m-7-7 7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="work-card-stat"><strong>5</strong> companies · VP and above since 2021</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-left">
+      <img class="footer-avatar" src="data:image/jpeg;base64,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" alt="Ivan Huang">
+      <div class="footer-id"><h3>Ivan Huang</h3><p>VP Performance Media · Los Angeles</p></div>
+    </div>
+    <div class="footer-actions">
+      <a href="https://www.linkedin.com/in/ivanthuang/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:ivan.t.huang@gmail.com" class="cta">Get in touch</a>
+    </div>
+    <p class="footer-note">This portfolio contains redacted versions of real work. Client names and financial figures have been anonymized or scaled. All strategic frameworks and analytical methodologies are Ivan's own.</p>
+  </footer>
 </div>
 
-<!-- DEMO -->
-<section class="demo" id="demo">
-  <div class="demo-lede">
-    <h2>See the platform in motion</h2>
-    <p>Campaign pacing against targets. Publisher performance across 130+ outlets. Full creative intelligence on 5,000+ ad placements. AI planning agent. Media buy matching. ~95 seconds.</p>
-  </div>
-  <div class="demo-player" style="position:relative;width:100%;aspect-ratio:16/9;background:#000;overflow:hidden;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);">
-    <iframe
-      style="position:absolute;inset:0;width:100%;height:100%;border:none;"
-      src="https://www.youtube.com/embed/Xwl0vKHphgw?rel=0&modestbranding=1&color=white"
-      title="Morpheus product demo"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen loading="lazy">
-    </iframe>
-  </div>
-  <p class="demo-note">Screens recreated with illustrative data. Real publisher names anonymized.</p>
-</section>
-
-<!-- IMPACT + ADOPTION CHART -->
-<section class="section fi" id="impact">
-  <h2 class="section-h">What adoption looked like</h2>
-  <p class="section-sub">From internal tool to category leader in four months — without a product manager, design team, or engineering headcount.</p>
-
-  <div class="ev-grid">
-    <div class="ev-cell">
-      <div class="ev-n"><span>#1</span> of 15</div>
-      <div class="ev-l">Most-used internal app</div>
-      <div class="ev-s">Stoda quarterly review, July 2026. 64 unique users in a two-week window, up 20% MoM.</div>
-    </div>
-    <div class="ev-cell">
-      <div class="ev-n">6<span>×</span></div>
-      <div class="ev-l">Visits vs the prior leader</div>
-      <div class="ev-s">Oct 2026: CIP 6,375 visits vs CPT's 1,033 — a tool with a 14-month head start.</div>
-    </div>
-    <div class="ev-cell">
-      <div class="ev-n">16<span>K</span></div>
-      <div class="ev-l">Product visits in 5 months</div>
-      <div class="ev-s">CPT needed 14 months to reach 5,730. CIP tripled that in a third of the time.</div>
-    </div>
-    <div class="ev-cell">
-      <div class="ev-n">68<span>%</span></div>
-      <div class="ev-l">Of all Stoda internal traffic</div>
-      <div class="ev-s">Morpheus and one other app accounted for 68% of visits across 15 production apps company-wide.</div>
-    </div>
-    <div class="ev-cell">
-      <div class="ev-n">4<span style="font-size:.55em;vertical-align:6px">mo</span></div>
-      <div class="ev-l">To category leader</div>
-      <div class="ev-s">Displaced a 14-month incumbent. Kerry, Head of Product, announced the crossover on Sep 30, 2026.</div>
-    </div>
-    <div class="ev-cell">
-      <div class="ev-n">64</div>
-      <div class="ev-l">Unique users in 2 weeks</div>
-      <div class="ev-s">3.6 visits per person — broad, embedded usage, not a small group of power users inflating the numbers.</div>
-    </div>
+<!-- ══════════════ MORPHEUS ══════════════ -->
+<div id="page-morpheus" class="page">
+  <div class="page-header">
+    <button class="page-header-back" onclick="showPage('home')">
+      <svg viewBox="0 0 24 24" stroke-width="2"><path d="M19 12H5m7-7-7 7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Back
+    </button>
+    <h2>Morpheus</h2>
+    <p>Performance media intelligence platform. Built solo as VP of Performance Media at DealMaker, March–November 2026. <strong>666 commits · 32,000 lines of TypeScript · 159 production deploys.</strong> Zero engineering headcount.</p>
   </div>
 
-  <!-- ADOPTION CHART - interactive -->
-  <div class="chart-wrap fi" style="margin-top:48px;">
-    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:12px;">
-      <div style="font-size:13px;font-weight:500;color:var(--mid);">Monthly visits, Jul–Nov 2026 &nbsp;<span style="color:var(--dim);font-weight:400;">— hover to explore</span></div>
-      <div style="display:flex;gap:20px;flex-wrap:wrap;">
-        <div style="display:flex;align-items:center;gap:7px;font-size:12px;color:var(--mid);"><div style="width:10px;height:10px;border-radius:50%;background:#4FE0AE;flex-shrink:0;"></div>CIP (productized)</div>
-        <div style="display:flex;align-items:center;gap:7px;font-size:12px;color:var(--mid);"><div style="width:10px;height:10px;border-radius:50%;background:#3B82F6;flex-shrink:0;"></div>CPT (prior leader)</div>
-        <div style="display:flex;align-items:center;gap:7px;font-size:12px;color:var(--mid);"><div style="width:10px;height:10px;border-radius:50%;background:#52525B;flex-shrink:0;"></div>Morpheus (internal)</div>
-      </div>
-    </div>
-    <div style="background:var(--bg2);border:1px solid var(--rule);border-radius:12px;padding:28px 28px 20px;position:relative;">
-      <canvas id="chart-canvas" style="width:100%;display:block;cursor:crosshair;" height="260"></canvas>
-      <div id="chart-tooltip" style="position:absolute;background:var(--bg);border:1px solid var(--rule2);border-radius:8px;padding:12px 16px;font-size:12px;line-height:1.9;pointer-events:none;opacity:0;transition:opacity .15s;z-index:10;min-width:170px;box-shadow:0 8px 24px rgba(0,0,0,.5);"></div>
-    </div>
-    <div style="font-size:11px;color:var(--dim);margin-top:10px;">*November through the 24th</div>
+  <div class="video-wrap">
+    <iframe src="https://www.youtube.com/embed/Xwl0vKHphgw?rel=0&modestbranding=1&color=white" title="Morpheus product demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
   </div>
-</section>
+  <p class="video-caption">Screens recreated with illustrative data. Real publisher names anonymized. ~95 seconds.</p>
 
-<!-- BUILD SECTION -->
-<section class="section fi" id="build">
-  <h2 class="section-h">How it was built</h2>
-  <p class="section-sub">666 commits across 9 months, alongside a VP-level day job. No engineering team. Every line shipped via AI coding agents under my direction.</p>
+  <section class="section fi">
+    <h2 class="section-h">What adoption looked like</h2>
+    <p class="section-sub">From internal tool to category leader in four months — without a product manager, design team, or engineering headcount.</p>
+    <div class="ev-grid">
+      <div class="ev-cell fi"><div class="ev-n"><span>#1</span> of 15</div><div class="ev-l">Most-used internal app</div><div class="ev-s">Stoda quarterly review, July 2026. 64 unique users in a two-week window, up 20% month over month.</div></div>
+      <div class="ev-cell fi"><div class="ev-n">6<span>×</span></div><div class="ev-l">Visits vs the prior leader</div><div class="ev-s">Oct 2026: 6,375 visits vs CPT's 1,033 — a tool with a 14-month head start.</div></div>
+      <div class="ev-cell fi"><div class="ev-n">16<span>K</span></div><div class="ev-l">Product visits in 5 months</div><div class="ev-s">CPT needed 14 months to reach 5,730. CIP tripled that in a third of the time.</div></div>
+      <div class="ev-cell fi"><div class="ev-n">68<span>%</span></div><div class="ev-l">Of all Stoda internal traffic</div><div class="ev-s">Morpheus and one other app accounted for 68% of visits across 15 production apps.</div></div>
+      <div class="ev-cell fi"><div class="ev-n">4<span style="font-size:.5em;vertical-align:7px">mo</span></div><div class="ev-l">To category leader</div><div class="ev-s">Displaced a 14-month incumbent. Kerry, Head of Product, announced the crossover Sep 30, 2026.</div></div>
+      <div class="ev-cell fi"><div class="ev-n">Solo</div><div class="ev-l">Zero engineering headcount</div><div class="ev-s">666 commits, 32K lines of TypeScript, 159 deploys — alongside leading a 25-person org.</div></div>
+    </div>
 
-  <div class="build-grid">
-    <!-- Bar chart: what was shipped -->
-    <div>
-      <div style="font-size:13px;font-weight:500;color:var(--mid);margin-bottom:20px;">Platform surface · scale of effort</div>
-      <div class="build-bars">
-        <div class="bar-row">
-          <span class="bar-label">Paid Media</span>
-          <div class="bar-track"><div class="bar-fill" style="width:72%"></div></div>
-          <span class="bar-val">~180</span>
-        </div>
-        <div class="bar-row">
-          <span class="bar-label">Publisher Hub</span>
-          <div class="bar-track"><div class="bar-fill" style="width:88%"></div></div>
-          <span class="bar-val">~220</span>
-        </div>
-        <div class="bar-row">
-          <span class="bar-label">Planning Agent</span>
-          <div class="bar-track"><div class="bar-fill" style="width:52%"></div></div>
-          <span class="bar-val">~130</span>
-        </div>
-        <div class="bar-row">
-          <span class="bar-label">DIS Matching</span>
-          <div class="bar-track"><div class="bar-fill" style="width:48%"></div></div>
-          <span class="bar-val">~120</span>
-        </div>
-        <div class="bar-row">
-          <span class="bar-label">Infra / Deploy</span>
-          <div class="bar-track"><div class="bar-fill" style="width:24%"></div></div>
-          <span class="bar-val">~16</span>
+    <div class="chart-wrap fi">
+      <div class="chart-header">
+        <div><div class="chart-title-text">Monthly visits, Jul–Nov 2026</div><div class="chart-sub">Hover to explore</div></div>
+        <div class="legend">
+          <div class="leg"><div class="leg-dot" style="background:#4FE0AE"></div>CIP (productized)</div>
+          <div class="leg"><div class="leg-dot" style="background:#3B82F6"></div>CPT (prior leader)</div>
+          <div class="leg"><div class="leg-dot" style="background:#52525B"></div>Morpheus (internal)</div>
         </div>
       </div>
-      <div style="font-size:11px;color:var(--dim);margin-top:10px;">Estimated commits per area · 666 total</div>
+      <div class="chart-outer">
+        <canvas id="chart-canvas" height="260"></canvas>
+      </div>
+      <div id="chart-tooltip"></div>
+      <div style="font-size:11px;color:var(--dim);margin-top:10px;">*November through the 24th</div>
     </div>
+  </section>
 
-    <!-- Workflow loop -->
-    <div>
-      <div style="font-size:13px;font-weight:500;color:var(--mid);margin-bottom:20px;">The build loop — every feature, every session</div>
-      <div class="wf-steps">
-        <div class="wf-step active">
-          <div class="wf-num">1</div>
-          <div class="wf-step-label">Identify the gap</div>
+  <section class="section fi" id="build">
+    <h2 class="section-h">How it was built</h2>
+    <p class="section-sub">666 commits, 9 months, zero engineering headcount — alongside a VP-level day job.</p>
+    <div class="build-grid">
+      <div>
+        <div class="bar-section-label">Platform surface · estimated commits</div>
+        <div class="bars">
+          <div class="bar-row"><span class="bar-label">Publisher Hub</span><div class="bar-track"><div class="bar-fill" data-w="88"></div></div><span class="bar-val">~220</span></div>
+          <div class="bar-row"><span class="bar-label">Paid Media</span><div class="bar-track"><div class="bar-fill" data-w="72"></div></div><span class="bar-val">~180</span></div>
+          <div class="bar-row"><span class="bar-label">Planning Agent</span><div class="bar-track"><div class="bar-fill" data-w="52"></div></div><span class="bar-val">~130</span></div>
+          <div class="bar-row"><span class="bar-label">DIS Matching</span><div class="bar-track"><div class="bar-fill" data-w="48"></div></div><span class="bar-val">~120</span></div>
+          <div class="bar-row"><span class="bar-label">Infra / Deploy</span><div class="bar-track"><div class="bar-fill" data-w="24"></div></div><span class="bar-val">~16</span></div>
         </div>
-        <div class="wf-step active">
-          <div class="wf-num">2</div>
-          <div class="wf-step-label">Write the spec</div>
-        </div>
-        <div class="wf-step active">
-          <div class="wf-num">3</div>
-          <div class="wf-step-label">Direct Claude Code</div>
-        </div>
-        <div class="wf-step active">
-          <div class="wf-num">4</div>
-          <div class="wf-step-label">Review every diff</div>
-        </div>
-        <div class="wf-step active">
-          <div class="wf-num">5</div>
-          <div class="wf-step-label">Ship to ECS</div>
+        <div class="build-stats">
+          <div class="bs-cell"><div class="bs-n">159</div><div class="bs-l">production deploys to AWS ECS</div></div>
+          <div class="bs-cell"><div class="bs-n">32K</div><div class="bs-l">lines of TypeScript</div></div>
+          <div class="bs-cell"><div class="bs-n">9mo</div><div class="bs-l">Mar–Nov 2026 · solo</div></div>
+          <div class="bs-cell"><div class="bs-n">0</div><div class="bs-l">engineering headcount</div></div>
         </div>
       </div>
-      <div class="wf-detail">
-        <div class="wf-fact">
-          <span class="wf-fact-n">159</span>
-          <span class="wf-fact-l">production deploys to AWS ECS</span>
+      <div>
+        <div class="loop-label">The build loop — every feature</div>
+        <div class="loop-steps">
+          <div class="loop-step"><div class="loop-num">1</div><div class="loop-text"><h4>Identify the gap</h4><p>Campaign managers spending more time finding data than acting on it</p></div></div>
+          <div class="loop-step"><div class="loop-num">2</div><div class="loop-text"><h4>Write the spec</h4><p>User story, data model, edge cases, acceptance criteria — before any code</p></div></div>
+          <div class="loop-step"><div class="loop-num">3</div><div class="loop-text"><h4>Direct Claude Code</h4><p>One file, one problem, explicit criteria. Test locally before committing.</p></div></div>
+          <div class="loop-step"><div class="loop-num">4</div><div class="loop-text"><h4>Review every diff</h4><p>Architecture decisions stayed with me. The agent executed, I designed.</p></div></div>
+          <div class="loop-step"><div class="loop-num">5</div><div class="loop-text"><h4>Deploy to production</h4><p>GitHub Actions → Docker → AWS ECS. 159 times over 9 months.</p></div></div>
         </div>
-        <div class="wf-fact">
-          <span class="wf-fact-n">32K</span>
-          <span class="wf-fact-l">lines of TypeScript shipped</span>
-        </div>
-        <div class="wf-fact">
-          <span class="wf-fact-n">9mo</span>
-          <span class="wf-fact-l">Mar–Nov 2026 · solo</span>
-        </div>
-        <div class="wf-fact">
-          <span class="wf-fact-n">0</span>
-          <span class="wf-fact-l">engineering headcount used</span>
+        <div class="stack" style="margin-top:24px;padding-top:24px;">
+          <div class="stack-label">Integrations</div>
+          <div class="stack-tags">
+            <span class="tag">Looker API</span><span class="tag">Meta Graph API</span><span class="tag">Google Sheets</span><span class="tag">Anthropic API</span><span class="tag">HubSpot</span><span class="tag">AWS ECS</span><span class="tag">GitHub Actions</span><span class="tag">Cloudflare</span><span class="tag">Next.js</span><span class="tag">TypeScript</span>
+          </div>
         </div>
       </div>
     </div>
+  </section>
+
+  <section class="quote-section fi">
+    <blockquote>
+      <p>"CIP usage surpassed the Analytics dashboards for the first time for internal users."</p>
+      <cite>Kerry, Head of Product at DealMaker &nbsp;·&nbsp; September 30, 2026</cite>
+    </blockquote>
+  </section>
+
+  <footer>
+    <div class="footer-left">
+      <img class="footer-avatar" src="data:image/jpeg;base64,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" alt="Ivan Huang">
+      <div class="footer-id"><h3>Ivan Huang</h3><p>VP Performance Media · Los Angeles</p></div>
+    </div>
+    <div class="footer-actions">
+      <a href="https://www.linkedin.com/in/ivanthuang/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:ivan.t.huang@gmail.com" class="cta">Get in touch</a>
+    </div>
+    <p class="footer-note">Screens in the demo are recreated with illustrative data. Real issuer and investor data replaced with fictional names consistent with the platform's actual scale.</p>
+  </footer>
+</div>
+
+<!-- ══════════════ MODELS ══════════════ -->
+<div id="page-models" class="page">
+  <div class="page-header">
+    <button class="page-header-back" onclick="showPage('home')">
+      <svg viewBox="0 0 24 24" stroke-width="2"><path d="M19 12H5m7-7-7 7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Back
+    </button>
+    <h2>Financial Models</h2>
+    <p>Two models built from scratch and adopted as company planning baselines. <strong>DAN Fee Scenario Planner</strong> — a 7-scenario media margin framework built for the CFO. <strong>Q2 Revenue Forecast</strong> — a dual-view forecast across 50+ client accounts with weekly pacing.</p>
+  </div>
+  <div style="padding:16px 80px;background:var(--bg2);border-bottom:1px solid var(--rule);font-size:12px;color:var(--dim);">
+    Client names, company names, and dollar amounts are fictional. Structure, methodology, and analytical frameworks are real and unchanged.
   </div>
 
-  <!-- Tech stack -->
-  <div style="margin-top:48px;padding-top:40px;border-top:1px solid var(--rule);">
-    <div style="font-size:13px;font-weight:500;color:var(--mid);margin-bottom:20px;">Data sources integrated</div>
-    <div style="display:flex;flex-wrap:wrap;gap:10px;">
-      <span style="padding:8px 16px;background:var(--bg2);border:1px solid var(--rule2);border-radius:4px;font-size:13px;color:var(--text);">Looker API</span>
-      <span style="padding:8px 16px;background:var(--bg2);border:1px solid var(--rule2);border-radius:4px;font-size:13px;color:var(--text);">Meta Graph API</span>
-      <span style="padding:8px 16px;background:var(--bg2);border:1px solid var(--rule2);border-radius:4px;font-size:13px;color:var(--text);">Google Sheets API</span>
-      <span style="padding:8px 16px;background:var(--bg2);border:1px solid var(--rule2);border-radius:4px;font-size:13px;color:var(--text);">Anthropic API</span>
-      <span style="padding:8px 16px;background:var(--bg2);border:1px solid var(--rule2);border-radius:4px;font-size:13px;color:var(--text);">HubSpot API</span>
-      <span style="padding:8px 16px;background:var(--bg2);border:1px solid var(--rule2);border-radius:4px;font-size:13px;color:var(--text);">Userpilot</span>
-      <span style="padding:8px 16px;background:var(--bg2);border:1px solid var(--rule2);border-radius:4px;font-size:13px;color:var(--text);">AWS ECS + GitHub Actions</span>
-      <span style="padding:8px 16px;background:var(--bg2);border:1px solid var(--rule2);border-radius:4px;font-size:13px;color:var(--text);">Cloudflare</span>
-      <span style="padding:8px 16px;background:var(--bg2);border:1px solid var(--rule2);border-radius:4px;font-size:13px;color:var(--text);">Next.js / TypeScript</span>
+  <div class="models-grid">
+    <!-- DAN FEE MODEL -->
+    <div class="model-panel fi">
+      <div class="model-panel-label">Case study 01</div>
+      <h3>Media Fee Scenario Planner</h3>
+      <p>Built for the CFO after the existing fee model fell <strong>$284K short of the quarterly goal.</strong> The planner models 7 fee structures — flat rate, two-rate, spend ladder, performance, agency-style — against Finance's target, issuer mix, and MER. Adopted as the basis for the FY27–FY29 annual planning memo.</p>
+
+      <div class="scenario-wrap">
+        <div class="scenario-controls">
+          <div class="sc-group">
+            <span class="sc-label">Quarterly fee goal ($)</span>
+            <input class="sc-input" id="sc-goal" type="number" value="700000" step="50000" oninput="calcScenario()">
+          </div>
+          <div class="sc-group">
+            <span class="sc-label">Total paid spend ($)</span>
+            <input class="sc-input" id="sc-spend" type="number" value="16000000" step="1000000" oninput="calcScenario()">
+          </div>
+          <div class="sc-group">
+            <span class="sc-label">Ad network share (%)</span>
+            <input class="sc-input" id="sc-anshare" type="number" value="20" step="1" min="1" max="100" oninput="calcScenario()">
+          </div>
+          <div class="sc-group">
+            <span class="sc-label">Active deals</span>
+            <input class="sc-input" id="sc-deals" type="number" value="30" step="1" oninput="calcScenario()">
+          </div>
+        </div>
+        <div class="scenario-tabs">
+          <button class="sc-tab active" onclick="setScenario('today',this)">Today (13% AN)</button>
+          <button class="sc-tab" onclick="setScenario('flat',this)">Flat 5% all spend</button>
+          <button class="sc-tab" onclick="setScenario('tworate',this)">Two-rate</button>
+          <button class="sc-tab" onclick="setScenario('agency',this)">Agency-style</button>
+        </div>
+        <div class="scenario-results" id="sc-results">
+          <!-- filled by JS -->
+        </div>
+        <div class="sc-formula" id="sc-formula"></div>
+      </div>
+    </div>
+
+    <!-- Q2 FORECAST MODEL -->
+    <div class="model-panel fi">
+      <div class="model-panel-label">Case study 02</div>
+      <h3>Q2 Revenue Forecast</h3>
+      <p>Dual-view forecast — top-down (strategy) and bottom-up (confirmed budgets) — across 50+ client accounts. <strong>Weekly pacing log tracked budget changes Monday to Monday.</strong> Built when the company had no planning baseline; became the annual forecasting standard.</p>
+
+      <div class="forecast-wrap">
+        <div class="forecast-tabs">
+          <button class="fc-tab active" onclick="setForecast('mix',this)">Channel mix</button>
+          <button class="fc-tab" onclick="setForecast('gap',this)">Top-down vs bottom-up</button>
+        </div>
+        <div class="channel-bars" id="fc-bars"><!-- filled by JS --></div>
+        <div class="forecast-summary" id="fc-summary"><!-- filled by JS --></div>
+        <div class="redact-note">Issuer names replaced with fictional names. Spend figures scaled proportionally. Methodology and structure are unchanged from the original model delivered to Finance.</div>
+      </div>
     </div>
   </div>
-</section>
 
-<!-- QUOTE -->
-<section class="quote fi">
-  <blockquote>
-    <p>"CIP usage surpassed the Analytics dashboards for the first time for internal users."</p>
-    <cite>Kerry, Head of Product at DealMaker &nbsp;·&nbsp; September 30, 2026</cite>
-  </blockquote>
-</section>
+  <footer>
+    <div class="footer-left">
+      <img class="footer-avatar" src="data:image/jpeg;base64,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" alt="Ivan Huang">
+      <div class="footer-id"><h3>Ivan Huang</h3><p>VP Performance Media · Los Angeles</p></div>
+    </div>
+    <div class="footer-actions">
+      <a href="https://www.linkedin.com/in/ivanthuang/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:ivan.t.huang@gmail.com" class="cta">Get in touch</a>
+    </div>
+    <p class="footer-note">All financial data shown uses fictional client names and proportionally scaled figures. Analytical frameworks and model structure are Ivan's original work.</p>
+  </footer>
+</div>
 
-<!-- FOOTER -->
-<footer id="contact">
-  <div class="footer-id">
-    <h3>Ivan Huang</h3>
-    <p>VP of Performance Media &nbsp;·&nbsp; Built Morpheus solo, Mar–Nov 2026</p>
+<!-- ══════════════ RESUME ══════════════ -->
+<div id="page-resume" class="page">
+<div class="resume-wrap">
+  <div class="resume-actions">
+    <button class="resume-print" onclick="window.print()">Print / Save PDF</button>
+    <a class="resume-dl" href="https://www.linkedin.com/in/ivanthuang/" target="_blank" rel="noopener">LinkedIn</a>
   </div>
-  <div class="footer-actions">
-    <a href="https://www.linkedin.com/in/ivanthuang/" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="mailto:ivanhuang89@gmail.com" class="cta">Get in touch</a>
+
+  <div class="resume-name">Ivan Huang</div>
+  <div class="resume-contact">
+    <span>Los Angeles, CA</span>
+    <a href="tel:6265920334">626-592-0334</a>
+    <a href="mailto:ivan.t.huang@gmail.com">ivan.t.huang@gmail.com</a>
+    <a href="https://www.linkedin.com/in/ivanthuang/" target="_blank">linkedin.com/in/ivanthuang</a>
+    <a href="https://ivanthuang89.github.io/morpheus/" target="_blank">Portfolio</a>
   </div>
-  <p class="footer-note">Screens in the demo are recreated with illustrative data. Real issuer and investor data replaced with fictional names and numbers consistent with the platform's actual scale and performance.</p>
-</footer>
+
+  <div class="resume-section-head">Experience</div>
+
+  <div class="resume-role">
+    <div class="resume-role-header">
+      <div>
+        <div class="resume-company">DealMaker</div>
+        <div class="resume-title">VP, Head of Paid Media &amp; Retention</div>
+      </div>
+      <div class="resume-dates">March 2025 – Present</div>
+    </div>
+    <ul class="resume-bullets">
+      <li>Own integrated paid media strategy and performance for $90M+ in annual spend across paid social (Meta, TikTok, Snapchat), paid search (Google, YouTube, Microsoft Ads), programmatic, CTV/OTT, newsletter, and retention channels, driving $450M+ in annual client capital raised at ~5× MER for the market leader in online capital raising ($2.4B+ raised on platform).</li>
+      <li>Built and lead a 25-person cross-channel media organization spanning paid social, search, Ad Network, and retention; hire and mentor directors, set performance and QA standards, and serve as escalation point on the most complex accounts.</li>
+      <li>Act as senior strategic advisor across a rolling portfolio of 40 active client accounts, engaging founder and C-suite stakeholders to align full-funnel media plans to revenue targets and reporting performance weekly and monthly.</li>
+      <li>Own forecasting, budget oversight, and measurement standards for the business: built the top-down/bottom-up revenue model used as the company's annual planning baseline, authored the executive-adopted media efficiency framework, and identified $4.5M in annualized incremental capital through media mix reallocation.</li>
+      <li>Built the pricing model and ELT decision memo to restructure the ad network fee onto all managed paid spend, turning a $284K quarterly shortfall into a projected $3.3–3.9M annual surplus against FY28–FY29 goals.</li>
+      <li>Co-founded and scaled a proprietary publisher network from a single-channel concept into a 75+ publisher marketplace transacting $25M+ in annual media; negotiated seven-figure contracts with national media brands.</li>
+      <li>Shipped Morpheus, a production LLM-powered analytics platform integrating Meta, Looker, and Slack — adopted by 60+ employees as the most-used internal tool within 90 days, now rebranded as the company's #1 external product (Campaign Intelligence Platform).</li>
+    </ul>
+  </div>
+
+  <div class="resume-role">
+    <div class="resume-role-header">
+      <div>
+        <div class="resume-company">dentsu (MuteSix)</div>
+        <div class="resume-title">SVP, Head of Paid Media</div>
+      </div>
+      <div class="resume-dates">Jan 2023 – Nov 2024</div>
+    </div>
+    <ul class="resume-bullets">
+      <li>Oversaw MuteSix's digital and paid media practice under dentsu — 60% profit margin, generating 75% of agency revenue through holistic P&amp;L oversight.</li>
+      <li>Managed 70 performance marketers from VP to Junior Associate across paid social, SEM, programmatic display, retail media, and ad operations for mid-market and enterprise clients including Conair, Cuisinart, Theory (Fast Retailing), and DirecTV.</li>
+      <li>Spearheaded holistic media strategies and planning, fostering stronger integrations between digital planning and buying, CRM, CRO, data analytics, and advanced measurement and attribution.</li>
+      <li>Orchestrated RFI/RFP process, formulated staff plans, and reformed agency fee model for new business pitches; rehashed agency UVP to align with dentsu career frameworks and financial goals.</li>
+    </ul>
+  </div>
+
+  <div class="resume-role">
+    <div class="resume-role-header">
+      <div>
+        <div class="resume-company">jetfuel.agency</div>
+        <div class="resume-title">Head of Paid Media</div>
+      </div>
+      <div class="resume-dates">Feb 2021 – Dec 2022</div>
+    </div>
+    <ul class="resume-bullets">
+      <li>Oversaw agency's performance media and account management arm — paid social (FB/IG, TikTok, Pinterest, YouTube), SEM (Google, Bing), and lifecycle/retention marketing (Klaviyo, Attentive) for full-funnel D2C and retail clients, primarily CPG.</li>
+      <li>Managed marketing department P&amp;L; drove 45% YoY increase in net revenue and 300% increase in profit margin within the first year.</li>
+      <li>Assisted in business development and contract negotiations; refined business operations, workflows, and integrations between digital planning, data management, and attribution.</li>
+    </ul>
+  </div>
+
+  <div class="resume-role">
+    <div class="resume-role-header">
+      <div>
+        <div class="resume-company">Stripes Agency</div>
+        <div class="resume-title">Group Director → Director, Performance Media</div>
+      </div>
+      <div class="resume-dates">Jun 2019 – Jan 2021</div>
+    </div>
+    <ul class="resume-bullets">
+      <li>Led all performance media functions; scaled agency media spend 70% YoY and grew direct media management income 59% YoY — CY20 wins produced a 116-point swing in profit margin from Q1 to Q4.</li>
+      <li>Spearheaded agency structural revamp: crystallized employee remit, framed organizational hierarchy, and monetized new and existing lines of business across 25+ client portfolio.</li>
+    </ul>
+  </div>
+
+  <div class="resume-role">
+    <div class="resume-role-header">
+      <div>
+        <div class="resume-company">Rubin Postaer and Associates (RPA)</div>
+        <div class="resume-title">Associate Director, Paid Social — American Honda Motors Company</div>
+      </div>
+      <div class="resume-dates">May 2018 – May 2019</div>
+    </div>
+    <ul class="resume-bullets">
+      <li>Directed paid social media planning and strategy for American Honda Motors Company (Tier 1 &amp; 2); incubated RPA's in-house paid social team primed to oversee $30M in AHM fiscal paid social investment.</li>
+    </ul>
+  </div>
+
+  <div class="resume-section-head">Earlier experience (2013–2017)</div>
+
+  <div class="resume-role">
+    <ul class="resume-bullets">
+      <li><strong style="color:var(--text)">Resolution Media / PHD</strong> — Sr. Paid Social Strategist &amp; Supervisor, Hewlett-Packard (2017)</li>
+      <li><strong style="color:var(--text)">Resolution Media / OMD</strong> — Paid Social Strategist, Nissan (2016)</li>
+      <li><strong style="color:var(--text)">SheKnows Media</strong> — Digital Sales Planner (2015)</li>
+      <li><strong style="color:var(--text)">Starcom Mediavest</strong> — Media Associate, Mattel (2013–2014)</li>
+    </ul>
+  </div>
+
+  <div class="resume-section-head">References</div>
+  <div class="ref-grid">
+    <div class="ref-card"><div class="ref-name">Daniel Hernandez</div><div class="ref-title">SVP, Digital Strategy &amp; Operations · OMG23</div></div>
+    <div class="ref-card"><div class="ref-name">Edwin Choi</div><div class="ref-title">Founder · jetfuel.agency</div></div>
+    <div class="ref-card"><div class="ref-name">JuHee Kim</div><div class="ref-title">President · MuteSix / dentsu</div></div>
+    <div class="ref-card"><div class="ref-name">Tommy Swanson</div><div class="ref-title">CEO · Stripes Agency / Co-founder CMO · Audiio</div></div>
+  </div>
+</div>
+</div>
 
 <script>
+// ── PAGE ROUTING ──
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  document.getElementById('nav-' + id).classList.add('active');
+  window.scrollTo(0, 0);
+  if (id === 'morpheus') { setTimeout(initChart, 100); setTimeout(initBars, 200); }
+  if (id === 'models') { setTimeout(initScenario, 100); setTimeout(initForecast, 150); }
+}
+
+// ── INTERSECTION OBSERVER ──
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); } });
 }, { threshold: .08 });
 document.querySelectorAll('.fi').forEach(el => obs.observe(el));
-</script>
 
-<script>
-(function(){
-  var canvas = document.getElementById('chart-canvas');
-  var tooltip = document.getElementById('chart-tooltip');
-  if(!canvas) return;
+// ── BAR CHART ──
+let barsInited = false;
+function initBars() {
+  if (barsInited) return; barsInited = true;
+  document.querySelectorAll('.bar-fill').forEach((b, i) => {
+    setTimeout(() => { b.style.width = b.dataset.w + '%'; }, i * 100);
+  });
+}
 
-  var dpr = window.devicePixelRatio || 1;
-  var DATA = {
+// ── ADOPTION CHART ──
+let chartInited = false;
+function initChart() {
+  if (chartInited) return; chartInited = true;
+  const canvas = document.getElementById('chart-canvas');
+  const tooltip = document.getElementById('chart-tooltip');
+  if (!canvas) return;
+  const dpr = window.devicePixelRatio || 1;
+  const DATA = {
     months: ['Jul 2026','Aug 2026','Sep 2026','Oct 2026','Nov 2026*'],
     series: [
       {label:'CIP',      color:'#4FE0AE', values:[919,983,1731,6375,6134], r:5},
@@ -398,144 +719,147 @@ document.querySelectorAll('.fi').forEach(el => obs.observe(el));
       {label:'Morpheus', color:'#52525B', values:[381,603,493,223,165],    r:3}
     ]
   };
-
-  var PAD = {top:24,right:20,bottom:40,left:60};
-  var W=0, H=260;
-
+  const PAD = {top:24,right:20,bottom:40,left:60};
+  let W=0, H=260;
   function getW(){ return canvas.parentElement.clientWidth - 56; }
-
-  function xScale(i){ return PAD.left + (i/(DATA.months.length-1))*(W-PAD.left-PAD.right); }
-  function yScale(v){ return PAD.top + (H-PAD.top-PAD.bottom)*(1-v/7000); }
-
-  function draw(hoverIdx){
-    hoverIdx = hoverIdx === undefined ? -1 : hoverIdx;
-    var ctx = canvas.getContext('2d');
+  function xS(i){ return PAD.left + (i/(DATA.months.length-1))*(W-PAD.left-PAD.right); }
+  function yS(v){ return PAD.top + (H-PAD.top-PAD.bottom)*(1-v/7000); }
+  function draw(hi){
+    hi = hi === undefined ? -1 : hi;
+    const ctx = canvas.getContext('2d');
     ctx.clearRect(0,0,canvas.width,canvas.height);
     ctx.scale(dpr,dpr);
-
-    // grid
-    [0,1000,2000,3500,5000,7000].forEach(function(v){
-      var y = yScale(v);
-      ctx.beginPath();
-      ctx.strokeStyle = v===0 ? '#27272A' : '#1C1C1F';
-      ctx.lineWidth=1;
-      ctx.moveTo(PAD.left,y); ctx.lineTo(W-PAD.right,y);
-      ctx.stroke();
-      ctx.fillStyle='#52525B';
-      ctx.font='11px Inter,sans-serif';
-      ctx.textAlign='right';
+    [0,1000,2000,3500,5000,7000].forEach(v=>{
+      const y=yS(v);
+      ctx.beginPath(); ctx.strokeStyle=v===0?'#27272A':'#1C1C1F'; ctx.lineWidth=1;
+      ctx.moveTo(PAD.left,y); ctx.lineTo(W-PAD.right,y); ctx.stroke();
+      ctx.fillStyle='#52525B'; ctx.font='11px Inter,sans-serif'; ctx.textAlign='right';
       ctx.fillText(v>=1000?(v/1000)+'K':v, PAD.left-8, y+4);
     });
-
-    // x labels
-    ctx.fillStyle='#52525B';
-    ctx.textAlign='center';
-    DATA.months.forEach(function(m,i){
-      ctx.fillText(m, xScale(i), H-8);
-    });
-
-    // hover rule
-    if(hoverIdx>=0){
-      ctx.beginPath();
-      ctx.strokeStyle='#3F3F46';
-      ctx.lineWidth=1;
-      ctx.setLineDash([4,3]);
-      ctx.moveTo(xScale(hoverIdx),PAD.top);
-      ctx.lineTo(xScale(hoverIdx),H-PAD.bottom);
-      ctx.stroke();
-      ctx.setLineDash([]);
+    ctx.fillStyle='#52525B'; ctx.textAlign='center';
+    DATA.months.forEach((m,i)=>ctx.fillText(m,xS(i),H-8));
+    if(hi>=0){
+      ctx.beginPath(); ctx.strokeStyle='#3F3F46'; ctx.lineWidth=1; ctx.setLineDash([4,3]);
+      ctx.moveTo(xS(hi),PAD.top); ctx.lineTo(xS(hi),H-PAD.bottom); ctx.stroke(); ctx.setLineDash([]);
     }
-
-    // series
-    DATA.series.forEach(function(s){
-      var spts = s.values.map(function(v,i){ return {x:xScale(i),y:yScale(v)}; });
-
-      // smooth line
-      ctx.beginPath();
-      ctx.strokeStyle=s.color;
-      ctx.lineWidth = s===DATA.series[0] ? 2.5 : 1.8;
-      ctx.lineJoin='round'; ctx.lineCap='round';
-      spts.forEach(function(p,i){
-        if(i===0){ ctx.moveTo(p.x,p.y); return; }
-        var prev=spts[i-1], cpx=(prev.x+p.x)/2;
-        ctx.bezierCurveTo(cpx,prev.y,cpx,p.y,p.x,p.y);
-      });
+    DATA.series.forEach(s=>{
+      const pts=s.values.map((v,i)=>({x:xS(i),y:yS(v)}));
+      ctx.beginPath(); ctx.strokeStyle=s.color; ctx.lineWidth=s===DATA.series[0]?2.5:1.8;
+      ctx.lineJoin="round"; ctx.lineCap="round";
+      pts.forEach((p,i)=>{ if(i===0){ctx.moveTo(p.x,p.y);}else{const pv=pts[i-1],cpx=(pv.x+p.x)/2;ctx.bezierCurveTo(cpx,pv.y,cpx,p.y,p.x,p.y);}});
       ctx.stroke();
-
-      // dots
-      spts.forEach(function(p,i){
-        var r = (hoverIdx===i) ? s.r+2 : s.r;
-        ctx.beginPath();
-        ctx.fillStyle=s.color;
-        ctx.arc(p.x,p.y,r,0,Math.PI*2);
-        ctx.fill();
-        if(hoverIdx===i){
-          ctx.beginPath();
-          ctx.strokeStyle='#09090B';
-          ctx.lineWidth=2;
-          ctx.arc(p.x,p.y,r,0,Math.PI*2);
-          ctx.stroke();
-        }
+      pts.forEach((p,i)=>{
+        const r=hi===i?s.r+2:s.r;
+        ctx.beginPath(); ctx.fillStyle=s.color; ctx.arc(p.x,p.y,r,0,Math.PI*2); ctx.fill();
+        if(hi===i){ctx.beginPath();ctx.strokeStyle='#09090B';ctx.lineWidth=2;ctx.arc(p.x,p.y,r,0,Math.PI*2);ctx.stroke();}
       });
     });
-
     ctx.setTransform(1,0,0,1,0,0);
   }
-
-  function findIdx(clientX){
-    var rect=canvas.getBoundingClientRect();
-    var mx=(clientX-rect.left);
-    var best=-1, bestD=50;
-    DATA.months.forEach(function(_,i){
-      var d=Math.abs(xScale(i)-mx);
-      if(d<bestD){bestD=d;best=i;}
-    });
-    return best;
-  }
-
-  function showTip(clientX,clientY,idx){
+  function findIdx(cx){const rect=canvas.getBoundingClientRect();let best=-1,bestD=50;DATA.months.forEach((_,i)=>{const d=Math.abs(xS(i)-(cx-rect.left));if(d<bestD){bestD=d;best=i;}});return best;}
+  function showTip(cx,cy,idx){
     if(idx<0){tooltip.style.opacity=0;return;}
-    var html='<div style="font-size:11px;font-weight:600;color:#A1A1AA;letter-spacing:.06em;margin-bottom:8px;">'+DATA.months[idx].toUpperCase()+'</div>';
-    DATA.series.forEach(function(s){
-      html+='<div style="display:flex;align-items:center;gap:8px;padding:2px 0;">'
-        +'<div style="width:8px;height:8px;border-radius:50%;background:'+s.color+';flex-shrink:0;"></div>'
-        +'<span style="color:#A1A1AA;min-width:76px;">'+s.label+'</span>'
-        +'<strong style="color:#FAFAFA;margin-left:auto;">'+s.values[idx].toLocaleString()+'</strong>'
-        +'</div>';
-    });
-    tooltip.innerHTML=html;
-    tooltip.style.opacity=1;
-    var contRect=tooltip.parentElement.getBoundingClientRect();
-    var canRect=canvas.getBoundingClientRect();
-    var left=(clientX-contRect.left)+16;
-    if(left+190>contRect.width-28) left=(clientX-contRect.left)-200;
-    tooltip.style.left=Math.max(0,left)+'px';
-    tooltip.style.top=(clientY-contRect.top-60)+'px';
+    let h='<div style="font-size:11px;font-weight:600;color:#A1A1AA;letter-spacing:.06em;margin-bottom:8px;">'+DATA.months[idx].toUpperCase()+'</div>';
+    DATA.series.forEach(s=>{h+='<div style="display:flex;align-items:center;gap:8px;padding:2px 0;"><div style="width:8px;height:8px;border-radius:50%;background:'+s.color+';flex-shrink:0;"></div><span style="color:#A1A1AA;min-width:76px;">'+s.label+'</span><strong style="color:#FAFAFA;margin-left:auto;">'+s.values[idx].toLocaleString()+'</strong></div>';});
+    tooltip.innerHTML=h; tooltip.style.opacity=1;
+    const cr=tooltip.parentElement.getBoundingClientRect();
+    let left=(cx-cr.left)+16; if(left+190>cr.width-28) left=(cx-cr.left)-200;
+    tooltip.style.left=Math.max(0,left)+'px'; tooltip.style.top=(cy-cr.top-60)+'px';
   }
+  canvas.addEventListener('mousemove',e=>{const i=findIdx(e.clientX);draw(i);showTip(e.clientX,e.clientY,i);});
+  canvas.addEventListener('mouseleave',()=>{draw(-1);tooltip.style.opacity=0;});
+  canvas.addEventListener('touchmove',e=>{e.preventDefault();const t=e.touches[0];const i=findIdx(t.clientX);draw(i);showTip(t.clientX,t.clientY,i);},{passive:false});
+  canvas.addEventListener('touchend',()=>{draw(-1);tooltip.style.opacity=0;});
+  function resize(){W=getW();canvas.style.width=W+'px';canvas.style.height=H+'px';canvas.width=W*dpr;canvas.height=H*dpr;draw(-1);}
+  window.addEventListener('resize',resize); resize();
+}
 
-  canvas.addEventListener('mousemove',function(e){
-    var idx=findIdx(e.clientX); draw(idx); showTip(e.clientX,e.clientY,idx);
-  });
-  canvas.addEventListener('mouseleave',function(){draw(-1);tooltip.style.opacity=0;});
-  canvas.addEventListener('touchmove',function(e){
-    e.preventDefault();
-    var t=e.touches[0]; var idx=findIdx(t.clientX);
-    draw(idx); showTip(t.clientX,t.clientY,idx);
-  },{passive:false});
-  canvas.addEventListener('touchend',function(){draw(-1);tooltip.style.opacity=0;});
+// ── SCENARIO PLANNER ──
+var currentScenario = 'today';
+var scenarioDefs = {
+  today:   {anRate:0.13, otherRate:0, label:'13% on ad network spend only', color:'#E5675E'},
+  flat:    {anRate:0.05, otherRate:0.05, label:'5% flat on all paid spend', color:'#4FE0AE'},
+  tworate: {anRate:0.10, otherRate:0.03, label:'10% on ad network, 3% on other paid', color:'#3B82F6'},
+  agency:  {anRate:0.09, otherRate:0.09, label:'9% flat, no Reach retainer', color:'#F59E0B'}
+};
+function setScenario(id, el) {
+  currentScenario = id;
+  document.querySelectorAll('.sc-tab').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  calcScenario();
+}
+function fmt(n){ return '$'+Math.round(n).toLocaleString(); }
+function calcScenario() {
+  const goal = parseFloat(document.getElementById('sc-goal').value)||700000;
+  const spend = parseFloat(document.getElementById('sc-spend').value)||16000000;
+  const anShare = (parseFloat(document.getElementById('sc-anshare').value)||20)/100;
+  const deals = parseFloat(document.getElementById('sc-deals').value)||30;
+  const sc = scenarioDefs[currentScenario];
+  const anSpend = spend * anShare;
+  const otherSpend = spend * (1-anShare);
+  const danFee = anSpend*sc.anRate + otherSpend*sc.otherRate;
+  const diff = danFee - goal;
+  const reach = 10000*3*deals;
+  const platform = 2000*3*deals;
+  const totalRev = danFee + reach + platform;
+  const isPos = diff >= 0;
+  document.getElementById('sc-results').innerHTML =
+    '<div class="sc-result"><div class="sc-result-n '+(isPos?'positive':'negative')+'">'+(isPos?'+':'')+fmt(diff)+'</div><div class="sc-result-l">vs. fee goal ('+fmt(goal)+')</div></div>'+
+    '<div class="sc-result"><div class="sc-result-n" style="color:var(--teal)">'+fmt(danFee)+'</div><div class="sc-result-l">media fees this quarter</div></div>'+
+    '<div class="sc-result"><div class="sc-result-n" style="color:var(--text)">'+fmt(totalRev)+'</div><div class="sc-result-l">total DealMaker revenue</div></div>'+
+    '<div class="sc-result"><div class="sc-result-n" style="color:var(--text)">'+(Math.round(anShare*100))+'/'+(Math.round((1-anShare)*100))+'</div><div class="sc-result-l">ad network / other paid split</div></div>';
+  document.getElementById('sc-formula').innerHTML = '<strong style="color:var(--text)">Structure:</strong> '+sc.label+'<br>Ad network: '+fmt(anSpend)+' · Other paid: '+fmt(otherSpend)+'<br>Reach ('+deals+' deals × 3mo): '+fmt(reach)+' · Platform: '+fmt(platform);
+}
 
-  function resize(){
-    W = getW();
-    canvas.style.width=W+'px';
-    canvas.style.height=H+'px';
-    canvas.width=W*dpr;
-    canvas.height=H*dpr;
-    draw(-1);
-  }
-  window.addEventListener('resize',resize);
-  resize();
-})();
+// ── Q2 FORECAST ──
+var currentForecast = 'mix';
+function setForecast(id, el) {
+  currentForecast = id;
+  document.querySelectorAll('.fc-tab').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  renderForecast();
+}
+// Redacted proportional data: channel mix and gap data, scaled
+var fcData = {
+  mix: [
+    {label:'Paid Social', pct:60, val:'$15.7M', color:'blue'},
+    {label:'Ad Network',  pct:34, val:'$9.1M',  color:'blue'},
+    {label:'Comms/Email', pct:22, val:'$5.8M',  color:'gold'},
+    {label:'Search',      pct:8,  val:'$2.1M',  color:'blue'},
+    {label:'Programmatic',pct:10, val:'$1.4M',  color:'blue'},
+    {label:'Affiliate',   pct:22, val:'$3.0M',  color:'gold'},
+  ],
+  gap: [
+    {label:'Deal Group A', pct:88, val:'+$16.7M', color:'blue'},
+    {label:'Deal Group B', pct:72, val:'+$2.4M',  color:'blue'},
+    {label:'Deal Group C', pct:55, val:'-$0.3M',  color:'gold'},
+    {label:'Deal Group D', pct:45, val:'-$4.9M',  color:'gold'},
+    {label:'Deal Group E', pct:30, val:'-$9.5M',  color:'gold'},
+    {label:'Others',       pct:20, val:'-$7.6M',  color:'gold'},
+  ]
+};
+var fcSummary = {
+  mix:  [{n:'$39.8M', l:'Total confirmed budget'},{n:'2.89×', l:'Blended MER'},{n:'50+', l:'Active client accounts'}],
+  gap:  [{n:'$7.6M',  l:'Bottom-up shortfall vs strategy'},{n:'$108M', l:'Top-down forecast'},{n:'$81M', l:'Bottom-up raise'}]
+};
+function renderForecast() {
+  const rows = fcData[currentForecast];
+  document.getElementById('fc-bars').innerHTML = rows.map(r=>
+    '<div class="ch-row"><span class="ch-label">'+r.label+'</span><div class="ch-track"><div class="'+(r.color==='blue'?'ch-fill-blue':'ch-fill-gold')+'" style="width:'+r.pct+'%"></div></div><span class="ch-val">'+r.val+'</span></div>'
+  ).join('');
+  const sum = fcSummary[currentForecast];
+  document.getElementById('fc-summary').innerHTML = sum.map(s=>
+    '<div class="fs-cell"><div class="fs-n">'+s.n+'</div><div class="fs-l">'+s.l+'</div></div>'
+  ).join('');
+}
+function initForecast() { calcScenario(); renderForecast(); }
+function initScenario() { calcScenario(); }
+
+// init on load
+document.addEventListener('DOMContentLoaded', () => {
+  calcScenario();
+  renderForecast();
+});
 </script>
-
 </body>
 </html>
