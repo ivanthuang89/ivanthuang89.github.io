@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Morpheus — Ivan Huang</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#0A0C0E; --bg2:#13161A; --rule:#1E2328; --rule2:#262B30;
+  --text:#F0F0EE; --mid:#9BA3AA; --dim:#4A5158;
+  --teal:#4FE0AE; --blue:#3B82F6; --gold:#E0A93F; --neg:#E5675E;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;}
+body{min-height:100vh;}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important;}}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 48px;display:flex;align-items:center;justify-content:space-between;background:linear-gradient(to bottom,rgba(10,12,14,.96) 0%,rgba(10,12,14,0) 100%);}
+.nav-logo{font-weight:600;font-size:15px;letter-spacing:-.03em;color:var(--text);}
+.nav-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--teal);vertical-align:3px;margin-left:2px;}
+.nav-links{display:flex;gap:32px;}
+.nav-links a{font-size:13px;color:var(--mid);text-decoration:none;transition:color .15s;}
+.nav-links a:hover{color:var(--text);}
+
+/* HERO */
+.hero{padding:148px 80px 72px;text-align:center;border-bottom:1px solid var(--rule);}
+.eyebrow{font-size:12px;font-weight:500;color:var(--mid);letter-spacing:.08em;margin-bottom:28px;display:flex;align-items:center;justify-content:center;gap:12px;}
+.eyebrow::before,.eyebrow::after{content:'';display:block;width:28px;height:1px;background:var(--dim);}
+h1{font-family:'DM Serif Display',Georgia,serif;font-size:clamp(40px,6vw,88px);font-weight:400;line-height:1.05;letter-spacing:-.03em;color:var(--text);max-width:20ch;margin:0 auto;}
+h1 em{font-style:italic;color:var(--mid);}
+.hero-sub{margin:28px auto 0;font-size:17px;font-weight:300;line-height:1.7;color:var(--mid);max-width:52ch;}
+.hero-sub strong{color:var(--text);font-weight:500;}
+
+/* STAT RAIL */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--rule);}
+.stat{padding:32px 24px;border-right:1px solid var(--rule);display:flex;flex-direction:column;align-items:center;gap:6px;}
+.stat:last-child{border-right:none;}
+.stat-n{font-family:'DM Serif Display',serif;font-size:48px;color:var(--teal);letter-spacing:-.04em;line-height:1;}
+.stat-l{font-size:12px;color:var(--dim);text-align:center;max-width:18ch;line-height:1.4;}
+
+/* DEMO */
+.demo{background:#060708;}
+.demo-lede{padding:64px 80px 48px;display:flex;align-items:flex-end;justify-content:space-between;gap:48px;flex-wrap:wrap;}
+.demo-lede h2{font-family:'DM Serif Display',serif;font-size:clamp(28px,3.5vw,48px);font-weight:400;letter-spacing:-.03em;line-height:1.1;max-width:16ch;}
+.demo-lede p{font-size:14px;color:var(--mid);max-width:44ch;line-height:1.7;flex-shrink:0;}
+.demo-player{position:relative;width:100%;aspect-ratio:16/9;background:#060708;overflow:hidden;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);}
+.demo-player::before{content:'';position:absolute;inset:0;z-index:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:64px 64px;}
+.demo-cta{position:relative;z-index:1;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;}
+.play-btn{width:76px;height:76px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;text-decoration:none;transition:transform .2s,background .2s;animation:pulse 2.4s ease-out infinite;}
+.play-btn:hover{transform:scale(1.08);background:#3ecf9d;animation:none;}
+.play-btn svg{width:28px;height:28px;fill:#0A0C0E;margin-left:4px;}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(79,224,174,.35);}60%{box-shadow:0 0 0 20px rgba(79,224,174,0);}100%{box-shadow:0 0 0 0 rgba(79,224,174,0);}}
+.demo-cta h3{font-size:17px;font-weight:500;color:var(--text);letter-spacing:-.01em;}
+.demo-cta p{font-size:13px;color:var(--dim);}
+.demo-note{padding:14px 80px;font-size:11px;color:var(--dim);border-bottom:1px solid var(--rule);}
+
+/* SECTION SHELL */
+.section{padding:72px 80px;border-bottom:1px solid var(--rule);}
+.section-h{font-family:'DM Serif Display',serif;font-size:clamp(28px,3.5vw,44px);font-weight:400;letter-spacing:-.03em;margin-bottom:8px;}
+.section-sub{font-size:14px;color:var(--mid);max-width:52ch;line-height:1.65;margin-bottom:48px;}
+
+/* EVIDENCE GRID */
+.ev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);}
+.ev-cell{background:var(--bg);padding:36px;}
+.ev-n{font-family:'DM Serif Display',serif;font-size:52px;letter-spacing:-.04em;line-height:1;margin-bottom:8px;}
+.ev-n span{color:var(--teal);}
+.ev-l{font-size:14px;font-weight:500;color:var(--text);margin-bottom:6px;}
+.ev-s{font-size:13px;color:var(--dim);line-height:1.55;}
+
+/* ADOPTION CHART */
+.chart-wrap{margin-top:48px;}
+.chart-title{font-size:13px;font-weight:500;color:var(--mid);margin-bottom:20px;display:flex;align-items:center;gap:24px;}
+.legend{display:flex;gap:20px;flex-wrap:wrap;}
+.leg-item{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--mid);}
+.leg-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+.chart-svg-wrap{width:100%;overflow:hidden;}
+
+/* BUILD LOG — commit timeline */
+.build-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+.build-bars{display:flex;flex-direction:column;gap:0;}
+.bar-row{display:grid;grid-template-columns:100px 1fr 48px;align-items:center;gap:12px;padding:8px 0;border-top:1px solid var(--rule);}
+.bar-row:last-child{border-bottom:1px solid var(--rule);}
+.bar-label{font-size:12px;color:var(--mid);}
+.bar-track{background:var(--bg2);border-radius:2px;height:8px;overflow:hidden;}
+.bar-fill{height:100%;border-radius:2px;background:var(--teal);transition:width 1s ease;}
+.bar-val{font-size:12px;color:var(--text);text-align:right;font-variant-numeric:tabular-nums;}
+
+/* WORKFLOW VISUAL */
+.wf-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative;margin-bottom:40px;}
+.wf-steps::before{content:'';position:absolute;top:28px;left:10%;right:10%;height:1px;background:var(--rule2);z-index:0;}
+.wf-step{display:flex;flex-direction:column;align-items:center;gap:12px;position:relative;z-index:1;}
+.wf-num{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600;background:var(--bg2);border:1px solid var(--rule2);color:var(--mid);transition:all .3s;}
+.wf-step.active .wf-num{background:var(--teal);color:#0A0C0E;border-color:var(--teal);}
+.wf-step-label{font-size:12px;color:var(--mid);text-align:center;max-width:9ch;line-height:1.4;}
+.wf-step.active .wf-step-label{color:var(--text);}
+.wf-detail{background:var(--bg2);border:1px solid var(--rule2);border-radius:8px;padding:24px 28px;display:grid;grid-template-columns:1fr 1fr;gap:16px 32px;}
+.wf-fact{display:flex;flex-direction:column;gap:4px;}
+.wf-fact-n{font-family:'DM Serif Display',serif;font-size:28px;color:var(--teal);letter-spacing:-.03em;line-height:1;}
+.wf-fact-l{font-size:12px;color:var(--dim);}
+
+/* QUOTE */
+.quote{padding:80px;border-bottom:1px solid var(--rule);display:flex;justify-content:center;}
+blockquote{max-width:620px;}
+blockquote p{font-family:'DM Serif Display',serif;font-size:clamp(24px,3vw,36px);font-weight:400;font-style:italic;line-height:1.35;letter-spacing:-.02em;color:var(--text);margin-bottom:20px;}
+blockquote cite{font-size:13px;font-style:normal;color:var(--mid);}
+
+/* FOOTER */
+footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;}
+.footer-id h3{font-size:18px;font-weight:500;letter-spacing:-.02em;margin-bottom:4px;}
+.footer-id p{font-size:13px;color:var(--mid);}
+.footer-actions{display:flex;gap:12px;}
+.footer-actions a{font-size:13px;color:var(--mid);text-decoration:none;padding:10px 20px;border:1px solid var(--rule);border-radius:4px;transition:border-color .15s,color .15s;}
+.footer-actions a:hover{border-color:var(--dim);color:var(--text);}
+.footer-actions a.cta{background:var(--teal);color:#0A0C0E;border-color:var(--teal);font-weight:600;}
+.footer-actions a.cta:hover{background:#3ecf9d;border-color:#3ecf9d;}
+.footer-note{width:100%;font-size:11px;color:var(--dim);border-top:1px solid var(--rule);padding-top:20px;margin-top:4px;}
+
+/* FADE */
+.fi{opacity:0;transform:translateY(12px);transition:opacity .6s ease,transform .6s ease;}
+.fi.on{opacity:1;transform:translateY(0);}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav{padding:18px 24px;} .nav-links{display:none;}
+  .hero{padding:112px 24px 56px;}
+  .stats{grid-template-columns:repeat(2,1fr);}
+  .stat:nth-child(2){border-right:none;} .stat:nth-child(3){border-top:1px solid var(--rule);}
+  .demo-lede{padding:40px 24px 32px;flex-direction:column;gap:16px;}
+  .demo-note{padding:12px 24px;}
+  .section{padding:48px 24px;}
+  .ev-grid{grid-template-columns:1fr;}
+  .build-grid{grid-template-columns:1fr;}
+  .wf-steps{grid-template-columns:1fr;} .wf-steps::before{display:none;}
+  .wf-detail{grid-template-columns:1fr;}
+  .quote{padding:56px 24px;}
+  footer{padding:40px 24px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">morpheus<span class="nav-dot"></span></div>
+  <div class="nav-links">
+    <a href="#demo">Demo</a>
+    <a href="#impact">Impact</a>
+    <a href="#build">How it was built</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="eyebrow">Ivan Huang &nbsp;·&nbsp; VP Performance Media</div>
+  <h1>I built a performance media intelligence platform solo, <em>directing AI coding agents instead of writing code.</em></h1>
+  <p class="hero-sub">From March to November 2026, as a sitting VP leading a 25-person org, I shipped <strong>666 commits, 32,000 lines of TypeScript, 159 deploys.</strong> It became the most-used internal tool at DealMaker, then the company's #1 product.</p>
+</section>
+
+<!-- STAT RAIL -->
+<div class="stats">
+  <div class="stat"><span class="stat-n">#1</span><span class="stat-l">of 15 internal apps at DealMaker</span></div>
+  <div class="stat"><span class="stat-n">6<span style="font-size:.65em;vertical-align:3px">×</span></span><span class="stat-l">visits vs the prior category leader</span></div>
+  <div class="stat"><span class="stat-n">16K</span><span class="stat-l">product visits in 5 months</span></div>
+  <div class="stat"><span class="stat-n">68<span style="font-size:.65em;vertical-align:3px">%</span></span><span class="stat-l">of all internal app traffic</span></div>
+</div>
+
+<!-- DEMO -->
+<section class="demo" id="demo">
+  <div class="demo-lede">
+    <h2>See the platform in motion</h2>
+    <p>Campaign pacing against targets. Publisher performance across 130+ outlets. Full creative intelligence on 5,000+ ad placements. AI planning agent. Media buy matching. ~95 seconds.</p>
+  </div>
+  <div class="demo-player">
+    <div class="demo-cta">
+      <a class="play-btn" href="https://claude.ai/artifact/RDZBRJ7EBSawBjfMzyFEdN" target="_blank" rel="noopener" aria-label="Watch demo">
+        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+      </a>
+      <h3>Watch the product demo</h3>
+      <p>Opens in a new tab &nbsp;·&nbsp; unmute for sound design</p>
+    </div>
+  </div>
+  <p class="demo-note">Screens recreated with illustrative data. Real publisher names anonymized.</p>
+</section>
+
+<!-- IMPACT + ADOPTION CHART -->
+<section class="section fi" id="impact">
+  <h2 class="section-h">What adoption looked like</h2>
+  <p class="section-sub">From internal tool to category leader in four months — without a product manager, design team, or engineering headcount.</p>
+
+  <div class="ev-grid">
+    <div class="ev-cell">
+      <div class="ev-n"><span>#1</span> of 15</div>
+      <div class="ev-l">Most-used internal app</div>
+      <div class="ev-s">Stoda quarterly review, July 2026. 64 unique users in a two-week window, up 20% MoM.</div>
+    </div>
+    <div class="ev-cell">
+      <div class="ev-n">6<span>×</span></div>
+      <div class="ev-l">Visits vs the prior leader</div>
+      <div class="ev-s">Oct 2026: CIP 6,375 visits vs CPT's 1,033 — a tool with a 14-month head start.</div>
+    </div>
+    <div class="ev-cell">
+      <div class="ev-n">16<span>K</span></div>
+      <div class="ev-l">Product visits in 5 months</div>
+      <div class="ev-s">CPT needed 14 months to reach 5,730. CIP tripled that in a third of the time.</div>
+    </div>
+    <div class="ev-cell">
+      <div class="ev-n">68<span>%</span></div>
+      <div class="ev-l">Of all Stoda internal traffic</div>
+      <div class="ev-s">Morpheus and one other app accounted for 68% of visits across 15 production apps company-wide.</div>
+    </div>
+    <div class="ev-cell">
+      <div class="ev-n">4<span style="font-size:.55em;vertical-align:6px">mo</span></div>
+      <div class="ev-l">To category leader</div>
+      <div class="ev-s">Displaced a 14-month incumbent. Kerry, Head of Product, announced the crossover on Sep 30, 2026.</div>
+    </div>
+    <div class="ev-cell">
+      <div class="ev-n">64</div>
+      <div class="ev-l">Unique users in 2 weeks</div>
+      <div class="ev-s">3.6 visits per person — broad, embedded usage, not a small group of power users inflating the numbers.</div>
+    </div>
+  </div>
+
+  <!-- ADOPTION CHART — CIP vs CPT vs Morpheus, real data -->
+  <div class="chart-wrap fi">
+    <div class="chart-title">
+      Monthly visits, Jul–Nov 2026
+      <div class="legend">
+        <div class="leg-item"><div class="leg-dot" style="background:var(--teal)"></div>CIP (productized)</div>
+        <div class="leg-item"><div class="leg-dot" style="background:var(--blue)"></div>CPT (prior leader)</div>
+        <div class="leg-item"><div class="leg-dot" style="background:var(--dim)"></div>Morpheus (internal)</div>
+      </div>
+    </div>
+    <div class="chart-svg-wrap">
+      <svg id="adoption-chart" viewBox="0 0 900 300" style="width:100%;height:auto;overflow:visible;" xmlns="http://www.w3.org/2000/svg">
+        <!-- Grid lines -->
+        <line x1="80" y1="20" x2="880" y2="20" stroke="#1E2328" stroke-width="1"/>
+        <line x1="80" y1="80" x2="880" y2="80" stroke="#1E2328" stroke-width="1"/>
+        <line x1="80" y1="140" x2="880" y2="140" stroke="#1E2328" stroke-width="1"/>
+        <line x1="80" y1="200" x2="880" y2="200" stroke="#1E2328" stroke-width="1"/>
+        <line x1="80" y1="260" x2="880" y2="260" stroke="#262B30" stroke-width="1"/>
+        <!-- Y axis labels -->
+        <text x="70" y="24" text-anchor="end" font-size="11" fill="#4A5158">6,500</text>
+        <text x="70" y="84" text-anchor="end" font-size="11" fill="#4A5158">5,000</text>
+        <text x="70" y="144" text-anchor="end" font-size="11" fill="#4A5158">3,000</text>
+        <text x="70" y="204" text-anchor="end" font-size="11" fill="#4A5158">1,000</text>
+        <text x="70" y="264" text-anchor="end" font-size="11" fill="#4A5158">0</text>
+        <!-- X axis labels -->
+        <text x="160" y="285" text-anchor="middle" font-size="11" fill="#4A5158">Jul</text>
+        <text x="310" y="285" text-anchor="middle" font-size="11" fill="#4A5158">Aug</text>
+        <text x="460" y="285" text-anchor="middle" font-size="11" fill="#4A5158">Sep</text>
+        <text x="610" y="285" text-anchor="middle" font-size="11" fill="#4A5158">Oct</text>
+        <text x="760" y="285" text-anchor="middle" font-size="11" fill="#4A5158">Nov*</text>
+        <!-- Scale: max 6500, range 240px (20 to 260), so px = 20 + (1 - v/6500)*240 -->
+        <!-- CPT: 735, 644, 644, 1033, 788 -->
+        <!-- y = 260 - (v/6500)*240 -->
+        <!-- CPT line: blue -->
+        <polyline
+          points="160,233 310,237 460,237 610,222 760,231"
+          fill="none" stroke="#3B82F6" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" opacity="0.7"/>
+        <circle cx="160" cy="233" r="4" fill="#3B82F6"/>
+        <circle cx="310" cy="237" r="4" fill="#3B82F6"/>
+        <circle cx="460" cy="237" r="4" fill="#3B82F6"/>
+        <circle cx="610" cy="222" r="4" fill="#3B82F6"/>
+        <circle cx="760" cy="231" r="4" fill="#3B82F6"/>
+        <!-- Morpheus: 381, 603, 493, 223, 165 — dim -->
+        <polyline
+          points="160,247 310,238 460,242 610,252 760,254"
+          fill="none" stroke="#4A5158" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="5 3"/>
+        <circle cx="160" cy="247" r="3" fill="#4A5158"/>
+        <circle cx="310" cy="238" r="3" fill="#4A5158"/>
+        <circle cx="460" cy="242" r="3" fill="#4A5158"/>
+        <circle cx="610" cy="252" r="3" fill="#4A5158"/>
+        <circle cx="760" cy="254" r="3" fill="#4A5158"/>
+        <!-- CIP: 919, 983, 1731, 6375, 6134 — teal, the hero line -->
+        <polyline
+          id="cip-line"
+          points="160,226 310,224 460,196 610,25 760,34"
+          fill="none" stroke="#4FE0AE" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+        <circle cx="160" cy="226" r="5" fill="#4FE0AE"/>
+        <circle cx="310" cy="224" r="5" fill="#4FE0AE"/>
+        <circle cx="460" cy="196" r="5" fill="#4FE0AE"/>
+        <circle cx="610" cy="25" r="6" fill="#4FE0AE" stroke="#0A0C0E" stroke-width="2"/>
+        <circle cx="760" cy="34" r="5" fill="#4FE0AE"/>
+        <!-- CIP data labels -->
+        <text x="160" y="218" text-anchor="middle" font-size="10" fill="#4FE0AE" font-weight="600">919</text>
+        <text x="310" y="216" text-anchor="middle" font-size="10" fill="#4FE0AE" font-weight="600">983</text>
+        <text x="460" y="188" text-anchor="middle" font-size="10" fill="#4FE0AE" font-weight="600">1,731</text>
+        <text x="610" y="17" text-anchor="middle" font-size="11" fill="#4FE0AE" font-weight="700">6,375</text>
+        <text x="760" y="26" text-anchor="middle" font-size="10" fill="#4FE0AE" font-weight="600">6,134</text>
+        <!-- CPT data labels -->
+        <text x="160" y="244" text-anchor="middle" font-size="9" fill="#3B82F6">735</text>
+        <text x="610" y="215" text-anchor="middle" font-size="9" fill="#3B82F6">1,033</text>
+        <!-- Crossover annotation -->
+        <line x1="610" y1="20" x2="610" y2="260" stroke="#262B30" stroke-width="1" stroke-dasharray="4 3"/>
+        <text x="618" y="38" font-size="10" fill="#9BA3AA">6× crossover</text>
+        <text x="618" y="50" font-size="10" fill="#9BA3AA">Oct 2026</text>
+        <!-- Nov asterisk note -->
+        <text x="880" y="285" text-anchor="end" font-size="10" fill="#4A5158">*Nov through 24th</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- BUILD SECTION -->
+<section class="section fi" id="build">
+  <h2 class="section-h">How it was built</h2>
+  <p class="section-sub">666 commits across 9 months, alongside a VP-level day job. No engineering team. Every line shipped via AI coding agents under my direction.</p>
+
+  <div class="build-grid">
+    <!-- Bar chart: what was shipped -->
+    <div>
+      <div style="font-size:13px;font-weight:500;color:var(--mid);margin-bottom:20px;">Platform surface · scale of effort</div>
+      <div class="build-bars">
+        <div class="bar-row">
+          <span class="bar-label">Paid Media</span>
+          <div class="bar-track"><div class="bar-fill" style="width:72%"></div></div>
+          <span class="bar-val">~180</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Publisher Hub</span>
+          <div class="bar-track"><div class="bar-fill" style="width:88%"></div></div>
+          <span class="bar-val">~220</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Planning Agent</span>
+          <div class="bar-track"><div class="bar-fill" style="width:52%"></div></div>
+          <span class="bar-val">~130</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">DIS Matching</span>
+          <div class="bar-track"><div class="bar-fill" style="width:48%"></div></div>
+          <span class="bar-val">~120</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Infra / Deploy</span>
+          <div class="bar-track"><div class="bar-fill" style="width:24%"></div></div>
+          <span class="bar-val">~16</span>
+        </div>
+      </div>
+      <div style="font-size:11px;color:var(--dim);margin-top:10px;">Estimated commits per area · 666 total</div>
+    </div>
+
+    <!-- Workflow loop -->
+    <div>
+      <div style="font-size:13px;font-weight:500;color:var(--mid);margin-bottom:20px;">The build loop — every feature, every session</div>
+      <div class="wf-steps">
+        <div class="wf-step active">
+          <div class="wf-num">1</div>
+          <div class="wf-step-label">Identify the gap</div>
+        </div>
+        <div class="wf-step active">
+          <div class="wf-num">2</div>
+          <div class="wf-step-label">Write the spec</div>
+        </div>
+        <div class="wf-step active">
+          <div class="wf-num">3</div>
+          <div class="wf-step-label">Direct Claude Code</div>
+        </div>
+        <div class="wf-step active">
+          <div class="wf-num">4</div>
+          <div class="wf-step-label">Review every diff</div>
+        </div>
+        <div class="wf-step active">
+          <div class="wf-num">5</div>
+          <div class="wf-step-label">Ship to ECS</div>
+        </div>
+      </div>
+      <div class="wf-detail">
+        <div class="wf-fact">
+          <span class="wf-fact-n">159</span>
+          <span class="wf-fact-l">production deploys to AWS ECS</span>
+        </div>
+        <div class="wf-fact">
+          <span class="wf-fact-n">32K</span>
+          <span class="wf-fact-l">lines of TypeScript shipped</span>
+        </div>
+        <div class="wf-fact">
+          <span class="wf-fact-n">9mo</span>
+          <span class="wf-fact-l">Mar–Nov 2026 · solo</span>
+        </div>
+        <div class="wf-fact">
+          <span class="wf-fact-n">0</span>
+          <span class="wf-fact-l">engineering headcount used</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tech stack -->
+  <div style="margin-top:48px;padding-top:40px;border-top:1px solid var(--rule);">
+    <div style="font-size:13px;font-weight:500;color:var(--mid);margin-bottom:20px;">Data sources integrated</div>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;">
+      <span style="padding:8px 16px;background:var(--bg2);border:1px solid var(--rule2);border-radius:4px;font-size:13px;color:var(--text);">Looker API</span>
+      <span style="padding:8px 16px;background:var(--bg2);border:1px solid var(--rule2);border-radius:4px;font-size:13px;color:var(--text);">Meta Graph API</span>
+      <span style="padding:8px 16px;background:var(--bg2);border:1px solid var(--rule2);border-radius:4px;font-size:13px;color:var(--text);">Google Sheets API</span>
+      <span style="padding:8px 16px;background:var(--bg2);border:1px solid var(--rule2);border-radius:4px;font-size:13px;color:var(--text);">Anthropic API</span>
+      <span style="padding:8px 16px;background:var(--bg2);border:1px solid var(--rule2);border-radius:4px;font-size:13px;color:var(--text);">HubSpot API</span>
+      <span style="padding:8px 16px;background:var(--bg2);border:1px solid var(--rule2);border-radius:4px;font-size:13px;color:var(--text);">Userpilot</span>
+      <span style="padding:8px 16px;background:var(--bg2);border:1px solid var(--rule2);border-radius:4px;font-size:13px;color:var(--text);">AWS ECS + GitHub Actions</span>
+      <span style="padding:8px 16px;background:var(--bg2);border:1px solid var(--rule2);border-radius:4px;font-size:13px;color:var(--text);">Cloudflare</span>
+      <span style="padding:8px 16px;background:var(--bg2);border:1px solid var(--rule2);border-radius:4px;font-size:13px;color:var(--text);">Next.js / TypeScript</span>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote fi">
+  <blockquote>
+    <p>"CIP usage surpassed the Analytics dashboards for the first time for internal users."</p>
+    <cite>Kerry, Head of Product at DealMaker &nbsp;·&nbsp; September 30, 2026</cite>
+  </blockquote>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="footer-id">
+    <h3>Ivan Huang</h3>
+    <p>VP of Performance Media &nbsp;·&nbsp; Built Morpheus solo, Mar–Nov 2026</p>
+  </div>
+  <div class="footer-actions">
+    <a href="https://linkedin.com/in/ivanhuang" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="mailto:ivan@example.com" class="cta">Get in touch</a>
+  </div>
+  <p class="footer-note">Screens in the demo are recreated with illustrative data. Real issuer and investor data replaced with fictional names and numbers consistent with the platform's actual scale and performance.</p>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); } });
+}, { threshold: .08 });
+document.querySelectorAll('.fi').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
