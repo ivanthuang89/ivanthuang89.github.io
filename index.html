@@ -73,6 +73,8 @@ h1 em{font-style:italic;color:var(--mid);}
 .work-section-h{font-family:'DM Serif Display',serif;font-size:clamp(28px,3.5vw,44px);font-weight:400;letter-spacing:-.03em;margin-bottom:10px;}
 .work-section-sub{font-size:15px;color:var(--mid);max-width:52ch;line-height:1.7;margin-bottom:48px;}
 .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border-radius:12px;overflow:hidden;}
+.work-grid > .work-card:last-child:nth-child(3n-1){grid-column:span 1;}
+.work-grid > .work-card:last-child:nth-child(3n-2){grid-column:span 2;}
 .work-card{background:var(--bg2);padding:40px;cursor:pointer;transition:background .25s, transform .25s, box-shadow .25s;position:relative;overflow:hidden;border-bottom:1px solid var(--rule);}
 .work-card:hover{background:var(--bg3);transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,.4);}
 .work-card::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(79,224,174,.03) 0%,transparent 60%);opacity:0;transition:opacity .25s;}
@@ -381,6 +383,13 @@ footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-b
         <p>Built and deployed a skills hub, four production Claude skills, a daily standup automation, and a weekly product adoption report — operationalizing AI across a 25-person org, not just using it personally.</p>
         <div class="work-card-arrow"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M5 12h14m-7-7 7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <div class="work-card-stat"><strong>4</strong> skills deployed org-wide · used weekly</div>
+      </div>
+      <div class="work-card" onclick="showPage('resume')">
+        <div class="work-card-tag"><span>●</span> 13 years</div>
+        <h3>Career</h3>
+        <p>Starcom → PHD → RPA → Stripes → jetfuel → dentsu MuteSix → DealMaker. VP and above since 2021, managing up to $100M+ in annual media spend and teams of 70+ across holdcos and independents.</p>
+        <div class="work-card-arrow"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M5 12h14m-7-7 7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="work-card-stat"><strong>5</strong> companies · VP+ since 2021</div>
       </div>
     </div>
   </section>
