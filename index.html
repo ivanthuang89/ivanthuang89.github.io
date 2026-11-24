@@ -47,7 +47,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 48px;height:60px;d
 .hero-byline-text{text-align:left;}
 .hero-byline-name{font-size:15px;font-weight:600;color:var(--text);letter-spacing:-.02em;line-height:1.2;}
 .hero-byline-role{font-size:12px;color:var(--mid);margin-top:1px;font-weight:400;}
-h1{font-family:'Inter',system-ui,sans-serif;font-size:clamp(36px,5.5vw,72px);font-weight:800;line-height:1.03;letter-spacing:-.045em;color:var(--text);max-width:18ch;margin:0 auto 32px;}
+h1{font-family:'Inter',system-ui,sans-serif;font-size:clamp(40px,6vw,80px);font-weight:800;line-height:1.02;letter-spacing:-.05em;color:var(--text);max-width:18ch;margin:0 auto 32px;}
 h1 em{font-style:normal;color:#0066FF;}
 .hero-sub{font-size:16px;font-weight:400;line-height:1.72;color:var(--mid);max-width:52ch;margin:0 auto 32px;}
 .hero-sub strong{color:var(--text);font-weight:500;}
@@ -68,26 +68,26 @@ h1 em{font-style:normal;color:#0066FF;}
 .stat{padding:28px 24px;border-right:1px solid var(--rule);display:flex;flex-direction:column;align-items:center;gap:7px;transition:background .2s;cursor:default;}
 .stat:hover{background:var(--bg2);}
 .stat:last-child{border-right:none;}
-.stat-n{font-size:44px;font-weight:800;color:#0066FF;letter-spacing:-.045em;line-height:1;}
+.stat-n{font-size:clamp(40px,4.5vw,56px);font-weight:800;color:#0066FF;letter-spacing:-.05em;line-height:1;}
 .stat-l{font-size:11px;color:var(--dim);text-align:center;max-width:16ch;line-height:1.5;font-weight:400;}
 
 /* WORK GRID */
 .work-section{padding:80px;}
-.work-section-h{font-family:'Inter',sans-serif;font-weight:800;font-size:clamp(28px,3.5vw,44px);font-weight:400;letter-spacing:-.03em;margin-bottom:10px;}
+.work-section-h{font-family:'Inter',sans-serif;font-weight:800;font-size:clamp(32px,4vw,52px);letter-spacing:-.045em;margin-bottom:12px;}
 .work-section-sub{font-size:15px;color:var(--mid);max-width:52ch;line-height:1.72;margin-bottom:40px;}
 .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;border-radius:0;overflow:visible;background:transparent;}
 .work-card{background:#fff;border:1px solid var(--rule);border-radius:12px;padding:32px;cursor:pointer;transition:border-color .2s,transform .2s,box-shadow .2s;position:relative;overflow:hidden;}
 .work-card:hover{border-color:#0066FF;transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,102,255,.1);}
 .work-card-tag{font-size:11px;font-weight:600;color:#0066FF;letter-spacing:.06em;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:7px;}
 .work-card-tag span{width:6px;height:6px;border-radius:50%;background:#0066FF;display:inline-block;flex-shrink:0;}
-.work-card h3{font-family:'Inter',sans-serif;font-size:22px;font-weight:700;letter-spacing:-.03em;margin-bottom:10px;line-height:1.1;color:var(--text);}
+.work-card h3{font-family:'Inter',sans-serif;font-size:clamp(20px,2vw,26px);font-weight:700;letter-spacing:-.03em;margin-bottom:10px;line-height:1.1;color:var(--text);}
 .work-card p{font-size:14px;color:var(--mid);line-height:1.7;margin-bottom:24px;}
 .work-card-arrow{width:32px;height:32px;border-radius:50%;background:var(--bg2);border:1px solid var(--rule);display:flex;align-items:center;justify-content:center;transition:background .15s,border-color .15s;}
 .work-card:hover .work-card-arrow{background:#0066FF;border-color:#0066FF;}
 .work-card-arrow svg{width:13px;height:13px;stroke:var(--dim);fill:none;transition:stroke .15s;}
 .work-card:hover .work-card-arrow svg{stroke:#fff;}
 .work-card-stat{margin-top:18px;padding-top:16px;border-top:1px solid var(--rule);font-size:11px;color:var(--dim);}
-.work-card-stat strong{color:#0066FF;font-family:'Inter',sans-serif;font-size:22px;font-weight:800;display:block;margin-bottom:3px;letter-spacing:-.035em;}
+.work-card-stat strong{color:#0066FF;font-family:'Inter',sans-serif;font-size:clamp(20px,2.5vw,28px);font-weight:800;display:block;margin-bottom:4px;letter-spacing:-.04em;}
 
 /* ── MORPHEUS PAGE ── */
 .page-header{padding:72px 80px 56px;border-bottom:1px solid var(--rule);position:relative;background:#fff;}
@@ -95,7 +95,7 @@ h1 em{font-style:normal;color:#0066FF;}
 .page-header-back{font-size:12px;color:var(--dim);cursor:pointer;display:inline-flex;align-items:center;gap:6px;margin-bottom:24px;transition:color .15s;background:none;border:none;padding:0;}
 .page-header-back:hover{color:var(--text);}
 .page-header-back svg{width:14px;height:14px;stroke:currentColor;fill:none;}
-.page-header h2{font-family:'Inter',sans-serif;font-size:clamp(32px,4.5vw,64px);font-weight:800;letter-spacing:-.045em;line-height:1.03;margin-bottom:16px;color:var(--text);}
+.page-header h2{font-family:'Inter',sans-serif;font-size:clamp(36px,5vw,72px);font-weight:800;letter-spacing:-.05em;line-height:1.02;margin-bottom:16px;color:var(--text);}
 .page-header p{font-size:16px;color:var(--mid);max-width:60ch;line-height:1.78;}
 .page-header p strong{color:var(--text);font-weight:500;}
 
@@ -107,16 +107,16 @@ h1 em{font-style:normal;color:#0066FF;}
 
 /* SECTION SHELL */
 .section{padding:72px 80px;border-bottom:1px solid var(--rule);background:#fff;}
-.section-h{font-family:'Inter',sans-serif;font-size:clamp(24px,2.8vw,40px);font-weight:800;letter-spacing:-.04em;margin-bottom:10px;display:inline-block;color:var(--text);}
+.section-h{font-family:'Inter',sans-serif;font-size:clamp(28px,3.2vw,48px);font-weight:800;letter-spacing:-.045em;margin-bottom:12px;display:inline-block;color:var(--text);}
 .section-sub{font-size:15px;color:var(--mid);max-width:52ch;line-height:1.72;margin-bottom:48px;}
 
 /* EVIDENCE GRID */
 .ev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border-radius:12px;overflow:hidden;margin-bottom:48px;}
-.ev-cell{background:#fff;padding:36px;transition:border-color .2s,box-shadow .2s;position:relative;}
+.ev-cell{background:#fff;padding:40px 36px;transition:border-color .2s,box-shadow .2s;position:relative;}
 .ev-cell:hover{box-shadow:inset 0 0 0 2px #0066FF;}
-.ev-n{font-family:'Inter',sans-serif;font-size:48px;font-weight:800;letter-spacing:-.05em;line-height:1;margin-bottom:10px;}
+.ev-n{font-family:'Inter',sans-serif;font-size:clamp(44px,5vw,64px);font-weight:800;letter-spacing:-.05em;line-height:1;margin-bottom:12px;}
 .ev-n span{color:#0066FF;}
-.ev-l{font-size:14px;font-weight:600;color:var(--text);margin-bottom:8px;}
+.ev-l{font-size:14px;font-weight:700;color:var(--text);margin-bottom:8px;letter-spacing:-.01em;}
 .ev-s{font-size:13px;color:var(--mid);line-height:1.65;}
 
 /* CHART */
@@ -150,8 +150,8 @@ h1 em{font-style:normal;color:#0066FF;}
 .loop-text h4{font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px;}
 .loop-text p{font-size:13px;color:var(--mid);line-height:1.6;}
 .build-stats{margin-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border-radius:10px;overflow:hidden;}
-.bs-cell{background:#fff;padding:18px 20px;border:none;}
-.bs-n{font-family:'Inter',sans-serif;font-size:28px;font-weight:800;color:#0066FF;letter-spacing:-.04em;line-height:1;margin-bottom:4px;}
+.bs-cell{background:#fff;padding:24px 28px;border:none;}
+.bs-n{font-family:'Inter',sans-serif;font-size:clamp(28px,3vw,40px);font-weight:800;color:#0066FF;letter-spacing:-.045em;line-height:1;margin-bottom:4px;}
 .bs-l{font-size:12px;color:var(--dim);}
 .stack{margin-top:48px;padding-top:40px;border-top:1px solid var(--rule);}
 .stack-label{font-size:11px;font-weight:500;color:var(--mid);letter-spacing:.06em;text-transform:uppercase;margin-bottom:16px;}
@@ -162,7 +162,7 @@ h1 em{font-style:normal;color:#0066FF;}
 /* QUOTE */
 .quote-section{padding:80px;border-bottom:1px solid var(--rule);display:flex;justify-content:center;background:#F0F5FF;}
 blockquote{max-width:640px;text-align:center;}
-blockquote p{font-family:'Inter',sans-serif;font-weight:700;font-size:clamp(22px,3vw,36px);font-weight:400;font-style:italic;line-height:1.3;letter-spacing:-.025em;color:var(--text);margin-bottom:24px;}
+blockquote p{font-family:'Inter',sans-serif;font-weight:800;font-size:clamp(24px,3.5vw,44px);font-weight:400;font-style:italic;line-height:1.3;letter-spacing:-.025em;color:var(--text);margin-bottom:24px;}
 blockquote cite{font-size:13px;font-style:normal;color:var(--mid);}
 
 /* ── MODELS PAGE ── */
@@ -205,8 +205,8 @@ blockquote cite{font-size:13px;font-style:normal;color:var(--mid);}
 .ch-fill-gold{height:100%;border-radius:3px;background:var(--gold);width:0%;transition:width .8s cubic-bezier(.16,1,.3,1);}
 .ch-val{font-size:11px;color:var(--dim);text-align:right;}
 .forecast-summary{margin-top:24px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border-radius:10px;overflow:hidden;}
-.fs-cell{background:#EEF4FF;padding:16px 20px;}
-.fs-n{font-family:'Inter',sans-serif;font-size:22px;font-weight:800;letter-spacing:-.04em;line-height:1;margin-bottom:4px;color:#0066FF;}
+.fs-cell{background:#EEF4FF;padding:20px 24px;}
+.fs-n{font-family:'Inter',sans-serif;font-size:clamp(22px,2.5vw,32px);font-weight:800;letter-spacing:-.045em;line-height:1;margin-bottom:4px;color:#0066FF;}
 .fs-l{font-size:11px;color:var(--dim);}
 .redact-note{font-size:11px;color:var(--dim);margin-top:16px;padding:10px 14px;background:var(--bg);border:1px solid var(--rule);border-radius:6px;}
 
@@ -217,7 +217,7 @@ blockquote cite{font-size:13px;font-style:normal;color:var(--mid);}
 .resume-print:hover{background:#3ecf9d;}
 .resume-dl{font-size:13px;color:var(--mid);text-decoration:none;padding:9px 20px;border-radius:6px;border:1px solid var(--rule);transition:border-color .15s,color .15s;}
 .resume-dl:hover{border-color:var(--rule2);color:var(--text);}
-.resume-name{font-family:'Inter',sans-serif;font-size:48px;font-weight:800;letter-spacing:-.05em;margin-bottom:4px;color:var(--text);}
+.resume-name{font-family:'Inter',sans-serif;font-size:clamp(44px,6vw,72px);font-weight:800;letter-spacing:-.055em;margin-bottom:4px;color:var(--text);}
 .resume-contact{font-size:13px;color:var(--mid);margin-bottom:48px;display:flex;gap:20px;flex-wrap:wrap;}
 .resume-contact a{color:var(--mid);text-decoration:none;}
 .resume-contact a:hover{color:var(--teal);}
@@ -369,8 +369,8 @@ footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-b
         <div class="work-card-stat"><strong>5</strong> companies · VP and above since 2021</div>
       </div>
       <div class="work-card" onclick="showPage('pubnet')">
-        <div class="work-card-tag"><span>●</span> Publisher strategy</div>
-        <h3>Publisher Network</h3>
+        <div class="work-card-tag"><span>●</span> Ad network strategy</div>
+        <h3>Ad Network Strategy</h3>
         <p>Built a 75+ publisher marketplace from scratch. Negotiated a $5.8M amendment with Morning Brew, identified $1.5M in incremental capital through ROAS rotation analysis, and authored the managed wind-down memo adopted by ELT.</p>
         <div class="work-card-arrow"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M5 12h14m-7-7 7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <div class="work-card-stat"><strong>75+</strong> publishers · $25M+ annual media transacted</div>
@@ -653,13 +653,43 @@ footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-b
       <svg viewBox="0 0 24 24" stroke-width="2"><path d="M19 12H5m7-7-7 7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
       Back
     </button>
-    <h2>Publisher Network</h2>
-    <p>Built DealMaker's ad network from a single-channel concept into a <strong>75+ publisher marketplace transacting $25M+ in annual media.</strong> Then identified the ROAS rotation problem eroding network returns, negotiated a $5.8M contract amendment with the flagship publisher, and authored the managed wind-down memo adopted by ELT.</p>
+    <h2>Ad Network Strategy</h2>
+    <p>Authored DealMaker's Ad Network strategy — from a 75+ publisher marketplace to a phased DIS/DV360 roadmap. Negotiated a $5.8M flagship contract amendment, identified $1.5M in recoverable capital via ROAS rotation analysis, and built the pricing and revenue recognition framework adopted by ELT and Finance.</p>
   </div>
 
+  <section class="section fi" style="background:#F0F5FF;">
+    <h2 class="section-h">The strategy</h2>
+    <p class="section-sub">Not a generic DSP. A premium hybrid platform — hand-selected inventory, a proprietary matching engine, and OLV via managed API — with a moat built on investor data, not auction scale.</p>
+    <div class="ev-grid" style="grid-template-columns:repeat(3,1fr);">
+      <div class="ev-cell fi">
+        <div class="ev-n">3</div>
+        <div class="ev-l">Phases</div>
+        <div class="ev-s">Phase 1: DIS for Tier 1/2 newsletter inventory. Phase 2: OLV via Viant managed service. Phase 3: DV360 via GMP partner (Dandelion) with Bid Manager API reporting.</div>
+      </div>
+      <div class="ev-cell fi">
+        <div class="ev-n">15<span>%</span></div>
+        <div class="ev-l">Fee earned — Tier 1 partnerships</div>
+        <div class="ev-s">Recognized gross under ASC 606 — DealMaker contracts directly with issuers and controls inventory prior to sale. DV360 fees recognized net as management margin only.</div>
+      </div>
+      <div class="ev-cell fi">
+        <div class="ev-n">$5<span>M+</span></div>
+        <div class="ev-l">Build cost avoided</div>
+        <div class="ev-s">Full DSP requires $5M–10M+ and years to build. DIS + GMP partner approach gets to market in 3–6 months with 2–3 FTEs and no auction infrastructure.</div>
+      </div>
+    </div>
+    <div style="margin-top:40px;">
+      <div class="loop-label">Phased roadmap</div>
+      <div class="loop-steps">
+        <div class="loop-step"><div class="loop-num">1</div><div class="loop-text"><h4>DIS — Dynamic Inventory System</h4><p>Rules-based matching engine allocating Tier 1/2 newsletter slots to issuers by audience fit, budget, and campaign priority. Eliminates oversupply/undersupply mismatch. MVP: 3–6 months, 7 FTEs.</p></div></div>
+        <div class="loop-step"><div class="loop-num">2</div><div class="loop-text"><h4>OLV via Viant — managed service, 15%</h4><p>Online video as the next inventory ceiling-breaker beyond newsletter. New avenue as newsletter concentration risk grows. Managed service model, same fee structure as Tier 1.</p></div></div>
+        <div class="loop-step"><div class="loop-num">3</div><div class="loop-text"><h4>DV360 via Dandelion — GMP partner</h4><p>Full DV360 inventory (YouTube, display, CTV, audio, PMPs) through issuer-owned subclient seats. DealMaker as agency/manager. 15% on ad network spend. Bid Manager API pulls reporting into DealMaker dashboards. Saves $500K–$600K vs. direct at $2M spend.</p></div></div>
+      </div>
+    </div>
+  </section>
+
   <section class="section fi">
-    <h2 class="section-h">Network at a glance</h2>
-    <p class="section-sub">From zero to a functioning publisher marketplace in under two years — built alongside a full paid media leadership role.</p>
+    <h2 class="section-h">The network at a glance</h2>
+    <p class="section-sub">75+ publisher marketplace built alongside the ad network strategy — the operational foundation the DIS is designed to automate.</p>
     <div class="ev-grid">
       <div class="ev-cell fi"><div class="ev-n">75<span>+</span></div><div class="ev-l">Publishers in network</div><div class="ev-s">Built from scratch. Spans newsletter, affiliate, sponsored content, OLV/CTV, and programmatic channels.</div></div>
       <div class="ev-cell fi"><div class="ev-n">$25M<span>+</span></div><div class="ev-l">Annual media transacted</div><div class="ev-s">Scaled from a concept to a marketplace with committed inventory, pricing tiers, and a managed allocation model.</div></div>
@@ -1033,10 +1063,10 @@ function initChart() {
     series: [
       {label:'CIP',      color:'#4FE0AE', values:[919,983,1731,6375,6134], r:5},
       {label:'CPT',      color:'#3B82F6', values:[735,644,644,1033,788],   r:4},
-      {label:'Morpheus', color:'#52525B', values:[381,603,493,223,165],    r:3}
+      {label:'Morpheus', color:'#AAAAAA', values:[381,603,493,223,165],    r:3}
     ]
   };
-  const PAD = {top:24,right:20,bottom:40,left:60};
+  const PAD = {top:36,right:20,bottom:40,left:60};
   let W=0, H=260;
   function getW(){ return canvas.parentElement.clientWidth - 56; }
   function xS(i){ return PAD.left + (i/(DATA.months.length-1))*(W-PAD.left-PAD.right); }
@@ -1046,17 +1076,30 @@ function initChart() {
     const ctx = canvas.getContext('2d');
     ctx.clearRect(0,0,canvas.width,canvas.height);
     ctx.scale(dpr,dpr);
+    // Grid lines
     [0,1000,2000,3500,5000,7000].forEach(v=>{
       const y=yS(v);
-      ctx.beginPath(); ctx.strokeStyle=v===0?'#27272A':'#1C1C1F'; ctx.lineWidth=1;
+      ctx.beginPath(); ctx.strokeStyle=v===0?'#E5E5E5':'#F0F0F0'; ctx.lineWidth=1;
       ctx.moveTo(PAD.left,y); ctx.lineTo(W-PAD.right,y); ctx.stroke();
-      ctx.fillStyle='#52525B'; ctx.font='11px Inter,sans-serif'; ctx.textAlign='right';
+      ctx.fillStyle='#888'; ctx.font='11px Inter,sans-serif'; ctx.textAlign='right';
       ctx.fillText(v>=1000?(v/1000)+'K':v, PAD.left-8, y+4);
     });
-    ctx.fillStyle='#52525B'; ctx.textAlign='center';
+    // X-axis labels
+    ctx.fillStyle='#888'; ctx.textAlign='center';
     DATA.months.forEach((m,i)=>ctx.fillText(m,xS(i),H-8));
+    // Sep 2026 cutover annotation (index 2)
+    const cutX = xS(2);
+    ctx.beginPath(); ctx.strokeStyle='#0066FF'; ctx.lineWidth=1.5; ctx.setLineDash([5,4]);
+    ctx.moveTo(cutX, PAD.top-8); ctx.lineTo(cutX, H-PAD.bottom); ctx.stroke(); ctx.setLineDash([]);
+    // Annotation label
+    ctx.fillStyle='#0066FF'; ctx.font='bold 10px Inter,sans-serif'; ctx.textAlign='center';
+    ctx.fillText('CIP productized', cutX, PAD.top-14);
+    // Arrow up from Sep
+    ctx.beginPath(); ctx.strokeStyle='#0066FF'; ctx.lineWidth=1.5;
+    ctx.moveTo(cutX-5, PAD.top-10); ctx.lineTo(cutX, PAD.top-16); ctx.lineTo(cutX+5, PAD.top-10); ctx.stroke();
+    // Hover crosshair
     if(hi>=0){
-      ctx.beginPath(); ctx.strokeStyle='#3F3F46'; ctx.lineWidth=1; ctx.setLineDash([4,3]);
+      ctx.beginPath(); ctx.strokeStyle='#D0D0D0'; ctx.lineWidth=1; ctx.setLineDash([4,3]);
       ctx.moveTo(xS(hi),PAD.top); ctx.lineTo(xS(hi),H-PAD.bottom); ctx.stroke(); ctx.setLineDash([]);
     }
     DATA.series.forEach(s=>{
@@ -1076,9 +1119,9 @@ function initChart() {
   function findIdx(cx){const rect=canvas.getBoundingClientRect();let best=-1,bestD=50;DATA.months.forEach((_,i)=>{const d=Math.abs(xS(i)-(cx-rect.left));if(d<bestD){bestD=d;best=i;}});return best;}
   function showTip(cx,cy,idx){
     if(idx<0){tooltip.style.opacity=0;return;}
-    let h='<div style="font-size:11px;font-weight:600;color:#A1A1AA;letter-spacing:.06em;margin-bottom:8px;">'+DATA.months[idx].toUpperCase()+'</div>';
+    let h='<div style="font-size:11px;font-weight:600;color:#0066FF;letter-spacing:.06em;margin-bottom:8px;">'+DATA.months[idx].toUpperCase()+'</div>';
     DATA.series.forEach(s=>{h+='<div style="display:flex;align-items:center;gap:8px;padding:2px 0;"><div style="width:8px;height:8px;border-radius:50%;background:'+s.color+';flex-shrink:0;"></div><span style="color:#A1A1AA;min-width:76px;">'+s.label+'</span><strong style="color:#FAFAFA;margin-left:auto;">'+s.values[idx].toLocaleString()+'</strong></div>';});
-    tooltip.innerHTML=h; tooltip.style.opacity=1;
+    tooltip.style.background='#fff'; tooltip.style.boxShadow='0 4px 16px rgba(0,0,0,.1)'; tooltip.innerHTML=h; tooltip.style.opacity=1;
     const cr=tooltip.parentElement.getBoundingClientRect();
     let left=(cx-cr.left)+16; if(left+190>cr.width-28) left=(cx-cr.left)-200;
     tooltip.style.left=Math.max(0,left)+'px'; tooltip.style.top=(cy-cr.top-60)+'px';
