@@ -137,7 +137,7 @@ h1 em{font-style:normal;color:#0066FF;}
 .bar-row:last-child{border-bottom:1px solid var(--rule);}
 .bar-label{font-size:14px;color:var(--mid);font-weight:500;}
 .bar-track{background:var(--bg3);border-radius:3px;height:6px;overflow:hidden;}
-.bar-fill{height:100%;border-radius:3px;background:var(--teal);width:0%;transition:width .9s cubic-bezier(.16,1,.3,1);}
+.bar-fill{height:100%;border-radius:3px;background:#0066FF;width:0%;transition:width .9s cubic-bezier(.16,1,.3,1);}
 .bar-val{font-size:13px;color:var(--mid);text-align:right;font-weight:500;}
 .loop-label{font-size:12px;font-weight:600;color:var(--mid);letter-spacing:.06em;text-transform:uppercase;margin-bottom:16px;}
 .loop-steps{display:flex;flex-direction:column;gap:0;border:1px solid var(--rule);border-radius:12px;overflow:hidden;background:#fff;}
@@ -165,7 +165,7 @@ blockquote cite{font-size:14px;font-style:normal;color:var(--mid);}
 
 /* ── MODELS PAGE ── */
 .models-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);margin:0;border-bottom:1px solid var(--rule);background:var(--bg);}
-.model-panel{background:#fff;padding:48px 56px;}
+.model-panel{background:#fff;padding:0;}
 .model-panel-label{font-size:12px;font-weight:600;color:var(--mid);letter-spacing:.07em;text-transform:uppercase;margin-bottom:16px;}
 .model-panel h3{font-family:'DM Serif Display',serif;font-size:32px;font-weight:400;letter-spacing:-.025em;margin-bottom:14px;line-height:1.1;}
 .model-panel p{font-size:14px;color:var(--mid);line-height:1.78;margin-bottom:28px;}
@@ -424,13 +424,13 @@ footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-b
         <h3>Career</h3>
         <p>Starcom → PHD → RPA → Stripes → jetfuel → dentsu MuteSix → DealMaker. VP and above since 2021, managing up to $100M+ in annual media spend and teams of 70+ across holdcos and independents.</p>
         <div class="career-logo-strip">
-          <div class="career-logo-pill"><img src="https://logo.clearbit.com/starcom.com" alt="Starcom" onerror="this.style.display='none'">Starcom</div>
-          <div class="career-logo-pill"><img src="https://logo.clearbit.com/phdmedia.com" alt="PHD" onerror="this.style.display='none'">PHD</div>
-          <div class="career-logo-pill"><img src="https://logo.clearbit.com/rpa.com" alt="RPA" onerror="this.style.display='none'">RPA</div>
-          <div class="career-logo-pill"><img src="https://logo.clearbit.com/thestripes.co" alt="Stripes" onerror="this.style.display='none'">Stripes</div>
-          <div class="career-logo-pill"><img src="https://logo.clearbit.com/jetfuel.agency" alt="jetfuel" onerror="this.style.display='none'">jetfuel</div>
-          <div class="career-logo-pill"><img src="https://logo.clearbit.com/mutesix.com" alt="MuteSix" onerror="this.style.display='none'">MuteSix</div>
-          <div class="career-logo-pill"><img src="https://logo.clearbit.com/dealmaker.tech" alt="DealMaker" onerror="this.style.display='none'">DealMaker</div>
+          <div class="career-logo-pill"><img src="https://unavatar.io/starcom.com" alt="Starcom" onerror="this.style.display='none'">Starcom</div>
+          <div class="career-logo-pill"><img src="https://unavatar.io/phdmedia.com" alt="PHD" onerror="this.style.display='none'">PHD</div>
+          <div class="career-logo-pill"><img src="https://unavatar.io/rpa.com" alt="RPA" onerror="this.style.display='none'">RPA</div>
+          <div class="career-logo-pill"><img src="https://unavatar.io/thestripes.co" alt="Stripes" onerror="this.style.display='none'">Stripes</div>
+          <div class="career-logo-pill"><img src="https://unavatar.io/jetfuel.agency" alt="jetfuel" onerror="this.style.display='none'">jetfuel</div>
+          <div class="career-logo-pill"><img src="https://unavatar.io/mutesix.com" alt="MuteSix" onerror="this.style.display='none'">MuteSix</div>
+          <div class="career-logo-pill"><img src="https://unavatar.io/dealmaker.tech" alt="DealMaker" onerror="this.style.display='none'">DealMaker</div>
         </div>
         <div class="work-card-arrow"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M5 12h14m-7-7 7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <div class="work-card-stat"><strong>5</strong> companies · VP+ since 2021</div>
@@ -576,10 +576,10 @@ footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-b
     <span style="font-size:13px;color:#0052CC;font-weight:500;">All numbers in these models are made up. The inputs, outputs, and scenario labels exist to demonstrate the tool's structure and logic — not to represent real company data.</span>
   </div>
 
-  <div class="models-grid">
-    <!-- DAN FEE MODEL -->
-    <div class="model-panel fi">
-      <div class="model-panel-label">Case study 01</div>
+  <section class="section fi" style="border-bottom:3px solid var(--rule);">
+    <div class="model-num-label" style="font-size:12px;font-weight:700;color:#0066FF;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;">Case study 01</div>
+    <div>
+      
       <h3>Media Fee Scenario Planner</h3>
       <p>Built in response to a quarterly fee shortfall — the existing model had no way to stress-test alternatives. The planner models multiple fee structures against a configurable goal, issuer mix, and spend split. Inputs below are illustrative.</p>
 
@@ -588,7 +588,7 @@ footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-b
           <div class="sc-group">
             <span class="sc-label">Quarterly fee goal ($)</span>
             <input class="sc-input" id="sc-goal" type="number" value="850000" step="50000" oninput="calcScenario()">
-          </div>
+          
           <div class="sc-group">
             <span class="sc-label">Total paid spend ($)</span>
             <input class="sc-input" id="sc-spend" type="number" value="22000000" step="1000000" oninput="calcScenario()">
@@ -613,11 +613,16 @@ footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-b
         </div>
         <div class="sc-formula" id="sc-formula"></div>
       </div>
-    </div>
+    <
+  </section>
+
+  <section class="section fi" style="border-bottom:3px solid var(--rule);">
+    <div class="model-num-label" style="font-size:12px;font-weight:700;color:#0066FF;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;">Case study 02</div>
+    /div>
 
     <!-- Q2 FORECAST MODEL -->
-    <div class="model-panel fi">
-      <div class="model-panel-label">Case study 02</div>
+    <div>
+      
       <h3>Q2 Revenue Forecast</h3>
       <p>Dual-view forecast — top-down (strategy target) and bottom-up (confirmed client budgets) — with a weekly pacing log tracking changes Monday to Monday. Built when no planning baseline existed; became the standard. Data below uses fictional client names and scaled figures.</p>
 
@@ -625,13 +630,13 @@ footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-b
         <div class="forecast-tabs">
           <button class="fc-tab active" onclick="setForecast('mix',this)">Channel mix</button>
           <button class="fc-tab" onclick="setForecast('gap',this)">Top-down vs bottom-up</button>
-        </div>
+        
         <div class="channel-bars" id="fc-bars"><!-- filled by JS --></div>
         <div class="forecast-summary" id="fc-summary"><!-- filled by JS --></div>
         <div class="redact-note">Issuer names replaced with fictional names. Spend figures scaled proportionally. Methodology and structure are unchanged from the original model delivered to Finance.</div>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- Q3 Recovery full-width panel -->
   <div style="border-bottom:1px solid var(--rule);padding:56px 80px;background:var(--bg2);" class="fi">
@@ -744,15 +749,15 @@ footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-b
     </div>
   </section>
 
-    <section class="section fi" style="background:#F7F9FF;">
-    <div class="logo-strip-label">Platforms integrated in Morpheus</div>
-    <div class="logo-strip" style="margin-top:0;">
-      <div class="logo-item logo-partner"><img class="logo-img" src="https://logo.clearbit.com/meta.com" alt="Meta" onerror="this.style.display='none'"><span class="logo-name">Meta</span></div>
-      <div class="logo-item logo-partner"><img class="logo-img" src="https://logo.clearbit.com/google.com" alt="Google" onerror="this.style.display='none'"><span class="logo-name">Google</span></div>
-      <div class="logo-item logo-partner"><img class="logo-img" src="https://logo.clearbit.com/anthropic.com" alt="Anthropic" onerror="this.style.display='none'"><span class="logo-name">Anthropic</span></div>
-      <div class="logo-item logo-partner"><img class="logo-img" src="https://logo.clearbit.com/looker.com" alt="Looker" onerror="this.style.display='none'"><span class="logo-name">Looker</span></div>
-      <div class="logo-item logo-partner"><img class="logo-img" src="https://logo.clearbit.com/amazon.com" alt="AWS" onerror="this.style.display='none'"><span class="logo-name">AWS</span></div>
-      <div class="logo-item logo-partner"><img class="logo-img" src="https://logo.clearbit.com/notion.com" alt="Notion" onerror="this.style.display='none'"><span class="logo-name">Notion</span></div>
+  <section class="section fi" style="background:#F7F9FF;padding:40px 80px;">
+    <div class="logo-strip-label" style="margin-bottom:16px;">Platforms integrated</div>
+    <div class="logo-strip" style="margin-top:0;gap:28px;">
+      <div class="logo-item logo-partner"><img class="logo-img" src="https://unavatar.io/meta.com" alt="Meta" onerror="this.style.display='none'"><span class="logo-name">Meta</span></div>
+      <div class="logo-item logo-partner"><img class="logo-img" src="https://unavatar.io/google.com" alt="Google" onerror="this.style.display='none'"><span class="logo-name">Google</span></div>
+      <div class="logo-item logo-partner"><img class="logo-img" src="https://unavatar.io/anthropic.com" alt="Anthropic" onerror="this.style.display='none'"><span class="logo-name">Anthropic</span></div>
+      <div class="logo-item logo-partner"><img class="logo-img" src="https://unavatar.io/looker.com" alt="Looker" onerror="this.style.display='none'"><span class="logo-name">Looker</span></div>
+      <div class="logo-item logo-partner"><img class="logo-img" src="https://unavatar.io/aws.amazon.com" alt="AWS" onerror="this.style.display='none'"><span class="logo-name">AWS</span></div>
+      <div class="logo-item logo-partner"><img class="logo-img" src="https://unavatar.io/notion.so" alt="Notion" onerror="this.style.display='none'"><span class="logo-name">Notion</span></div>
     </div>
   </section>
 <section class="section fi" style="background:#F7F9FF;">
@@ -798,8 +803,8 @@ footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-b
           </div>
         </div>
         <div style="margin-top:24px;padding:20px 24px;background:var(--bg3);border-radius:10px;border:1px solid var(--rule);">
-          <div style="font-size:11px;font-weight:600;color:var(--dim);letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;">What this signals to a hiring org</div>
-          <p style="font-size:13px;color:var(--mid);line-height:1.72;">Most media leaders are still figuring out what prompts to run. I've already solved the harder problem — how to make AI output reliable enough to deploy to a team and trust it to run without supervision. That's a different capability, and it transfers to any org.</p>
+          <div style="font-size:12px;font-weight:600;color:var(--mid);letter-spacing:.07em;text-transform:uppercase;margin-bottom:12px;">The distinction</div>
+          <p style="font-size:14px;color:var(--mid);line-height:1.72;">Most performance leaders are using AI to write emails faster. This is different — structured skills that run on a schedule, produce a consistent output, and don't require me to touch them. The question isn't whether you can use AI. It's whether you can build something with it that works when you're not in the room.</p>
         </div>
       </div>
     </div>
@@ -838,7 +843,7 @@ footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-b
 
   <div class="resume-role">
     <div class="resume-role-header">
-      <img class="resume-role-logo" src="https://logo.clearbit.com/dealmaker.tech" alt="DealMaker" onerror="this.style.display='none'">
+      <img class="resume-role-logo" src="https://unavatar.io/dealmaker.tech" alt="DealMaker" onerror="this.style.display='none'">
       <div class="resume-role-header-text">
         <div class="resume-company">DealMaker</div>
         <div class="resume-title">VP, Head of Paid Media &amp; Retention</div>
@@ -858,7 +863,7 @@ footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-b
 
   <div class="resume-role">
     <div class="resume-role-header">
-      <img class="resume-role-logo" src="https://logo.clearbit.com/dentsu.com" alt="dentsu (MuteSix)" onerror="this.style.display='none'">
+      <img class="resume-role-logo" src="https://unavatar.io/dentsu.com" alt="dentsu (MuteSix)" onerror="this.style.display='none'">
       <div class="resume-role-header-text">
         <div class="resume-company">dentsu (MuteSix)</div>
         <div class="resume-title">SVP, Head of Paid Media</div>
@@ -875,7 +880,7 @@ footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-b
 
   <div class="resume-role">
     <div class="resume-role-header">
-      <img class="resume-role-logo" src="https://logo.clearbit.com/jetfuel.agency" alt="jetfuel.agency" onerror="this.style.display='none'">
+      <img class="resume-role-logo" src="https://unavatar.io/jetfuel.agency" alt="jetfuel.agency" onerror="this.style.display='none'">
       <div class="resume-role-header-text">
         <div class="resume-company">jetfuel.agency</div>
         <div class="resume-title">Head of Paid Media</div>
@@ -891,7 +896,7 @@ footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-b
 
   <div class="resume-role">
     <div class="resume-role-header">
-      <img class="resume-role-logo" src="https://logo.clearbit.com/thestripes.co" alt="Stripes Agency" onerror="this.style.display='none'">
+      <img class="resume-role-logo" src="https://unavatar.io/thestripes.co" alt="Stripes Agency" onerror="this.style.display='none'">
       <div class="resume-role-header-text">
         <div class="resume-company">Stripes Agency</div>
         <div class="resume-title">Group Director → Director, Performance Media</div>
@@ -906,7 +911,7 @@ footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-b
 
   <div class="resume-role">
     <div class="resume-role-header">
-      <img class="resume-role-logo" src="https://logo.clearbit.com/rpa.com" alt="Rubin Postaer and Associates (RPA)" onerror="this.style.display='none'">
+      <img class="resume-role-logo" src="https://unavatar.io/rpa.com" alt="Rubin Postaer and Associates (RPA)" onerror="this.style.display='none'">
       <div class="resume-role-header-text">
         <div class="resume-company">Rubin Postaer and Associates (RPA)</div>
         <div class="resume-title">Associate Director, Paid Social — American Honda Motors Company</div>
@@ -965,6 +970,7 @@ function showPage(id) {
   if (mnavEl) mnavEl.classList.add('active');
   window.scrollTo(0, 0);
   if (id === 'morpheus') { setTimeout(initChart, 100); setTimeout(initBars, 200); }
+  if (id === 'aiworkflows') { setTimeout(initBars, 150); }
   if (id === 'models') { setTimeout(initScenario, 100); setTimeout(initForecast, 150); }
 }
 
@@ -975,11 +981,10 @@ const obs = new IntersectionObserver(entries => {
 document.querySelectorAll('.fi').forEach(el => obs.observe(el));
 
 // ── BAR CHART ──
-let barsInited = false;
 function initBars() {
-  if (barsInited) return; barsInited = true;
   document.querySelectorAll('.bar-fill').forEach((b, i) => {
-    setTimeout(() => { b.style.width = b.dataset.w + '%'; }, i * 100);
+    b.style.width = '0%';
+    setTimeout(() => { b.style.width = b.dataset.w + '%'; }, i * 120);
   });
 }
 
