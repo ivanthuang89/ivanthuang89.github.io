@@ -39,10 +39,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 48px;height:60px;d
 .page.active{display:block;}
 
 /* ── HOME PAGE ── */
-.hero{min-height:calc(100vh - 60px);display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;padding:0 80px;position:relative;overflow:hidden;}
-.hero::before{content:'';position:absolute;top:0;right:0;width:50%;height:100%;background:linear-gradient(135deg,#F0F5FF 0%,#E8F0FF 100%);z-index:0;}
-.hero-left{position:relative;z-index:1;}
-.hero-right{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.hero{min-height:calc(100vh - 60px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:100px 80px 72px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{display:none;}
+.hero-left{width:100%;display:flex;flex-direction:column;align-items:center;}
 .hero-byline{display:flex;align-items:center;gap:12px;margin-bottom:24px;}
 .hero-avatar{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--rule);flex-shrink:0;}
 .hero-byline-text{text-align:left;}
@@ -50,9 +49,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 48px;height:60px;d
 .hero-byline-role{font-size:12px;color:var(--mid);margin-top:1px;font-weight:400;}
 h1{font-family:'Inter',system-ui,sans-serif;font-size:clamp(36px,5.5vw,72px);font-weight:800;line-height:1.03;letter-spacing:-.045em;color:var(--text);max-width:18ch;margin:0 auto 32px;}
 h1 em{font-style:normal;color:#0066FF;}
-.hero-sub{font-size:16px;font-weight:400;line-height:1.72;color:var(--mid);max-width:42ch;margin:0 0 32px;}
+.hero-sub{font-size:16px;font-weight:400;line-height:1.72;color:var(--mid);max-width:52ch;margin:0 auto 32px;}
 .hero-sub strong{color:var(--text);font-weight:500;}
-.hero-actions{display:flex;gap:10px;flex-wrap:wrap;}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
 .btn-primary{font-size:14px;font-weight:600;text-decoration:none;padding:11px 28px;border-radius:7px;background:#0066FF;color:#fff;transition:background .15s;display:flex;align-items:center;gap:8px;cursor:pointer;border:none;}
 .btn-primary:hover{background:#0052CC;}
 .btn-primary svg{width:16px;height:16px;fill:#fff;}
@@ -63,11 +62,6 @@ h1 em{font-style:normal;color:#0066FF;}
 @keyframes bob{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(5px);}}
 
 
-.hero-metric{background:#fff;border:1px solid var(--rule);border-radius:10px;padding:20px 20px;transition:border-color .15s,box-shadow .15s;}
-.hero-metric:hover{border-color:#0066FF;box-shadow:0 2px 16px rgba(0,102,255,.08);}
-.hero-metric-n{font-size:32px;font-weight:800;color:#0A0A0A;letter-spacing:-.045em;line-height:1;margin-bottom:5px;}
-.hero-metric-n span{color:#0066FF;}
-.hero-metric-l{font-size:11px;color:#888;line-height:1.4;}
 
 /* STAT RAIL */
 .stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);background:#fff;}
@@ -340,11 +334,6 @@ footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-b
       <button class="btn-ghost" onclick="showPage('resume')">View Resume</button>
     </div>
   </div>
-  <div class="hero-right">
-    <div class="hero-metric"><div class="hero-metric-n">0<span>M+</span></div><div class="hero-metric-l">Annual paid media spend managed</div></div>
-    <div class="hero-metric"><div class="hero-metric-n">13<span>yr</span></div><div class="hero-metric-l">Performance media career</div></div>
-    <div class="hero-metric"><div class="hero-metric-n">25</div><div class="hero-metric-l">Person org at DealMaker</div></div>
-    <div class="hero-metric"><div class="hero-metric-n">.8<span>M</span></div><div class="hero-metric-l">Publisher contract renegotiated</div></div>
   </div>
 </section>
 
