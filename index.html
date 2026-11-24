@@ -94,7 +94,8 @@ h1 em{font-style:italic;color:var(--mid);}
 .page-header p strong{color:var(--text);font-weight:500;}
 
 /* VIDEO */
-.video-wrap{position:relative;width:100%;aspect-ratio:16/9;background:#000;overflow:hidden;border-bottom:1px solid var(--rule);}
+.video-outer{padding:0 80px 0;border-bottom:1px solid var(--rule);background:var(--bg);}
+.video-wrap{position:relative;width:100%;max-width:900px;margin:0 auto;aspect-ratio:16/9;background:#000;overflow:hidden;border-radius:8px;}
 .video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:none;}
 .video-caption{padding:14px 80px;font-size:12px;color:var(--dim);border-bottom:1px solid var(--rule);}
 
@@ -261,6 +262,7 @@ footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-b
   .work-section{padding:48px 24px;}
   .work-grid{grid-template-columns:1fr;}
   .page-header{padding:40px 24px;}
+  .video-outer{padding:0 24px;}
   .video-caption{padding:12px 24px;}
   .section{padding:48px 24px;}
   .ev-grid{grid-template-columns:1fr;}
@@ -382,9 +384,10 @@ footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-b
     <p>Performance media intelligence platform. Built solo as VP of Performance Media at DealMaker, March–November 2026. <strong>666 commits · 32,000 lines of TypeScript · 159 production deploys.</strong> Zero engineering headcount.</p>
   </div>
 
+  <div class="video-outer"><div style="padding:40px 0 32px;">
   <div class="video-wrap">
     <iframe src="https://www.youtube.com/embed/Xwl0vKHphgw?rel=0&modestbranding=1&color=white" title="Morpheus product demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-  </div>
+  </div></div></div>
   <p class="video-caption">Screens recreated with illustrative data. Real publisher names anonymized. ~95 seconds.</p>
 
   <section class="section fi">
