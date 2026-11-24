@@ -299,6 +299,7 @@ footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-b
     <button class="nav-link" onclick="showPage('models')" id="nav-models">Models</button>
     <button class="nav-link" onclick="showPage('pubnet')" id="nav-pubnet">Publisher Network</button>
     <button class="nav-link" onclick="showPage('perfmodel')" id="nav-perfmodel">Performance Model</button>
+    <button class="nav-link" onclick="showPage('aiworkflows')" id="nav-aiworkflows">AI Workflows</button>
     <button class="nav-link" onclick="showPage('resume')" id="nav-resume">Resume</button>
   </div>
   <a class="nav-cta" href="mailto:ivan.t.huang@gmail.com">Get in touch</a>
@@ -372,6 +373,13 @@ footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-b
         <p>Designed a managed ad allocation product with pre-funded issuer treasury accounts. Piloted it, managed a $580K operational incident, and ran a controlled three-account relaunch — all while running the broader media org.</p>
         <div class="work-card-arrow"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M5 12h14m-7-7 7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <div class="work-card-stat"><strong>$580K</strong> incident resolved · relaunched in one quarter</div>
+      </div>
+      <div class="work-card" onclick="showPage('aiworkflows')">
+        <div class="work-card-tag"><span>●</span> AI operationalization</div>
+        <h3>AI Workflows</h3>
+        <p>Built and deployed a skills hub, four production Claude skills, a daily standup automation, and a weekly product adoption report — operationalizing AI across a 25-person org, not just using it personally.</p>
+        <div class="work-card-arrow"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M5 12h14m-7-7 7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="work-card-stat"><strong>4</strong> skills deployed org-wide · used weekly</div>
       </div>
     </div>
   </section>
@@ -795,6 +803,119 @@ footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-b
   </footer>
 </div>
 
+
+<!-- ══════════════ AI WORKFLOWS ══════════════ -->
+<div id="page-aiworkflows" class="page">
+  <div class="page-header">
+    <button class="page-header-back" onclick="showPage('home')">
+      <svg viewBox="0 0 24 24" stroke-width="2"><path d="M19 12H5m7-7-7 7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Back
+    </button>
+    <h2>AI Workflows</h2>
+    <p>Most leaders adopt AI as a personal productivity tool. I operationalized it across a 25-person org — building production-grade skills, automations, and reporting infrastructure that run weekly without my involvement.</p>
+  </div>
+
+  <section class="section fi">
+    <h2 class="section-h">What was built</h2>
+    <p class="section-sub">Four deployed skills, a skills hub, a daily automation, and a weekly adoption report — all in production, all actively used.</p>
+
+    <div class="ev-grid" style="margin-bottom:0;">
+      <div class="ev-cell fi">
+        <div class="ev-n" style="font-size:36px;margin-bottom:12px;">Meta LP<br>Audit</div>
+        <div class="ev-l">Pre-launch compliance skill</div>
+        <div class="ev-s">Built for the sales and creative team. Claude reviews a Meta landing page against DealMaker's compliance checklist before any campaign goes live. Catches issues that previously only surfaced after launch — after spend had already been wasted.</div>
+      </div>
+      <div class="ev-cell fi">
+        <div class="ev-n" style="font-size:36px;margin-bottom:12px;">Delegation<br>Brief</div>
+        <div class="ev-l">Work distribution skill</div>
+        <div class="ev-s">Structured prompt that takes a deliverable and generates a brief each recipient can upload into their own Claude session and execute independently. Used for documentation sprints, knowledge base builds, and any project requiring contributions from people who weren't in the original meetings.</div>
+      </div>
+      <div class="ev-cell fi">
+        <div class="ev-n" style="font-size:36px;margin-bottom:12px;">Daily<br>Standup</div>
+        <div class="ev-l">Slack canvas automation</div>
+        <div class="ev-s">Automated daily standup that writes directly to a Slack canvas used as a live task tracker. The canvas updates without anyone touching it — open it, see where things stand. Built to replace the weekly status meeting that produced the same information a day late.</div>
+      </div>
+      <div class="ev-cell fi">
+        <div class="ev-n" style="font-size:36px;margin-bottom:12px;">Intake<br>Triage</div>
+        <div class="ev-l">Inbound request management skill</div>
+        <div class="ev-s">Built after auditing Skylar's request volume into the org — high-frequency, mixed-priority asks arriving with no routing logic. The skill categorizes incoming requests into three lanes (immediate, scheduled, delegated) and surfaces the right next action without requiring a meeting to triage it.</div>
+      </div>
+      <div class="ev-cell fi">
+        <div class="ev-n" style="font-size:36px;margin-bottom:12px;">Skills<br>Hub</div>
+        <div class="ev-l">Internal deployment infrastructure</div>
+        <div class="ev-s">An HTML page deployed to Cloudflare Pages that surfaces all four skills in one place — instructions, trigger phrases, and usage examples. Built so any team member can find and use the right skill without asking Ivan what prompts to run. The distribution layer for everything above.</div>
+      </div>
+      <div class="ev-cell fi">
+        <div class="ev-n" style="font-size:36px;margin-bottom:12px;">Adoption<br>Report</div>
+        <div class="ev-l">Weekly product usage reporting</div>
+        <div class="ev-s">Automated weekly report posted to a Slack channel tracking adoption of CPT, CIP, and Morpheus across the org via Userpilot. The report that surfaced the Morpheus #1-of-15 stat and the CIP crossover moment — both of which became executive talking points.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fi" style="background:var(--bg2);">
+    <h2 class="section-h">The pattern</h2>
+    <p class="section-sub">Every workflow followed the same logic: identify where the team was spending time on something that shouldn't require a person, build the minimum viable automation, deploy it, and measure adoption.</p>
+    <div class="build-grid">
+      <div>
+        <div class="loop-label">How each workflow was built</div>
+        <div class="loop-steps">
+          <div class="loop-step"><div class="loop-num">1</div><div class="loop-text"><h4>Identify the friction</h4><p>Not "where can we use AI" but "where is the team doing something repetitive that produces a known output." Pre-launch reviews, status updates, request routing — all had predictable outputs.</p></div></div>
+          <div class="loop-step"><div class="loop-num">2</div><div class="loop-text"><h4>Write the skill in Claude</h4><p>Each skill is a Claude prompt with a trigger phrase, a structured output format, and a scope definition that tells it exactly what to include and exclude. No code, no API calls — just precise instruction sets.</p></div></div>
+          <div class="loop-step"><div class="loop-num">3</div><div class="loop-text"><h4>Deploy via skills hub</h4><p>Skills land in the hub so anyone can find them. The hub is a single HTML page on Cloudflare — no login, no onboarding. Open it, find the skill, run it.</p></div></div>
+          <div class="loop-step"><div class="loop-num">4</div><div class="loop-text"><h4>Measure and report</h4><p>The adoption report tracked weekly usage across all tools. That data became the evidence used to justify continued investment in internal tooling — and was cited directly in ELT conversations.</p></div></div>
+        </div>
+      </div>
+      <div>
+        <div class="bar-section-label">What each skill replaced</div>
+        <div class="bars">
+          <div class="bar-row">
+            <span class="bar-label">Meta LP Audit</span>
+            <div class="bar-track"><div class="bar-fill" data-w="85"></div></div>
+            <span class="bar-val">Manual review</span>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">Delegation Brief</span>
+            <div class="bar-track"><div class="bar-fill" data-w="70"></div></div>
+            <span class="bar-val">Kick-off meetings</span>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">Daily Standup</span>
+            <div class="bar-track"><div class="bar-fill" data-w="90"></div></div>
+            <span class="bar-val">Status meetings</span>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">Intake Triage</span>
+            <div class="bar-track"><div class="bar-fill" data-w="75"></div></div>
+            <span class="bar-val">Ad hoc Slack threads</span>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">Adoption Report</span>
+            <div class="bar-track"><div class="bar-fill" data-w="95"></div></div>
+            <span class="bar-val">Manual Userpilot pulls</span>
+          </div>
+        </div>
+        <div style="margin-top:24px;padding:20px 24px;background:var(--bg3);border-radius:10px;border:1px solid var(--rule);">
+          <div style="font-size:11px;font-weight:600;color:var(--dim);letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;">What this signals to a hiring org</div>
+          <p style="font-size:13px;color:var(--mid);line-height:1.72;">Most media leaders are still figuring out what prompts to run. I've already solved the harder problem — how to make AI output reliable enough to deploy to a team and trust it to run without supervision. That's a different capability, and it transfers to any org.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-left">
+      <img class="footer-avatar" src="data:image/jpeg;base64,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" alt="Ivan Huang">
+      <div class="footer-id"><h3>Ivan Huang</h3><p>VP Performance Media · Los Angeles</p></div>
+    </div>
+    <div class="footer-actions">
+      <a href="https://www.linkedin.com/in/ivanthuang/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:ivan.t.huang@gmail.com" class="cta">Get in touch</a>
+    </div>
+    <p class="footer-note">All skills and automations described were built for and deployed at DealMaker. Workflow details have been generalized where needed to protect internal process information.</p>
+  </footer>
+</div>
+
 <!-- ══════════════ RESUME ══════════════ -->
 <div id="page-resume" class="page">
 <div class="resume-wrap">
@@ -1145,6 +1266,10 @@ document.addEventListener('DOMContentLoaded', () => {
   <button class="mobile-nav-btn" id="mnav-pubnet" onclick="showPage('pubnet')">
     <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-linecap="round" stroke-linejoin="round"/><line x1="2" y1="12" x2="22" y2="12" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke-linecap="round" stroke-linejoin="round"/></svg>
     Network
+  </button>
+  <button class="mobile-nav-btn" id="mnav-aiworkflows" onclick="showPage('aiworkflows')">
+    <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    AI
   </button>
   <button class="mobile-nav-btn" id="mnav-resume" onclick="showPage('resume')">
     <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="7" r="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
