@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%231a1a1a'/><text x='50' y='68' font-family='Inter,system-ui,sans-serif' font-size='52' font-weight='700' text-anchor='middle' fill='%234FE0AE'>m</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%230066FF'/><text x='50' y='70' font-family='Inter,system-ui,sans-serif' font-size='58' font-weight='800' text-anchor='middle' fill='white'>I</text></svg>">
 <style>
 :root{
   --bg:#FFFFFF;--bg2:#F7F7F7;--bg3:#F0F0F0;
@@ -48,7 +48,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 48px;height:60px;d
 .hero-byline-text{text-align:left;}
 .hero-byline-name{font-size:15px;font-weight:600;color:var(--text);letter-spacing:-.02em;line-height:1.2;}
 .hero-byline-role{font-size:12px;color:var(--mid);margin-top:1px;font-weight:400;}
-h1{font-family:'Inter',system-ui,sans-serif;font-size:clamp(40px,6vw,80px);font-weight:800;line-height:1.02;letter-spacing:-.05em;color:var(--text);max-width:18ch;margin:0 auto 32px;}
+h1{font-family:'Inter',system-ui,sans-serif;font-size:clamp(28px,4vw,52px);font-weight:800;line-height:1.1;letter-spacing:-.04em;color:var(--text);max-width:22ch;margin:0 auto 32px;}
 h1 em{font-style:normal;color:#0066FF;}
 .hero-sub{font-size:16px;font-weight:400;line-height:1.72;color:var(--mid);max-width:52ch;margin:0 auto 32px;}
 .hero-sub strong{color:var(--text);font-weight:500;}
@@ -187,6 +187,7 @@ blockquote cite{font-size:14px;font-style:normal;color:var(--mid);}
 .sc-result-n{font-family:'DM Serif Display',serif;font-size:28px;letter-spacing:-.03em;line-height:1;}
 .sc-result-n.positive{color:#0066FF;}
 .sc-result-n.negative{color:#E5675E;}
+.sc-result-n.negative{color:#E5675E;}
 .sc-result-l{font-size:13px;color:var(--mid);}
 .sc-formula{margin-top:16px;padding-top:16px;border-top:1px solid var(--rule);font-size:13px;color:var(--mid);line-height:1.6;}
 
@@ -212,7 +213,7 @@ blockquote cite{font-size:14px;font-style:normal;color:var(--mid);}
 /* ── RESUME PAGE ── */
 .resume-wrap{max-width:860px;margin:0 auto;padding:72px 80px;}
 .resume-actions{display:flex;gap:10px;margin-bottom:48px;}
-.resume-print{font-size:13px;font-weight:500;text-decoration:none;padding:9px 20px;border-radius:6px;background:var(--teal);color:#09090B;cursor:pointer;border:none;transition:background .15s;}
+.resume-print{font-size:13px;font-weight:500;text-decoration:none;padding:9px 20px;border-radius:6px;background:#0066FF;color:#fff;cursor:pointer;border:none;transition:background .15s;}
 .resume-print:hover{background:#3ecf9d;}
 .resume-dl{font-size:13px;color:var(--mid);text-decoration:none;padding:9px 20px;border-radius:6px;border:1px solid var(--rule);transition:border-color .15s,color .15s;}
 .resume-dl:hover{border-color:var(--rule2);color:var(--text);}
@@ -319,6 +320,8 @@ footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-b
   h1{font-size:clamp(32px,9vw,56px);}
   .hero-byline-name{font-size:16px;}
   .resume-name{font-size:clamp(36px,10vw,56px);}
+  .cs-layout{grid-template-columns:1fr;gap:28px;}
+  .sc-tabs-row{grid-template-columns:repeat(2,1fr);}
   .resume-company{font-size:15px;}
   .resume-title{font-size:14px;}
   .resume-bullets li{font-size:14px;}
@@ -425,13 +428,13 @@ footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-b
         <h3>Career</h3>
         <p>Starcom → PHD → RPA → Stripes → jetfuel → dentsu MuteSix → DealMaker. VP and above since 2021, managing up to $100M+ in annual media spend and teams of 70+ across holdcos and independents.</p>
         <div class="career-logo-strip">
-          <div class="career-logo-pill"><img src="https://unavatar.io/starcom.com" alt="Starcom" onerror="this.style.display='none'">Starcom</div>
-          <div class="career-logo-pill"><img src="https://unavatar.io/phdmedia.com" alt="PHD" onerror="this.style.display='none'">PHD</div>
-          <div class="career-logo-pill"><img src="https://unavatar.io/rpa.com" alt="RPA" onerror="this.style.display='none'">RPA</div>
-          <div class="career-logo-pill"><img src="https://unavatar.io/thestripes.co" alt="Stripes" onerror="this.style.display='none'">Stripes</div>
-          <div class="career-logo-pill"><img src="https://unavatar.io/jetfuel.agency" alt="jetfuel" onerror="this.style.display='none'">jetfuel</div>
-          <div class="career-logo-pill"><img src="https://unavatar.io/mutesix.com" alt="MuteSix" onerror="this.style.display='none'">MuteSix</div>
-          <div class="career-logo-pill"><img src="https://unavatar.io/dealmaker.tech" alt="DealMaker" onerror="this.style.display='none'">DealMaker</div>
+          <div class="career-logo-pill"><img src="https://favicon.im/starcom.com?larger=true" alt="Starcom" onerror="this.style.display='none'">Starcom</div>
+          <div class="career-logo-pill"><img src="https://favicon.im/phdmedia.com?larger=true" alt="PHD" onerror="this.style.display='none'">PHD</div>
+          <div class="career-logo-pill"><img src="https://favicon.im/rpa.com?larger=true" alt="RPA" onerror="this.style.display='none'">RPA</div>
+          <div class="career-logo-pill"><img src="https://favicon.im/thestripes.co?larger=true" alt="Stripes" onerror="this.style.display='none'">Stripes</div>
+          <div class="career-logo-pill"><img src="https://favicon.im/jetfuel.agency?larger=true" alt="jetfuel" onerror="this.style.display='none'">jetfuel</div>
+          <div class="career-logo-pill"><img src="https://favicon.im/mutesix.com?larger=true" alt="MuteSix" onerror="this.style.display='none'">MuteSix</div>
+          <div class="career-logo-pill"><img src="https://favicon.im/dealmaker.tech?larger=true" alt="DealMaker" onerror="this.style.display='none'">DealMaker</div>
         </div>
         <div class="work-card-arrow"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M5 12h14m-7-7 7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <div class="work-card-stat"><strong>5</strong> companies · VP+ since 2021</div>
@@ -569,124 +572,101 @@ footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-b
       Back
     </button>
     <h2>Financial Models</h2>
-    <p>Two models built from scratch and adopted as company planning baselines. <strong>DAN Fee Scenario Planner</strong> — a 7-scenario media margin framework built for the CFO. <strong>Q2 Revenue Forecast</strong> — a dual-view forecast across 50+ client accounts with weekly pacing.</p>
+    <p>Three models built from scratch and adopted as planning baselines. Each one solved a problem that spreadsheets and intuition couldn't.</p>
   </div>
+
   <div style="padding:14px 80px;background:#EEF4FF;border-bottom:2px solid #CCE0FF;display:flex;align-items:center;gap:10px;">
     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0066FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-    <span style="font-size:13px;color:#0052CC;font-weight:500;">All numbers in these models are made up. The inputs, outputs, and scenario labels exist to demonstrate the tool's structure and logic — not to represent real company data.</span>
+    <span style="font-size:13px;color:#0052CC;font-weight:500;">All numbers are made up. The inputs, outputs, and labels exist to demonstrate structure and logic — not to represent real company data.</span>
   </div>
 
-  <section class="section fi" style="border-bottom:3px solid var(--rule);">
-    <div class="model-num-label" style="font-size:12px;font-weight:700;color:#0066FF;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;">Case study 01</div>
-    <div>
-      
-      <h3>Media Fee Scenario Planner</h3>
-      <p>Built in response to a quarterly fee shortfall — the existing model had no way to stress-test alternatives. The planner models multiple fee structures against a configurable goal, issuer mix, and spend split. Inputs below are illustrative.</p>
+  <!-- ── CASE STUDY 01 ── -->
+  <section class="section fi" style="border-bottom:2px solid var(--rule);">
+    <div class="cs-label">Case study 01</div>
+    <h3 class="cs-h">Media Fee Scenario Planner</h3>
+    <p class="cs-p">Built in response to a quarterly fee shortfall — the existing model had no way to stress-test alternatives. Models four fee structures against a configurable goal, spend mix, and deal count.</p>
 
-      <div class="scenario-wrap">
-        <div class="scenario-controls">
-          <div class="sc-group">
-            <span class="sc-label">Quarterly fee goal ($)</span>
-            <input class="sc-input" id="sc-goal" type="number" value="850000" step="50000" oninput="calcScenario()">
-          
-          <div class="sc-group">
-            <span class="sc-label">Total paid spend ($)</span>
-            <input class="sc-input" id="sc-spend" type="number" value="22000000" step="1000000" oninput="calcScenario()">
-          </div>
-          <div class="sc-group">
-            <span class="sc-label">Ad network share (%)</span>
-            <input class="sc-input" id="sc-anshare" type="number" value="18" step="1" min="1" max="100" oninput="calcScenario()">
-          </div>
-          <div class="sc-group">
-            <span class="sc-label">Active deals</span>
-            <input class="sc-input" id="sc-deals" type="number" value="35" step="1" oninput="calcScenario()">
-          </div>
+    <div class="cs-layout">
+      <div class="cs-left">
+        <div class="sc-row">
+          <label class="sc-label">Quarterly fee goal</label>
+          <div class="sc-input-wrap"><span class="sc-prefix">$</span><input class="sc-input sc-dollar" id="sc-goal" type="number" value="850000" step="50000" oninput="calcScenario()"></div>
         </div>
-        <div class="scenario-tabs">
-          <button class="sc-tab active" onclick="setScenario('today',this)">Baseline (15% AN)</button>
-          <button class="sc-tab" onclick="setScenario('flat',this)">Flat 5% all spend</button>
-          <button class="sc-tab" onclick="setScenario('tworate',this)">Two-rate</button>
-          <button class="sc-tab" onclick="setScenario('agency',this)">Agency-style</button>
+        <div class="sc-row">
+          <label class="sc-label">Total paid spend</label>
+          <div class="sc-input-wrap"><span class="sc-prefix">$</span><input class="sc-input sc-dollar" id="sc-spend" type="number" value="22000000" step="1000000" oninput="calcScenario()"></div>
         </div>
-        <div class="scenario-results" id="sc-results">
-          <!-- filled by JS -->
+        <div class="sc-row">
+          <label class="sc-label">Ad network share</label>
+          <div class="sc-input-wrap"><input class="sc-input" id="sc-anshare" type="number" value="18" step="1" min="1" max="100" oninput="calcScenario()"><span class="sc-suffix">%</span></div>
         </div>
+        <div class="sc-row">
+          <label class="sc-label">Active deals</label>
+          <div class="sc-input-wrap"><input class="sc-input" id="sc-deals" type="number" value="35" step="1" oninput="calcScenario()"></div>
+        </div>
+      </div>
+      <div class="cs-right">
+        <div class="sc-tabs-row">
+          <button class="sc-tab2 active" onclick="setScenario('today',this)">Baseline<span>15% AN only</span></button>
+          <button class="sc-tab2" onclick="setScenario('flat',this)">Flat rate<span>5% all spend</span></button>
+          <button class="sc-tab2" onclick="setScenario('tworate',this)">Two-rate<span>10% AN · 3% other</span></button>
+          <button class="sc-tab2" onclick="setScenario('agency',this)">Agency<span>9% all spend</span></button>
+        </div>
+        <div class="sc-results2" id="sc-results"></div>
         <div class="sc-formula" id="sc-formula"></div>
       </div>
-    <
+    </div>
   </section>
 
-  <section class="section fi" style="border-bottom:3px solid var(--rule);">
-    <div class="model-num-label" style="font-size:12px;font-weight:700;color:#0066FF;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;">Case study 02</div>
-    /div>
+  <!-- ── CASE STUDY 02 ── -->
+  <section class="section fi" style="border-bottom:2px solid var(--rule);">
+    <div class="cs-label">Case study 02</div>
+    <h3 class="cs-h">Q2 Revenue Forecast</h3>
+    <p class="cs-p">Dual-view forecast — top-down (strategy target) and bottom-up (confirmed client budgets) — with a weekly pacing log tracking changes Monday to Monday. Built when no planning baseline existed. Data below uses fictional names and scaled figures.</p>
 
-    <!-- Q2 FORECAST MODEL -->
-    <div>
-      
-      <h3>Q2 Revenue Forecast</h3>
-      <p>Dual-view forecast — top-down (strategy target) and bottom-up (confirmed client budgets) — with a weekly pacing log tracking changes Monday to Monday. Built when no planning baseline existed; became the standard. Data below uses fictional client names and scaled figures.</p>
-
-      <div class="forecast-wrap">
-        <div class="forecast-tabs">
-          <button class="fc-tab active" onclick="setForecast('mix',this)">Channel mix</button>
-          <button class="fc-tab" onclick="setForecast('gap',this)">Top-down vs bottom-up</button>
-        
-        <div class="channel-bars" id="fc-bars"><!-- filled by JS --></div>
-        <div class="forecast-summary" id="fc-summary"><!-- filled by JS --></div>
-        <div class="redact-note">Issuer names replaced with fictional names. Spend figures scaled proportionally. Methodology and structure are unchanged from the original model delivered to Finance.</div>
+    <div class="cs-layout">
+      <div class="cs-left">
+        <div class="fc-tabs-col">
+          <button class="fc-tab2 active" onclick="setForecast('mix',this)">Channel mix</button>
+          <button class="fc-tab2" onclick="setForecast('gap',this)">Top-down vs bottom-up</button>
+        </div>
+      </div>
+      <div class="cs-right">
+        <div class="channel-bars" id="fc-bars"></div>
+        <div class="forecast-summary" id="fc-summary"></div>
+        <div class="cs-note">Issuer names replaced with fictional names. Spend figures scaled proportionally. Methodology unchanged from the original model delivered to Finance.</div>
       </div>
     </div>
   </section>
 
-  <!-- Q3 Recovery full-width panel -->
-  <div style="border-bottom:1px solid var(--rule);padding:56px 80px;background:var(--bg2);" class="fi">
-    <div class="q3-grid" style="display:grid;grid-template-columns:1fr 2fr;gap:64px;align-items:start;max-width:1200px;">
-      <div>
-        <div class="model-panel-label">Case study 03</div>
-        <h3 style="font-family:'DM Serif Display',serif;font-size:32px;font-weight:400;letter-spacing:-.025em;margin-bottom:14px;line-height:1.1;">Q3 Revenue Recovery</h3>
-        <p style="font-size:14px;color:var(--mid);line-height:1.75;margin-bottom:28px;">Led an org-wide recovery plan to close a material gap between forecast and goal — diversifying accountability across four strategy director pods rather than concentrating on one account. Numbers below are illustrative examples of the planning structure, not actual figures.</p>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border-radius:10px;overflow:hidden;margin-top:8px;">
-          <div style="background:var(--bg3);padding:18px 20px;"><div style="font-family:'DM Serif Display',serif;font-size:28px;color:var(--teal);letter-spacing:-.03em;line-height:1;margin-bottom:4px;">$X.XM</div><div style="font-size:13px;color:var(--mid);">gap to close</div></div>
-          <div style="background:var(--bg3);padding:18px 20px;"><div style="font-family:'DM Serif Display',serif;font-size:28px;color:var(--teal);letter-spacing:-.03em;line-height:1;margin-bottom:4px;">4</div><div style="font-size:13px;color:var(--mid);">strategy director pods accountable</div></div>
-          <div style="background:var(--bg3);padding:18px 20px;"><div style="font-family:'DM Serif Display',serif;font-size:28px;color:var(--teal);letter-spacing:-.03em;line-height:1;margin-bottom:4px;">$XXX K</div><div style="font-size:13px;color:var(--mid);">DAN fee target set</div></div>
-          <div style="background:var(--bg3);padding:18px 20px;"><div style="font-family:'DM Serif Display',serif;font-size:28px;color:var(--teal);letter-spacing:-.03em;line-height:1;margin-bottom:4px;">3</div><div style="font-size:13px;color:var(--mid);">workstreams: legal, BD, affiliate</div></div>
+  <!-- ── CASE STUDY 03 ── -->
+  <section class="section fi" style="border-bottom:2px solid var(--rule);">
+    <div class="cs-label">Case study 03</div>
+    <h3 class="cs-h">Q3 Revenue Recovery</h3>
+    <p class="cs-p">Led an org-wide recovery plan to close a material gap between forecast and goal — diversifying accountability across four strategy director pods rather than concentrating on one account. Numbers below are illustrative.</p>
+
+    <div class="cs-layout">
+      <div class="cs-left">
+        <div class="cs-stats-grid">
+          <div class="cs-stat"><div class="cs-stat-n">$X.XM</div><div class="cs-stat-l">gap to close</div></div>
+          <div class="cs-stat"><div class="cs-stat-n">4</div><div class="cs-stat-l">strategy director pods</div></div>
+          <div class="cs-stat"><div class="cs-stat-n">$XXXK</div><div class="cs-stat-l">DAN fee target set</div></div>
+          <div class="cs-stat"><div class="cs-stat-n">3</div><div class="cs-stat-l">workstreams</div></div>
         </div>
       </div>
-      <div>
-        <div style="font-size:11px;font-weight:500;color:var(--mid);letter-spacing:.06em;text-transform:uppercase;margin-bottom:20px;">Recovery levers by workstream</div>
-        <div style="display:flex;flex-direction:column;gap:0;">
-          <div style="display:grid;grid-template-columns:180px 1fr 70px;align-items:center;gap:14px;padding:10px 0;border-top:1px solid var(--rule);">
-            <span style="font-size:13px;color:var(--mid);">Affiliate growth</span>
-            <div style="background:var(--bg3);border-radius:3px;height:6px;overflow:hidden;"><div style="height:100%;border-radius:3px;background:var(--teal);width:72%;"></div></div>
-            <span style="font-size:12px;color:var(--dim);text-align:right;">Primary</span>
-          </div>
-          <div style="display:grid;grid-template-columns:180px 1fr 70px;align-items:center;gap:14px;padding:10px 0;border-top:1px solid var(--rule);">
-            <span style="font-size:13px;color:var(--mid);">BD publisher ramp</span>
-            <div style="background:var(--bg3);border-radius:3px;height:6px;overflow:hidden;"><div style="height:100%;border-radius:3px;background:var(--teal);width:58%;"></div></div>
-            <span style="font-size:12px;color:var(--dim);text-align:right;">Primary</span>
-          </div>
-          <div style="display:grid;grid-template-columns:180px 1fr 70px;align-items:center;gap:14px;padding:10px 0;border-top:1px solid var(--rule);">
-            <span style="font-size:13px;color:var(--mid);">Strategy director pods</span>
-            <div style="background:var(--bg3);border-radius:3px;height:6px;overflow:hidden;"><div style="height:100%;border-radius:3px;background:#3B82F6;width:85%;"></div></div>
-            <span style="font-size:12px;color:var(--dim);text-align:right;">Accountability</span>
-          </div>
-          <div style="display:grid;grid-template-columns:180px 1fr 70px;align-items:center;gap:14px;padding:10px 0;border-top:1px solid var(--rule);">
-            <span style="font-size:13px;color:var(--mid);">Legal unblocking</span>
-            <div style="background:var(--bg3);border-radius:3px;height:6px;overflow:hidden;"><div style="height:100%;border-radius:3px;background:#F59E0B;width:40%;"></div></div>
-            <span style="font-size:12px;color:var(--dim);text-align:right;">Enabler</span>
-          </div>
-          <div style="display:grid;grid-template-columns:180px 1fr 70px;align-items:center;gap:14px;padding:10px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);">
-            <span style="font-size:13px;color:var(--mid);">Publisher reallocation</span>
-            <div style="background:var(--bg3);border-radius:3px;height:6px;overflow:hidden;"><div style="height:100%;border-radius:3px;background:#F59E0B;width:30%;"></div></div>
-            <span style="font-size:12px;color:var(--dim);text-align:right;">Structural</span>
-          </div>
+      <div class="cs-right">
+        <div class="cs-bar-label">Recovery levers by workstream</div>
+        <div class="cs-bars">
+          <div class="cs-bar-row"><span class="cs-bar-name">Affiliate growth</span><div class="cs-bar-track"><div class="cs-bar-fill" style="width:72%;background:#0066FF;"></div></div><span class="cs-bar-tag cs-tag-primary">Primary</span></div>
+          <div class="cs-bar-row"><span class="cs-bar-name">BD publisher ramp</span><div class="cs-bar-track"><div class="cs-bar-fill" style="width:58%;background:#0066FF;"></div></div><span class="cs-bar-tag cs-tag-primary">Primary</span></div>
+          <div class="cs-bar-row"><span class="cs-bar-name">Strategy director pods</span><div class="cs-bar-track"><div class="cs-bar-fill" style="width:85%;background:#0066FF;"></div></div><span class="cs-bar-tag cs-tag-acct">Accountability</span></div>
+          <div class="cs-bar-row"><span class="cs-bar-name">Legal unblocking</span><div class="cs-bar-track"><div class="cs-bar-fill" style="width:40%;background:#F59E0B;"></div></div><span class="cs-bar-tag cs-tag-en">Enabler</span></div>
+          <div class="cs-bar-row"><span class="cs-bar-name">Publisher reallocation</span><div class="cs-bar-track"><div class="cs-bar-fill" style="width:30%;background:#F59E0B;"></div></div><span class="cs-bar-tag cs-tag-en">Structural</span></div>
         </div>
-        <div style="margin-top:20px;font-size:12px;color:var(--dim);line-height:1.65;padding:14px 18px;background:var(--bg3);border-radius:8px;border-left:2px solid var(--dim);">
-          Framed the gap as a shared org problem — not an ad network shortfall — with joint accountability across Marketing Services leadership, strategy directors, creative, and paid media.
-        </div>
+        <div class="cs-note" style="margin-top:20px;">Framed the gap as a shared org problem — not an ad network shortfall — with joint accountability across Marketing Services, strategy directors, creative, and paid media.</div>
       </div>
     </div>
-  </div>
+  </section>
 
   <footer>
     <div class="footer-left">
@@ -696,7 +676,7 @@ footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-b
       <a href="https://www.linkedin.com/in/ivanthuang/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="mailto:ivan.t.huang@gmail.com" class="cta">Get in touch</a>
     </div>
-    <p class="footer-note">All numbers on this page — fees, spend figures, goals, and gaps — are made up. They exist to show how the models work, not to disclose real data. Methodology and framework design are original.</p>
+    <p class="footer-note">All numbers on this page are made up. They exist to show how the models work, not to disclose real data.</p>
   </footer>
 </div>
 
@@ -752,12 +732,12 @@ footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-b
   <section class="section fi" style="background:#F7F9FF;padding:40px 80px;">
     <div class="logo-strip-label" style="margin-bottom:16px;">Platforms integrated</div>
     <div class="logo-strip" style="margin-top:0;gap:28px;">
-      <div class="logo-item logo-partner"><img class="logo-img" src="https://unavatar.io/meta.com" alt="Meta" onerror="this.style.display='none'"><span class="logo-name">Meta</span></div>
-      <div class="logo-item logo-partner"><img class="logo-img" src="https://unavatar.io/google.com" alt="Google" onerror="this.style.display='none'"><span class="logo-name">Google</span></div>
-      <div class="logo-item logo-partner"><img class="logo-img" src="https://unavatar.io/anthropic.com" alt="Anthropic" onerror="this.style.display='none'"><span class="logo-name">Anthropic</span></div>
-      <div class="logo-item logo-partner"><img class="logo-img" src="https://unavatar.io/looker.com" alt="Looker" onerror="this.style.display='none'"><span class="logo-name">Looker</span></div>
-      <div class="logo-item logo-partner"><img class="logo-img" src="https://unavatar.io/aws.amazon.com" alt="AWS" onerror="this.style.display='none'"><span class="logo-name">AWS</span></div>
-      <div class="logo-item logo-partner"><img class="logo-img" src="https://unavatar.io/notion.so" alt="Notion" onerror="this.style.display='none'"><span class="logo-name">Notion</span></div>
+      <div class="logo-item logo-partner"><img class="logo-img" src="https://favicon.im/meta.com?larger=true" alt="Meta" onerror="this.style.display='none'"><span class="logo-name">Meta</span></div>
+      <div class="logo-item logo-partner"><img class="logo-img" src="https://favicon.im/google.com?larger=true" alt="Google" onerror="this.style.display='none'"><span class="logo-name">Google</span></div>
+      <div class="logo-item logo-partner"><img class="logo-img" src="https://favicon.im/anthropic.com?larger=true" alt="Anthropic" onerror="this.style.display='none'"><span class="logo-name">Anthropic</span></div>
+      <div class="logo-item logo-partner"><img class="logo-img" src="https://favicon.im/looker.com?larger=true" alt="Looker" onerror="this.style.display='none'"><span class="logo-name">Looker</span></div>
+      <div class="logo-item logo-partner"><img class="logo-img" src="https://favicon.im/aws.amazon.com?larger=true" alt="AWS" onerror="this.style.display='none'"><span class="logo-name">AWS</span></div>
+      <div class="logo-item logo-partner"><img class="logo-img" src="https://favicon.im/notion.so?larger=true" alt="Notion" onerror="this.style.display='none'"><span class="logo-name">Notion</span></div>
     </div>
   </section>
 <section class="section fi" style="background:#F7F9FF;">
@@ -843,7 +823,7 @@ footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-b
 
   <div class="resume-role">
     <div class="resume-role-header">
-      <img class="resume-role-logo" src="https://unavatar.io/dealmaker.tech" alt="DealMaker" onerror="this.style.display='none'">
+      <img class="resume-role-logo" src="https://favicon.im/dealmaker.tech?larger=true" alt="DealMaker" onerror="this.style.display='none'">
       <div class="resume-role-header-text">
         <div class="resume-company">DealMaker</div>
         <div class="resume-title">VP, Head of Paid Media &amp; Retention</div>
@@ -863,7 +843,7 @@ footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-b
 
   <div class="resume-role">
     <div class="resume-role-header">
-      <img class="resume-role-logo" src="https://unavatar.io/dentsu.com" alt="dentsu (MuteSix)" onerror="this.style.display='none'">
+      <img class="resume-role-logo" src="https://favicon.im/dentsu.com?larger=true" alt="dentsu (MuteSix)" onerror="this.style.display='none'">
       <div class="resume-role-header-text">
         <div class="resume-company">dentsu (MuteSix)</div>
         <div class="resume-title">SVP, Head of Paid Media</div>
@@ -880,7 +860,7 @@ footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-b
 
   <div class="resume-role">
     <div class="resume-role-header">
-      <img class="resume-role-logo" src="https://unavatar.io/jetfuel.agency" alt="jetfuel.agency" onerror="this.style.display='none'">
+      <img class="resume-role-logo" src="https://favicon.im/jetfuel.agency?larger=true" alt="jetfuel.agency" onerror="this.style.display='none'">
       <div class="resume-role-header-text">
         <div class="resume-company">jetfuel.agency</div>
         <div class="resume-title">Head of Paid Media</div>
@@ -896,7 +876,7 @@ footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-b
 
   <div class="resume-role">
     <div class="resume-role-header">
-      <img class="resume-role-logo" src="https://unavatar.io/thestripes.co" alt="Stripes Agency" onerror="this.style.display='none'">
+      <img class="resume-role-logo" src="https://favicon.im/thestripes.co?larger=true" alt="Stripes Agency" onerror="this.style.display='none'">
       <div class="resume-role-header-text">
         <div class="resume-company">Stripes Agency</div>
         <div class="resume-title">Group Director → Director, Performance Media</div>
@@ -911,7 +891,7 @@ footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-b
 
   <div class="resume-role">
     <div class="resume-role-header">
-      <img class="resume-role-logo" src="https://unavatar.io/rpa.com" alt="Rubin Postaer and Associates (RPA)" onerror="this.style.display='none'">
+      <img class="resume-role-logo" src="https://favicon.im/rpa.com?larger=true" alt="Rubin Postaer and Associates (RPA)" onerror="this.style.display='none'">
       <div class="resume-role-header-text">
         <div class="resume-company">Rubin Postaer and Associates (RPA)</div>
         <div class="resume-title">Associate Director, Paid Social — American Honda Motors Company</div>
@@ -1080,7 +1060,7 @@ var scenarioDefs = {
 };
 function setScenario(id, el) {
   currentScenario = id;
-  document.querySelectorAll('.sc-tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.sc-tab2').forEach(t=>t.classList.remove('active'));
   el.classList.add('active');
   calcScenario();
 }
@@ -1101,7 +1081,7 @@ function calcScenario() {
   const isPos = diff >= 0;
   document.getElementById('sc-results').innerHTML =
     '<div class="sc-result"><div class="sc-result-n '+(isPos?'positive':'negative')+'">'+(isPos?'+':'')+fmt(diff)+'</div><div class="sc-result-l">vs. fee goal ('+fmt(goal)+')</div></div>'+
-    '<div class="sc-result"><div class="sc-result-n" style="color:var(--teal)">'+fmt(danFee)+'</div><div class="sc-result-l">media fees this quarter</div></div>'+
+    '<div class="sc-result"><div class="sc-result-n" style="color:#0066FF">'+fmt(danFee)+'</div><div class="sc-result-l">media fees this quarter</div></div>'+
     '<div class="sc-result"><div class="sc-result-n" style="color:var(--text)">'+fmt(totalRev)+'</div><div class="sc-result-l">total DealMaker revenue</div></div>'+
     '<div class="sc-result"><div class="sc-result-n" style="color:var(--text)">'+(Math.round(anShare*100))+'/'+(Math.round((1-anShare)*100))+'</div><div class="sc-result-l">ad network / other paid split</div></div>';
   document.getElementById('sc-formula').innerHTML = '<strong style="color:var(--text)">Structure:</strong> '+sc.label+'<br>Ad network: '+fmt(anSpend)+' · Other paid: '+fmt(otherSpend)+'<br>Reach ('+deals+' deals × 3mo): '+fmt(reach)+' · Platform: '+fmt(platform);
@@ -1111,7 +1091,7 @@ function calcScenario() {
 var currentForecast = 'mix';
 function setForecast(id, el) {
   currentForecast = id;
-  document.querySelectorAll('.fc-tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.fc-tab2').forEach(t=>t.classList.remove('active'));
   el.classList.add('active');
   renderForecast();
 }
@@ -1206,6 +1186,56 @@ document.addEventListener('DOMContentLoaded', () => {
 .career-logo-pill{display:flex;align-items:center;gap:8px;padding:7px 12px;background:#fff;border:1px solid var(--rule);border-radius:8px;font-size:12px;font-weight:500;color:var(--mid);transition:border-color .15s,color .15s;}
 .career-logo-pill:hover{border-color:#0066FF;color:#0066FF;}
 .career-logo-pill img{width:18px;height:18px;object-fit:contain;border-radius:3px;}
+
+
+/* ── Case study layout ── */
+.cs-label{font-size:12px;font-weight:700;color:#0066FF;letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px;}
+.cs-h{font-family:'Inter',sans-serif;font-size:28px;font-weight:700;letter-spacing:-.03em;margin-bottom:10px;color:var(--text);}
+.cs-p{font-size:15px;color:var(--mid);line-height:1.72;margin-bottom:36px;max-width:72ch;}
+.cs-layout{display:grid;grid-template-columns:380px 1fr;gap:48px;align-items:start;}
+.cs-left{}
+.cs-right{}
+/* Input rows */
+.sc-row{display:flex;flex-direction:column;gap:6px;margin-bottom:16px;}
+.sc-input-wrap{position:relative;display:flex;align-items:center;}
+.sc-prefix{position:absolute;left:12px;font-size:14px;color:var(--mid);pointer-events:none;}
+.sc-suffix{position:absolute;right:12px;font-size:14px;color:var(--mid);pointer-events:none;}
+.sc-dollar{padding-left:28px !important;}
+/* Scenario tabs — card style */
+.sc-tabs-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:20px;}
+.sc-tab2{background:#fff;border:1.5px solid var(--rule);border-radius:8px;padding:12px 10px 10px;cursor:pointer;transition:border-color .15s,background .15s;text-align:center;display:flex;flex-direction:column;gap:4px;}
+.sc-tab2:hover{border-color:var(--rule2);}
+.sc-tab2.active{border-color:#0066FF;background:#EEF4FF;}
+.sc-tab2{font-size:13px;font-weight:600;color:var(--text);}
+.sc-tab2 span{font-size:11px;font-weight:400;color:var(--dim);display:block;}
+.sc-tab2.active span{color:#0066FF;}
+/* Results */
+.sc-results2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:16px;}
+.sc-result{background:#F7F9FF;border-radius:8px;padding:16px 20px;}
+/* Forecast tabs — vertical */
+.fc-tabs-col{display:flex;flex-direction:column;gap:8px;}
+.fc-tab2{background:#fff;border:1.5px solid var(--rule);border-radius:8px;padding:14px 18px;cursor:pointer;text-align:left;font-size:14px;font-weight:500;color:var(--mid);transition:all .15s;}
+.fc-tab2:hover{border-color:var(--rule2);color:var(--text);}
+.fc-tab2.active{border-color:#0066FF;background:#EEF4FF;color:#0066FF;font-weight:600;}
+/* Q3 stats */
+.cs-stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border-radius:10px;overflow:hidden;}
+.cs-stat{background:#fff;padding:20px 22px;}
+.cs-stat-n{font-family:'Inter',sans-serif;font-size:28px;font-weight:800;color:#0066FF;letter-spacing:-.04em;line-height:1;margin-bottom:5px;}
+.cs-stat-l{font-size:13px;color:var(--mid);}
+/* Q3 bars */
+.cs-bar-label{font-size:12px;font-weight:600;color:var(--mid);letter-spacing:.06em;text-transform:uppercase;margin-bottom:14px;}
+.cs-bars{display:flex;flex-direction:column;gap:0;}
+.cs-bar-row{display:grid;grid-template-columns:180px 1fr 110px;align-items:center;gap:14px;padding:12px 0;border-top:1px solid var(--rule);}
+.cs-bar-row:last-child{border-bottom:1px solid var(--rule);}
+.cs-bar-name{font-size:14px;color:var(--text);}
+.cs-bar-track{background:#E5E5E5;border-radius:3px;height:8px;overflow:hidden;}
+.cs-bar-fill{height:100%;border-radius:3px;}
+.cs-bar-tag{font-size:12px;font-weight:500;text-align:right;}
+.cs-tag-primary{color:#0066FF;}
+.cs-tag-acct{color:#0066FF;}
+.cs-tag-en{color:#F59E0B;}
+/* Note */
+.cs-note{font-size:13px;color:var(--dim);line-height:1.65;padding:14px 18px;background:#F7F7F7;border-radius:8px;border-left:2px solid var(--rule2);}
 
 </style>
 <nav class="mobile-nav" id="mobile-nav">
