@@ -349,7 +349,6 @@ footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-b
     <button class="nav-link active" onclick="showPage('home')" id="nav-home">Home</button>
     <button class="nav-link" onclick="showPage('morpheus')" id="nav-morpheus">Morpheus</button>
     <button class="nav-link" onclick="showPage('models')" id="nav-models">Models</button>
-    <button class="nav-link" onclick="showPage('pubnet')" id="nav-pubnet">Publisher Network</button>
     <button class="nav-link" onclick="showPage('aiworkflows')" id="nav-aiworkflows">AI Workflows</button>
     <button class="nav-link" onclick="showPage('resume')" id="nav-resume">Resume</button>
   </div>
@@ -411,13 +410,7 @@ footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-b
         <div class="work-card-arrow"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M5 12h14m-7-7 7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <div class="work-card-stat"><strong>5</strong> companies · VP and above since 2021</div>
       </div>
-      <div class="work-card" onclick="showPage('pubnet')">
-        <div class="work-card-tag"><span>●</span> Ad network strategy</div>
-        <h3>Ad Network Strategy</h3>
-        <p>Built a 75+ publisher marketplace from scratch. Negotiated a $5.8M amendment with Morning Brew, identified $1.5M in incremental capital through ROAS rotation analysis, and authored the managed wind-down memo adopted by ELT.</p>
-        <div class="work-card-arrow"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M5 12h14m-7-7 7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <div class="work-card-stat"><strong>75+</strong> publishers · $25M+ annual media transacted</div>
-      </div>
+
 
       <div class="work-card" onclick="showPage('aiworkflows')">
         <div class="work-card-tag"><span>●</span> AI operationalization</div>
@@ -699,121 +692,6 @@ footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-b
       <a href="mailto:ivan.t.huang@gmail.com" class="cta">Get in touch</a>
     </div>
     <p class="footer-note">All numbers on this page — fees, spend figures, goals, and gaps — are made up. They exist to show how the models work, not to disclose real data. Methodology and framework design are original.</p>
-  </footer>
-</div>
-
-<!-- ══════════════ PUBLISHER NETWORK ══════════════ -->
-<div id="page-pubnet" class="page">
-  <div class="page-header">
-    <button class="page-header-back" onclick="showPage('home')">
-      <svg viewBox="0 0 24 24" stroke-width="2"><path d="M19 12H5m7-7-7 7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Back
-    </button>
-    <h2>Ad Network Strategy</h2>
-    <p>Authored DealMaker's Ad Network strategy — from a 75+ publisher marketplace to a phased DIS/DV360 roadmap. Negotiated a $5.8M flagship contract amendment, identified $1.5M in recoverable capital via ROAS rotation analysis, and built the pricing and revenue recognition framework adopted by ELT and Finance.</p>
-  </div>
-
-  <section class="section fi" style="background:#F0F5FF;">
-    <h2 class="section-h">The strategy</h2>
-    <p class="section-sub">Not a generic DSP. A premium hybrid platform — hand-selected inventory, a proprietary matching engine, and OLV via managed API — with a moat built on investor data, not auction scale.</p>
-    <div class="ev-grid" style="grid-template-columns:repeat(3,1fr);">
-      <div class="ev-cell fi">
-        <div class="ev-n">3</div>
-        <div class="ev-l">Phases</div>
-        <div class="ev-s">Phase 1: DIS for Tier 1/2 newsletter inventory. Phase 2: OLV via Viant managed service. Phase 3: DV360 via GMP partner (Dandelion) with Bid Manager API reporting.</div>
-      </div>
-      <div class="ev-cell fi">
-        <div class="ev-n">15<span>%</span></div>
-        <div class="ev-l">Fee earned — Tier 1 partnerships</div>
-        <div class="ev-s">Recognized gross under ASC 606 — DealMaker contracts directly with issuers and controls inventory prior to sale. DV360 fees recognized net as management margin only.</div>
-      </div>
-      <div class="ev-cell fi">
-        <div class="ev-n">$5<span>M+</span></div>
-        <div class="ev-l">Build cost avoided</div>
-        <div class="ev-s">Full DSP requires $5M–10M+ and years to build. DIS + GMP partner approach gets to market in 3–6 months with 2–3 FTEs and no auction infrastructure.</div>
-      </div>
-    </div>
-    <div style="margin-top:40px;">
-      <div class="loop-label">Phased roadmap</div>
-      <div class="loop-steps">
-        <div class="loop-step"><div class="loop-num">1</div><div class="loop-text"><h4>DIS — Dynamic Inventory System</h4><p>Rules-based matching engine allocating Tier 1/2 newsletter slots to issuers by audience fit, budget, and campaign priority. Eliminates oversupply/undersupply mismatch. MVP: 3–6 months, 7 FTEs.</p></div></div>
-        <div class="loop-step"><div class="loop-num">2</div><div class="loop-text"><h4>OLV via Viant — managed service, 15%</h4><p>Online video as the next inventory ceiling-breaker beyond newsletter. New avenue as newsletter concentration risk grows. Managed service model, same fee structure as Tier 1.</p></div></div>
-        <div class="loop-step"><div class="loop-num">3</div><div class="loop-text"><h4>DV360 via Dandelion — GMP partner</h4><p>Full DV360 inventory (YouTube, display, CTV, audio, PMPs) through issuer-owned subclient seats. DealMaker as agency/manager. 15% on ad network spend. Bid Manager API pulls reporting into DealMaker dashboards. Saves $500K–$600K vs. direct at $2M spend.</p></div></div>
-      </div>
-    </div>
-    <div style="margin-top:36px;">
-      <div class="logo-strip-label">Network partners</div>
-      <div class="logo-strip">
-        <div class="logo-item logo-partner"><img class="logo-img" src="https://logo.clearbit.com/morningbrew.com" alt="Morning Brew" onerror="this.style.display='none'"><span class="logo-name">Morning Brew</span></div>
-        <div class="logo-item logo-partner"><img class="logo-img" src="https://logo.clearbit.com/1440.io" alt="1440" onerror="this.style.display='none'"><span class="logo-name">1440</span></div>
-        <div class="logo-item logo-partner"><img class="logo-img" src="https://logo.clearbit.com/beehiiv.com" alt="Beehiiv" onerror="this.style.display='none'"><span class="logo-name">Beehiiv</span></div>
-        <div class="logo-item logo-partner"><img class="logo-img" src="https://logo.clearbit.com/viantinc.com" alt="Viant" onerror="this.style.display='none'"><span class="logo-name">Viant</span></div>
-        <div class="logo-item logo-partner"><img class="logo-img" src="https://logo.clearbit.com/tvscientific.com" alt="TVScientific" onerror="this.style.display='none'"><span class="logo-name">TVScientific</span></div>
-        <div class="logo-item logo-partner"><img class="logo-img" src="https://logo.clearbit.com/tatari.tv" alt="Tatari" onerror="this.style.display='none'"><span class="logo-name">Tatari</span></div>
-        <div class="logo-item logo-partner"><img class="logo-img" src="https://logo.clearbit.com/birdseyepost.com" alt="BirdsEye Post" onerror="this.style.display='none'"><span class="logo-name">BirdsEye Post</span></div>
-        <div class="logo-item logo-partner"><img class="logo-img" src="https://logo.clearbit.com/google.com" alt="DV360/Google" onerror="this.style.display='none'"><span class="logo-name">DV360</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section fi">
-    <h2 class="section-h">The network at a glance</h2>
-    <p class="section-sub">75+ publisher marketplace built alongside the ad network strategy — the operational foundation the DIS is designed to automate.</p>
-    <div class="ev-grid">
-      <div class="ev-cell fi"><div class="ev-n">75<span>+</span></div><div class="ev-l">Publishers in network</div><div class="ev-s">Built from scratch. Spans newsletter, affiliate, sponsored content, OLV/CTV, and programmatic channels.</div></div>
-      <div class="ev-cell fi"><div class="ev-n">$25M<span>+</span></div><div class="ev-l">Annual media transacted</div><div class="ev-s">Scaled from a concept to a marketplace with committed inventory, pricing tiers, and a managed allocation model.</div></div>
-      <div class="ev-cell fi"><div class="ev-n">$5.8M</div><div class="ev-l">Contract renegotiated</div><div class="ev-s">Negotiated Amendment No. 1 with the flagship publisher setting the 2026 commitment. Modeled the discount structure showing committed inventory cleared at 9% weighted DAN fee, not 15%.</div></div>
-      <div class="ev-cell fi"><div class="ev-n">51<span>pt</span></div><div class="ev-l">ROAS improvement YoY</div><div class="ev-s">Blended ad network ROAS rose 51 points FYTD YoY (190% vs 139%) once adverse publisher rotation was identified and corrected.</div></div>
-      <div class="ev-cell fi"><div class="ev-n">$1.5M</div><div class="ev-l">Incremental capital identified</div><div class="ev-s">Publisher rotation analysis identified significant recoverable capital from reallocating away from underperforming placements — quantified before the quarter closed.</div></div>
-      <div class="ev-cell fi"><div class="ev-n">63<span>%</span></div><div class="ev-l">Concentration risk flagged</div><div class="ev-s">Identified that 63% of newsletter spend was concentrated in two publishers. Built the case for diversification before the flagship began declining.</div></div>
-    </div>
-  </section>
-
-  <section class="section fi" style="background:#F0F5FF;">
-    <h2 class="section-h">Channel diversification</h2>
-    <p class="section-sub">Expanded the network beyond newsletters into OLV, Linear TV, CTV, and Direct Mail — each with its own vendor relationship, compliance framework, and attribution model standing up from scratch.</p>
-    <div class="ev-grid" style="grid-template-columns:repeat(2,1fr);">
-      <div class="ev-cell fi">
-        <div class="ev-n">9.8<span>×</span></div>
-        <div class="ev-l">ROAS — Viant OLV</div>
-        <div class="ev-s">Frontieras campaign on Viant OLV/Display. $550K spend, final ROAS 9.8x. Negotiated rebate agreement and 1-day attribution window to reduce view-through inflation. Now the template for all OLV pitches.</div>
-      </div>
-      <div class="ev-cell fi">
-        <div class="ev-n">7.1<span>×</span></div>
-        <div class="ev-l">ROAS — TVScientific CTV/OLV</div>
-        <div class="ev-s">Frontieras via TVScientific (acquired by Pinterest). $197K spend, 783 funded investments, $1.41M capital raised, 6.9M unique household reach. Built the compliance framework — QR code as functional equivalent to digital click-through — in response to SEC guidance on TV advertising for Reg A.</div>
-      </div>
-      <div class="ev-cell fi">
-        <div class="ev-n">$466<span>K+</span></div>
-        <div class="ev-l">Linear TV spend — Tatari</div>
-        <div class="ev-s">Pacaso linear TV across CNN, CNBC, Golf Channel, and MSNBC local rotations. Weekly bursts of $25–$125K. Managed creative uploads, S&P clearance, payment timing, and network-level ROAS targeting at 2.5x. Negotiated multi-customer MSA to deploy Tatari across the full issuer base.</div>
-      </div>
-      <div class="ev-cell fi">
-        <div class="ev-n">3,500<span>+</span></div>
-        <div class="ev-l">Direct mail recipients — BirdsEye Post</div>
-        <div class="ev-s">Stood up direct mail as a channel from scratch via BirdsEye Post. Segmented funded vs. unfunded investor sends with 1:1 SnapCapture attribution. Active for GCC (3,518 recipients), Cytonics, Doroni, and Pacaso. Gol Yazdani owns execution; channel built and contracted under Ivan's org.</div>
-      </div>
-    </div>
-    <div style="margin-top:40px;">
-      <div class="loop-label">Why this matters for a hiring audience</div>
-      <div class="loop-steps">
-        <div class="loop-step"><div class="loop-num">1</div><div class="loop-text"><h4>Each channel required its own compliance framework</h4><p>TV advertising for securities offerings hit a gray zone in SEC guidance mid-2025. Ivan built the QR code equivalency position, got compliance sign-off, and operationalized it before any other network peer had a playbook.</p></div></div>
-        <div class="loop-step"><div class="loop-num">2</div><div class="loop-text"><h4>Attribution was rebuilt for every channel</h4><p>OLV and CTV can't share a pixel setup with paid social. 1-day click + 7-day view windows were negotiated per vendor, with explicit hedging against organic inflation — documented before Viant or Tatari pitched their defaults.</p></div></div>
-        <div class="loop-step"><div class="loop-num">3</div><div class="loop-text"><h4>Vendor relationships were signed, not borrowed</h4><p>Every channel above has its own MSA, IO workflow, and billing structure. Tatari's was renegotiated to cover the full issuer base, not just Pacaso. Viant's rebate agreement is live and in legal review. These are durable partnerships, not one-off tests.</p></div></div>
-      </div>
-    </div>
-  </section>
-
-
-  <footer>
-    <div class="footer-left">
-      <div class="footer-id"><h3>Ivan Huang</h3><p>VP Performance Media · Los Angeles</p></div>
-    </div>
-    <div class="footer-actions">
-      <a href="https://www.linkedin.com/in/ivanthuang/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="mailto:ivan.t.huang@gmail.com" class="cta">Get in touch</a>
-    </div>
-    <p class="footer-note">Publisher names, contract figures, and ROAS data have been anonymized or generalized. Analytical methodology and strategic frameworks are unchanged.</p>
   </footer>
 </div>
 
@@ -1339,10 +1217,6 @@ document.addEventListener('DOMContentLoaded', () => {
   <button class="mobile-nav-btn" id="mnav-models" onclick="showPage('models')">
     <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" stroke-linecap="round" stroke-linejoin="round"/><rect x="14" y="3" width="7" height="7" stroke-linecap="round" stroke-linejoin="round"/><rect x="14" y="14" width="7" height="7" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="14" width="7" height="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
     Models
-  </button>
-  <button class="mobile-nav-btn" id="mnav-pubnet" onclick="showPage('pubnet')">
-    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-linecap="round" stroke-linejoin="round"/><line x1="2" y1="12" x2="22" y2="12" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    Network
   </button>
   <button class="mobile-nav-btn" id="mnav-aiworkflows" onclick="showPage('aiworkflows')">
     <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
