@@ -999,7 +999,7 @@ function initChart() {
       {label:'Morpheus', color:'#AAAAAA', values:[381,603,493,223,165],    r:3}
     ]
   };
-  const PAD = {top:36,right:20,bottom:40,left:60};
+  const PAD = {top:48,right:20,bottom:40,left:60};
   let W=0, H=260;
   function getW(){ return canvas.parentElement.clientWidth - 56; }
   function xS(i){ return PAD.left + (i/(DATA.months.length-1))*(W-PAD.left-PAD.right); }
@@ -1022,14 +1022,12 @@ function initChart() {
     DATA.months.forEach((m,i)=>ctx.fillText(m,xS(i),H-8));
     // Sep 2026 cutover annotation (index 2)
     const cutX = xS(2);
+    // Label first — sits at the very top of the chart area
+    ctx.fillStyle='#0066FF'; ctx.font='600 10px Inter,sans-serif'; ctx.textAlign='center';
+    ctx.fillText('CIP productized', cutX, PAD.top-6);
+    // Dashed vertical line from just below the label down to x-axis
     ctx.beginPath(); ctx.strokeStyle='#0066FF'; ctx.lineWidth=1.5; ctx.setLineDash([5,4]);
-    ctx.moveTo(cutX, PAD.top-8); ctx.lineTo(cutX, H-PAD.bottom); ctx.stroke(); ctx.setLineDash([]);
-    // Annotation label
-    ctx.fillStyle='#0066FF'; ctx.font='bold 10px Inter,sans-serif'; ctx.textAlign='center';
-    ctx.fillText('CIP productized', cutX, PAD.top-14);
-    // Arrow up from Sep
-    ctx.beginPath(); ctx.strokeStyle='#0066FF'; ctx.lineWidth=1.5;
-    ctx.moveTo(cutX-5, PAD.top-10); ctx.lineTo(cutX, PAD.top-16); ctx.lineTo(cutX+5, PAD.top-10); ctx.stroke();
+    ctx.moveTo(cutX, PAD.top+2); ctx.lineTo(cutX, H-PAD.bottom); ctx.stroke(); ctx.setLineDash([]);
     // Hover crosshair
     if(hi>=0){
       ctx.beginPath(); ctx.strokeStyle='#D0D0D0'; ctx.lineWidth=1; ctx.setLineDash([4,3]);
@@ -1044,7 +1042,7 @@ function initChart() {
       pts.forEach((p,i)=>{
         const r=hi===i?s.r+2:s.r;
         ctx.beginPath(); ctx.fillStyle=s.color; ctx.arc(p.x,p.y,r,0,Math.PI*2); ctx.fill();
-        if(hi===i){ctx.beginPath();ctx.strokeStyle='#09090B';ctx.lineWidth=2;ctx.arc(p.x,p.y,r,0,Math.PI*2);ctx.stroke();}
+        if(hi===i){ctx.beginPath();ctx.strokeStyle='#fff';ctx.lineWidth=2.5;ctx.arc(p.x,p.y,r,0,Math.PI*2);ctx.stroke();}
       });
     });
     ctx.setTransform(1,0,0,1,0,0);
@@ -1053,7 +1051,7 @@ function initChart() {
   function showTip(cx,cy,idx){
     if(idx<0){tooltip.style.opacity=0;return;}
     let h='<div style="font-size:11px;font-weight:600;color:#0066FF;letter-spacing:.06em;margin-bottom:8px;">'+DATA.months[idx].toUpperCase()+'</div>';
-    DATA.series.forEach(s=>{h+='<div style="display:flex;align-items:center;gap:8px;padding:2px 0;"><div style="width:8px;height:8px;border-radius:50%;background:'+s.color+';flex-shrink:0;"></div><span style="color:#A1A1AA;min-width:76px;">'+s.label+'</span><strong style="color:#FAFAFA;margin-left:auto;">'+s.values[idx].toLocaleString()+'</strong></div>';});
+    DATA.series.forEach(s=>{h+='<div style="display:flex;align-items:center;gap:8px;padding:2px 0;"><div style="width:8px;height:8px;border-radius:50%;background:'+s.color+';flex-shrink:0;"></div><span style="color:#555;min-width:76px;font-size:12px;">'+s.label+'</span><strong style="color:#0A0A0A;margin-left:auto;font-size:13px;">'+s.values[idx].toLocaleString()+'</strong></div>';});
     tooltip.style.background='#fff'; tooltip.style.boxShadow='0 4px 16px rgba(0,0,0,.1)'; tooltip.innerHTML=h; tooltip.style.opacity=1;
     const cr=tooltip.parentElement.getBoundingClientRect();
     let left=(cx-cr.left)+16; if(left+190>cr.width-28) left=(cx-cr.left)-200;
