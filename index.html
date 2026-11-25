@@ -697,7 +697,7 @@ footer{padding:48px 80px;border-top:1px solid var(--rule);display:flex;align-ite
       <a href="https://www.linkedin.com/in/ivanthuang/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="mailto:ivan.t.huang@gmail.com" class="cta">Get in touch</a>
     </div>
-    <p class="footer-note">Screens in the demo are recreated with illustrative data. Real issuer and investor data replaced with fictional names consistent with the platform's actual scale.</p>
+    <p class="footer-note">Screens in the demo are recreated with illustrative data. Real client and investor data replaced with fictional names consistent with the platform's actual scale.</p>
   </footer>
 </div>
 
@@ -773,7 +773,7 @@ footer{padding:48px 80px;border-top:1px solid var(--rule);display:flex;align-ite
       <div class="cs-right">
         <div class="channel-bars" id="fc-bars"></div>
         <div class="forecast-summary" id="fc-summary"></div>
-        <div class="cs-note">Issuer names replaced with fictional names. Spend figures scaled proportionally. Methodology unchanged from the original model delivered to Finance.</div>
+        <div class="cs-note">Client names replaced with fictional names. Spend figures scaled proportionally. Methodology unchanged from the original model delivered to Finance.</div>
       </div>
     </div>
   </section>
@@ -789,7 +789,7 @@ footer{padding:48px 80px;border-top:1px solid var(--rule);display:flex;align-ite
         <div class="cs-stats-grid">
           <div class="cs-stat"><div class="cs-stat-n">$X.XM</div><div class="cs-stat-l">gap to close</div></div>
           <div class="cs-stat"><div class="cs-stat-n">4</div><div class="cs-stat-l">strategy director pods</div></div>
-          <div class="cs-stat"><div class="cs-stat-n">$XXXK</div><div class="cs-stat-l">DAN fee target set</div></div>
+          <div class="cs-stat"><div class="cs-stat-n">$XXXK</div><div class="cs-stat-l">fee target set</div></div>
           <div class="cs-stat"><div class="cs-stat-n">3</div><div class="cs-stat-l">workstreams</div></div>
         </div>
       </div>
@@ -802,7 +802,7 @@ footer{padding:48px 80px;border-top:1px solid var(--rule);display:flex;align-ite
           <div class="cs-bar-row"><span class="cs-bar-name">Legal unblocking</span><div class="cs-bar-track"><div class="cs-bar-fill" style="width:40%;background:#F59E0B;"></div></div><span class="cs-bar-tag cs-tag-en">Enabler</span></div>
           <div class="cs-bar-row"><span class="cs-bar-name">Publisher reallocation</span><div class="cs-bar-track"><div class="cs-bar-fill" style="width:30%;background:#F59E0B;"></div></div><span class="cs-bar-tag cs-tag-en">Structural</span></div>
         </div>
-        <div class="cs-note" style="margin-top:20px;">Framed the gap as a shared org problem — not an ad network shortfall — with joint accountability across Marketing Services, strategy directors, creative, and paid media.</div>
+        <div class="cs-note" style="margin-top:20px;">Framed the gap as a shared org problem — not an channel network shortfall — with joint accountability across Marketing Services, strategy directors, creative, and paid media.</div>
       </div>
     </div>
   </section>
@@ -978,11 +978,11 @@ footer{padding:48px 80px;border-top:1px solid var(--rule);display:flex;align-ite
       <div class="resume-dates">March 2025 – Present</div>
     </div>
     <ul class="resume-bullets">
-      <li>Own integrated paid media strategy and performance for $90M+ in annual spend across paid social (Meta, TikTok, Snapchat), paid search (Google, YouTube, Microsoft Ads), programmatic, CTV/OTT, newsletter, and retention channels, driving $450M+ in annual client capital raised at ~5× MER for the market leader in online capital raising ($2.4B+ raised on platform).</li>
-      <li>Built and lead a 25-person cross-channel media organization spanning paid social, search, Ad Network, and retention; hire and mentor directors, set performance and QA standards, and serve as escalation point on the most complex accounts.</li>
+      <li>Own integrated paid media strategy and performance for $90M+ in annual spend across paid social (Meta, TikTok, Snapchat), paid search (Google, YouTube, Microsoft Ads), programmatic, CTV/OTT, newsletter, and retention channels, driving $450M+ in annual client revenue at ~5× ROAS for the market leader in online capital raising ($2.4B+ raised on platform).</li>
+      <li>Built and lead a 25-person cross-channel media organization spanning paid social, search, channel network, and retention; hire and mentor directors, set performance and QA standards, and serve as escalation point on the most complex accounts.</li>
       <li>Act as senior strategic advisor across a rolling portfolio of 40 active client accounts, engaging founder and C-suite stakeholders to align full-funnel media plans to revenue targets and reporting performance weekly and monthly.</li>
       <li>Own forecasting, budget oversight, and measurement standards for the business: built the top-down/bottom-up revenue model used as the company's annual planning baseline, authored the executive-adopted media efficiency framework, and identified $4.5M in annualized incremental capital through media mix reallocation.</li>
-      <li>Built the pricing model and ELT decision memo to restructure the ad network fee onto all managed paid spend, turning a $284K quarterly shortfall into a projected $3.3–3.9M annual surplus against FY28–FY29 goals.</li>
+      <li>Built the pricing model and ELT decision memo to restructure the channel network fee onto all managed paid spend, turning a $284K quarterly shortfall into a projected $3.3–3.9M annual surplus against FY28–FY29 goals.</li>
       <li>Co-founded and scaled a proprietary publisher network from a single-channel concept into a 75+ publisher marketplace transacting $25M+ in annual media; negotiated seven-figure contracts with national media brands.</li>
       <li>Shipped morpheus, a production LLM-powered analytics platform integrating Meta, Looker, and Slack — adopted by 60+ employees as the most-used internal tool within 90 days, now rebranded as the company's #1 external product (Campaign Intelligence Platform).</li>
     </ul>
@@ -1220,10 +1220,10 @@ function initChart() {
 // ── SCENARIO PLANNER ──
 var currentScenario = 'today';
 var scenarioDefs = {
-  today:   {anRate:0.15, otherRate:0, label:'15% on ad network spend only', color:'#E5675E'},
+  today:   {anRate:0.15, otherRate:0, label:'15% on channel network spend only', color:'#E5675E'},
   flat:    {anRate:0.05, otherRate:0.05, label:'5% flat on all paid spend', color:'#4FE0AE'},
-  tworate: {anRate:0.10, otherRate:0.03, label:'10% on ad network, 3% on other paid', color:'#3B82F6'},
-  agency:  {anRate:0.09, otherRate:0.09, label:'9% flat, no Reach retainer', color:'#F59E0B'}
+  tworate: {anRate:0.10, otherRate:0.03, label:'10% on channel network, 3% on other paid', color:'#3B82F6'},
+  agency:  {anRate:0.09, otherRate:0.09, label:'9% flat, no marketing retainer', color:'#F59E0B'}
 };
 function setScenario(id, el) {
   currentScenario = id;
@@ -1250,7 +1250,7 @@ function calcScenario() {
     '<div class="sc-result"><div class="sc-result-n '+(isPos?'positive':'negative')+'">'+(isPos?'+':'')+fmt(diff)+'</div><div class="sc-result-l">vs. fee goal ('+fmt(goal)+')</div></div>'+
     '<div class="sc-result"><div class="sc-result-n" style="color:#0066FF">'+fmt(danFee)+'</div><div class="sc-result-l">media fees this quarter</div></div>'+
     '<div class="sc-result"><div class="sc-result-n" style="color:var(--text)">'+fmt(totalRev)+'</div><div class="sc-result-l">total DealMaker revenue</div></div>'+
-    '<div class="sc-result"><div class="sc-result-n" style="color:var(--text)">'+(Math.round(anShare*100))+'/'+(Math.round((1-anShare)*100))+'</div><div class="sc-result-l">ad network / other paid split</div></div>';
+    '<div class="sc-result"><div class="sc-result-n" style="color:var(--text)">'+(Math.round(anShare*100))+'/'+(Math.round((1-anShare)*100))+'</div><div class="sc-result-l">channel network / other paid split</div></div>';
   document.getElementById('sc-formula').innerHTML = '<strong style="color:var(--text)">Structure:</strong> '+sc.label+'<br>Ad network: '+fmt(anSpend)+' · Other paid: '+fmt(otherSpend)+'<br>Reach ('+deals+' deals × 3mo): '+fmt(reach)+' · Platform: '+fmt(platform);
 }
 
@@ -1266,8 +1266,8 @@ function setForecast(id, el) {
 var fcData = {
   mix: [
     {label:'Paid Social', pct:60, val:'~60%', color:'blue'},
-    {label:'Ad Network',  pct:34, val:'~34%',  color:'blue'},
-    {label:'Comms/Email', pct:22, val:'~22%',  color:'gold'},
+    {label:'channel network',  pct:34, val:'~34%',  color:'blue'},
+    {label:'Email & SMS', pct:22, val:'~22%',  color:'gold'},
     {label:'Search',      pct:8,  val:'~8%',  color:'blue'},
     {label:'Programmatic',pct:10, val:'~10%',  color:'blue'},
     {label:'Affiliate',   pct:22, val:'~22%',  color:'gold'},
@@ -1282,7 +1282,7 @@ var fcData = {
   ]
 };
 var fcSummary = {
-  mix:  [{n:'~$XXM', l:'Illustrative total budget'},{n:'~2.X×', l:'Illustrative blended MER'},{n:'50+', l:'Account groups modeled'}],
+  mix:  [{n:'~$XXM', l:'Illustrative total budget'},{n:'~2.X×', l:'Illustrative blended ROAS'},{n:'50+', l:'Account groups modeled'}],
   gap:  [{n:'~$XM',  l:'Illustrative bottom-up gap'},{n:'~$XXM', l:'Illustrative top-down target'},{n:'~$XXM', l:'Illustrative bottom-up total'}]
 };
 function renderForecast() {
