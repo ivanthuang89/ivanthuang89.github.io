@@ -474,6 +474,8 @@ footer{padding:48px 80px;border-top:1px solid var(--rule);display:flex;align-ite
 .wm-submit{font-family:inherit;font-size:14px;font-weight:600;color:#fff;background:var(--blue);border:none;border-radius:8px;padding:12px 24px;cursor:pointer;transition:background .15s;align-self:flex-start;}
 .wm-submit:hover{background:#0047DD;}
 .wm-thanks{font-size:14px;color:var(--teal);font-weight:500;margin-top:4px;}
+.wm-error{font-size:13px;color:var(--red);margin-bottom:4px;}
+.wm-field-error{font-size:12px;color:var(--red);margin-top:-8px;}
 @media(max-width:960px){
   .wm-section{padding:48px 16px;}
   .wm-inner{grid-template-columns:1fr;gap:36px;}
@@ -634,12 +636,15 @@ footer{padding:48px 80px;border-top:1px solid var(--rule);display:flex;align-ite
         </div>
       </div>
       <div class="wm-right">
+        <div data-fs-success class="wm-thanks" style="display:none;">Got it — I'll be in touch.</div>
+        <div data-fs-error class="wm-error" style="display:none;"></div>
         <form class="wm-form" id="wm-form">
           <div class="wm-row">
-            <input class="wm-input" type="text" id="wm-name" placeholder="Name" required>
-            <input class="wm-input" type="email" id="wm-email" placeholder="Email" required>
+            <input class="wm-input" type="text" name="name" placeholder="Name" data-fs-field required>
+            <input class="wm-input" type="email" name="email" placeholder="Email" data-fs-field required>
           </div>
-          <select class="wm-input wm-select" id="wm-type">
+          <span data-fs-error="email" class="wm-field-error"></span>
+          <select class="wm-input wm-select" name="type" data-fs-field>
             <option value="" disabled selected>What do you need?</option>
             <option>Personal / portfolio site</option>
             <option>Small business site</option>
@@ -648,10 +653,14 @@ footer{padding:48px 80px;border-top:1px solid var(--rule);display:flex;align-ite
             <option>App or prototype</option>
             <option>Something else</option>
           </select>
-          <textarea class="wm-input wm-textarea" id="wm-desc" placeholder="Brief description" rows="3"></textarea>
-          <button class="wm-submit" type="button" onclick="submitWM()">Send →</button>
-          <p class="wm-thanks" id="wm-thanks" style="display:none;">Got it — I'll be in touch.</p>
+          <textarea class="wm-input wm-textarea" name="message" placeholder="Brief description" rows="3" data-fs-field></textarea>
+          <button class="wm-submit" type="submit" data-fs-submit-btn>Send →</button>
         </form>
+        <script>
+          window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+          formspree('initForm', { formElement: '#wm-form', formId: 'mwloyndz' });
+        </script>
+        <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
       </div>
     </div>
   </section>
@@ -1444,23 +1453,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-function submitWM() {
-  var name  = document.getElementById('wm-name').value.trim();
-  var email = document.getElementById('wm-email').value.trim();
-  var type  = document.getElementById('wm-type').value;
-  var desc  = document.getElementById('wm-desc').value.trim();
-  if (!name || !email || !type) { return; }
-  fetch('https://formspree.io/f/xpwzgoje', {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-    body: JSON.stringify({name: name, email: email, type: type, message: desc})
-  }).then(function(r) {
-    if (r.ok) {
-      document.getElementById('wm-form').style.display = 'none';
-      document.getElementById('wm-thanks').style.display = 'block';
-    }
-  });
-}
 
 </script>
 
