@@ -455,29 +455,6 @@ footer{padding:48px 80px;border-top:1px solid var(--rule);display:flex;align-ite
 
 
 
-/* ── WORK WITH ME ── */
-.wm-section{background:var(--ink);padding:72px 80px;}
-.wm-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;max-width:960px;margin:0 auto;}
-.wm-eyebrow{font-size:11px;font-weight:600;color:rgba(255,255,255,.4);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px;}
-.wm-h{font-size:clamp(28px,3vw,40px);font-weight:800;letter-spacing:-.04em;color:#fff;margin-bottom:14px;}
-.wm-p{font-size:15px;color:rgba(255,255,255,.55);line-height:1.6;margin-bottom:20px;}
-.wm-sites{display:flex;flex-direction:column;gap:9px;}
-.wm-site{font-size:14px;font-weight:500;color:rgba(255,255,255,.75);text-decoration:none;transition:color .15s;}
-.wm-site:hover{color:#fff;}
-.wm-form{display:flex;flex-direction:column;gap:10px;}
-.wm-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-.wm-input{font-family:inherit;font-size:14px;color:#fff;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.12);border-radius:8px;padding:11px 14px;outline:none;transition:border-color .15s;width:100%;box-sizing:border-box;}
-.wm-input::placeholder{color:rgba(255,255,255,.35);}
-.wm-input:focus{border-color:rgba(255,255,255,.4);}
-.wm-submit{font-family:inherit;font-size:14px;font-weight:600;color:var(--ink);background:#fff;border:none;border-radius:8px;padding:12px 24px;cursor:pointer;transition:opacity .15s;align-self:flex-start;margin-top:2px;}
-.wm-submit:hover{opacity:.88;}
-.wm-submit:disabled{opacity:.5;cursor:default;}
-.wm-thanks{font-size:15px;color:rgba(255,255,255,.7);margin-top:4px;}
-@media(max-width:960px){
-  .wm-section{padding:48px 16px;}
-  .wm-inner{grid-template-columns:1fr;gap:32px;}
-  .wm-row{grid-template-columns:1fr;}
-}
 
 
 </style>
@@ -619,33 +596,7 @@ footer{padding:48px 80px;border-top:1px solid var(--rule);display:flex;align-ite
   </section>
 
   
-    <!-- WORK WITH ME -->
-  <section class="wm-section">
-    <div class="wm-inner">
-      <div class="wm-left">
-        <p class="wm-eyebrow">Web development</p>
-        <h2 class="wm-h">Available for web projects.</h2>
-        <p class="wm-p">A few recent ones:</p>
-        <div class="wm-sites">
-          <a class="wm-site" href="https://apucampusrec.org/" target="_blank" rel="noopener">APU Campus Rec ↗</a>
-          <a class="wm-site" href="https://tapestryathletics.com/" target="_blank" rel="noopener">Tapestry Athletics ↗</a>
-          <a class="wm-site" href="https://ahjumma-golf-site.pages.dev/" target="_blank" rel="noopener">Ahjumma Golf ↗</a>
-          <a class="wm-site" href="https://www.linkout.app/" target="_blank" rel="noopener">Linkout ↗</a>
-        </div>
-      </div>
-      <div class="wm-right">
-        <form class="wm-form" id="wm-form" onsubmit="submitWM(event)">
-          <div class="wm-row">
-            <input class="wm-input" type="text" name="name" placeholder="Name" required>
-            <input class="wm-input" type="email" name="email" placeholder="Email" required>
-          </div>
-          <input class="wm-input" type="text" name="message" placeholder="Tell me about your project">
-          <button class="wm-submit" type="submit">Send</button>
-        </form>
-        <p class="wm-thanks" id="wm-thanks" style="display:none;">Got it — I'll be in touch.</p>
-      </div>
-    </div>
-  </section>
+  
 
 
 <footer>
@@ -1432,24 +1383,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-function submitWM(e) {
-  e.preventDefault();
-  var btn = e.target.querySelector('.wm-submit');
-  btn.disabled = true;
-  btn.textContent = 'Sending...';
-  var data = new FormData(e.target);
-  fetch('https://formspree.io/f/mwloyndz', {
-    method: 'POST',
-    body: data,
-    headers: {'Accept': 'application/json'}
-  }).then(function(r) {
-    document.getElementById('wm-form').style.display = 'none';
-    document.getElementById('wm-thanks').style.display = 'block';
-  }).catch(function() {
-    btn.disabled = false;
-    btn.textContent = 'Send';
-  });
-}
 
 </script>
 
