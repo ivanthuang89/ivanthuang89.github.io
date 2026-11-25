@@ -85,11 +85,16 @@ h1 em{font-style:normal;color:#0066FF;}
 .work-section-h{font-family:'Inter',sans-serif;font-weight:800;font-size:clamp(32px,4vw,52px);letter-spacing:-.045em;margin-bottom:12px;}
 .work-section-sub{font-size:15px;color:var(--mid);max-width:52ch;line-height:1.72;margin-bottom:40px;}
 .work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
-.work-card{background:#fff;border:1px solid var(--rule);border-radius:12px;padding:32px;cursor:pointer;transition:border-color .2s,transform .2s,box-shadow .2s;position:relative;overflow:hidden;}
-.work-card:hover{border-color:#0066FF;transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,102,255,.1);}
+.work-card{background:#fff;border:1.5px solid #E0E0E0;border-radius:12px;cursor:pointer;transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden;display:flex;flex-direction:column;}
+.work-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,102,255,.13);}
+.work-card-head{background:#0A0A0A;padding:20px 24px 18px;border-radius:10px 10px 0 0;}
+.work-card-head .work-card-tag{color:rgba(255,255,255,.45);margin-bottom:6px;}
+.work-card-head h3{color:#fff;margin:0;}
+.work-card-body{padding:20px 24px 20px;flex:1;display:flex;flex-direction:column;gap:12px;}
+.work-card-body p{margin:0;}
 .work-card-tag{font-size:12px;font-weight:600;color:#0066FF;letter-spacing:.05em;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:7px;}
 .work-card-tag span{width:6px;height:6px;border-radius:50%;background:#0066FF;display:inline-block;flex-shrink:0;}
-.work-card h3{font-family:'Inter',sans-serif;font-size:clamp(20px,2vw,26px);font-weight:700;letter-spacing:-.03em;margin-bottom:10px;line-height:1.1;color:var(--text);}
+.work-card h3{font-size:20px;font-weight:700;letter-spacing:-.025em;margin-bottom:0;}
 .work-card p{font-size:14px;color:var(--mid);line-height:1.7;margin-bottom:24px;}
 .work-card-arrow{width:32px;height:32px;border-radius:50%;background:var(--bg2);border:1px solid var(--rule);display:flex;align-items:center;justify-content:center;transition:background .15s,border-color .15s;}
 .work-card:hover .work-card-arrow{background:#0066FF;border-color:#0066FF;}
@@ -428,25 +433,42 @@ footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-b
     <h2 class="work-section-h">Selected work</h2>
     <p class="work-section-sub">Three case studies that show how I think, what I build, and the results I deliver.</p>
     <div class="work-grid">
-      <div class="work-card" onclick="showPage('morpheus')">
-        <div class="work-card-tag"><span>●</span> Platform engineering</div>
-        <h3>Morpheus</h3>
-        <p>A full-stack performance media intelligence platform. Built solo as VP, 666 commits across 9 months. Internally adopted as DealMaker's #1 tool, then productized by the product team as CIP — the company's most-used external product.</p>
-        <div class="work-card-arrow"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M5 12h14m-7-7 7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <div class="work-card-stat"><strong>#1</strong> of 15 internal apps · 6× adoption growth</div>
+            <div class="work-card" onclick="showPage('morpheus')">
+        <div class="work-card-head">
+          <div class="work-card-tag"><span>●</span> Platform engineering</div>
+          <h3>Morpheus</h3>
+        </div>
+        <div class="work-card-body">
+          <p>A full-stack performance media intelligence platform. Built solo as VP, 666 commits across 9 months. Internally adopted as DealMaker's #1 tool, then productized by the product team as CIP — the company's most-used external product.</p>
+          
+          <div class="work-card-footer">
+            <div class="work-card-stat"><strong>#1</strong> of 15 internal apps · 6× adoption growth</div>
+            <div class="work-card-arrow"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M5 12h14m-7-7 7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+        </div>
       </div>
-      <div class="work-card" onclick="showPage('models')">
-        <div class="work-card-tag"><span>●</span> Financial modeling</div>
-        <h3>Revenue &amp; Margin Models</h3>
-        <p>A 7-scenario media fee model built for the CFO, and a dual-view Q2 revenue forecast across 50+ client accounts with weekly pacing. Both used as company planning baselines.</p>
-        <div class="work-card-arrow"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M5 12h14m-7-7 7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <div class="work-card-stat"><strong>$3.9M</strong> annual surplus projected vs. prior model</div>
+            <div class="work-card" onclick="showPage('models')">
+        <div class="work-card-head">
+          <div class="work-card-tag"><span>●</span> Financial modeling</div>
+          <h3>Revenue &amp; Margin Models</h3>
+        </div>
+        <div class="work-card-body">
+          <p>A 7-scenario media fee model built for the CFO, and a dual-view Q2 revenue forecast across 50+ client accounts with weekly pacing. Both used as company planning baselines.</p>
+          
+          <div class="work-card-footer">
+            <div class="work-card-stat"><strong>$3.9M</strong> annual surplus projected vs. prior model</div>
+            <div class="work-card-arrow"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M5 12h14m-7-7 7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+        </div>
       </div>
-      <div class="work-card" onclick="showPage('resume')">
-        <div class="work-card-tag"><span>●</span> Career history</div>
-        <h3>13 Years in Performance Media</h3>
-        <p>Starcom → PHD → RPA → Stripes → jetfuel → dentsu MuteSix → DealMaker. Holdcos, independents, in-house — VP and above since 2021.</p>
-        <div class="career-logo-strip">
+            <div class="work-card" onclick="showPage('resume')">
+        <div class="work-card-head">
+          <div class="work-card-tag"><span>●</span> Career history</div>
+          <h3>13 Years in Performance Media</h3>
+        </div>
+        <div class="work-card-body">
+          <p>Starcom → PHD → RPA → Stripes → jetfuel → dentsu MuteSix → DealMaker. Holdcos, independents, in-house — VP and above since 2021.</p>
+          <div class="career-logo-strip">
           <div class="career-logo-pill"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAATCAYAAAD4f6+NAAACfklEQVR42sWWX3PbNhDEf3cASMlWx03kmp1p++Lv/6HaPrRp3MSWZEsmCdz1ARTlZPpWZooZDod/QO7tLvYgp95cVRABd+YzAjjA5Z7ZdOMbjgjw8PGBfhhoUmTMGRFFRRAVSimYGarK3V1HCAH35YC5OyIyX8upNy8lY+YTE44gmNtMU52kpJQWZUNEUBXcmYuMALkUcObqHaNp2gtyd3wCthQrISivrz2Hw46UGjab74gxVkC7xyf6vud6syHnkTyO/HDX0TRNBWilgpGldJr8irB72lHMuLq6QiRWyWK8mPo8zKCUUmWTOnnJUW0AILNHZ8k+fXqk5IK5EWPEzAkhcHNzM0023G1RMCFEnnZPvDw/Y+50XUfTtCiAqpLziJnNPrk43ycPsdhRv1ozpkz/HIYBES6SqU4vTzNKgVImVr6RZKrKOI5Vqhgvkv35xwf6YSDGSB5HQojcdR0xxtnU5kuGoiMa6Pue33/7FRHhp59/Yb1eV0Dfv3tHKQVVrQAm9NU7gCiyKEE1DHMeeb/dYjZl3Zmhtm1RrSvr/OOc7YtVt6RiVX6hbVdAzb/Vao25V0CfPz9yPL6walfkkkkx8X67nQ0+59By/KBT5X8/PPDa99zf35NSUwGt12tUlbZtGccBEX2zHkBUEV9SMEdUGftXHFCVSyM/d/uvJSvFF2XlX3Sbk7gS8Kbb9/1AKfnNg2rqlJo3vWxZUwdR9odn/vr4gZQauu5HVqtVBbTf73l5eSbGSEqJ0+nE9fWG29vbqdn6l33lv4cQJrVdxZg4HY+UUi7BeO4pX1cxb8iEhWOx1heCcjyeOBz2bLe3hKAVUN3z8L+M857oXPw/2cWPMzDaCmgAAAAASUVORK5CYII=" alt="Starcom">Starcom</div>
           <div class="career-logo-pill"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAALCAYAAAAX+i97AAAB/0lEQVR42s2TvW5TQRCFv5nZ6722E7AgwhJIKCUFL8DD8DS8C2+CKKgoUpCCAiSCFCUy4Ni+PzuTwlyTBBpCEU63szqab87sSkREX8A9QKAyABAR7kIJYN0GokJSuCOO60BfPx8DwShnRAx3Zz6fU1UVEfFbWiJCROzOEYGqIiJ4BOG+u7/qH2qDf6iLCFVV/QLSNGK1WrHeLMn1CEE4OTkBwN1xd8wMEUFEUFW6rkNVURHariPnjKqyWa+ZTKdMp1NEhFIKqnoNSFVxd1SViMDMrgO9fvuE9x+DVy8Lh/OeplPMto3rusbdERE2mzWWMlVSVLfTtT2YgkpQCnjAqFIinCHEmynfTOdqLQEcfQreHDnLlaMieDjebSHqusbMdqamh+Mvwtl3xxSeHxqLi2CxVGZ7MK2h75zZZINHIH9Y89BcREgpERGklDAzUgQ83IfDuVJKw/n5Ahvtk/NoF+kgM6PrC2Vzxv2c2d8bo2o0qzOai5Y8O8ALSLRMJnt/9ZiHPkkE2g6Wm0DNGI/H9GG7vQ6TAJgaIsrTxw+okoIoxYNHBzPmB45oopRCrqt/+2U/1nC6cEDIdU1poGma3WMe1HYtREatoo+ArQXVtJ2SQNVI1e2BJCLi3Qfn9Fvw4llwb+IUF1S3+72qUgoRim+tN0P/WQtMwVRuD8R/pEv1hAIHekL2TgAAAABJRU5ErkJggg==" alt="PHD">PHD</div>
           <div class="career-logo-pill"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAPCAYAAACMa21tAAACvUlEQVR42sWWX47cNgzGf5Rky+MJdtvupOg/oH3pCZozJBfsOQr0Dj1DnvrUhzZpM9tONjPjsSSyDx57vbtxtg8BSkCABZHUR/KjaMlqdkpgBqsanPC/Sjju9/zxektdVVSVowqOlBJmxmazoa5rAEQEM5uWyC1yM0NtCEpEEAyRW5tR5jZzWxGZVigl0x93UGpudj0+BHLOAHRdRwiBGCPH45EYI23boqp472fgoKnBtNDEyKHLnJLhnKOUgtnwPQJS1WmfUgKgbVvW6zXS971tt1uqqpqU27alqqoJmIhQSqGua+q6vhc19Bl+/Dnz187oEzz/wfPimaPoMgVGcKOvcR+893jvCSHQNA3OuQncWK5lZ8O+FOOnXwq//q7sO7i6EF488wxq9t5SLZUxAIQQUFVSShOIeRY+5GCUzSUcTsKhg3UDqoWUjeDlAWe894t+nJmRUqLve5xz5JxR1UWDObEH0AOhvRfqSgjhrKd5ao5SCqo6Bb0U7JSh9ZMnNDGiqnc66r+KE9gfjesb49BBUfAhsg5wP6yRDou+zIzUn9jv94jIowZLMrb9uMAoxaYgVXWW1WWRUoqlnO8S2Ix5bPPq2b2zAYzx8jfhcDJygW8/h282cs/mwxyczrOadfuEnjpMFd+uIQQww87leHeEYw+xgotWULMJkiFU3ojhdEYezp33OIEXOXTqTvRvd2jOkDLt5ac4kSFRHm4Ometdoo2GM6GOzewSQ8z489UWRKirCu8dZjo9iG3bEmPEe/84IAdcv9vz5p+3IPD9F1/jzpfJkCMq+5s6veHLr77D+YjMijZkUXj69OrOWCml4Jwbxooqfd+zWq0eB6TAatVw9cklzntS3+NEhtFwVvKhob34jJTB0hERYbVqbxGJ0MTmowxXUTMzG7higOpD0rpzSoaGeXgu8vH+Ev4F6hOY23Q0/ScAAAAASUVORK5CYII=" alt="RPA">RPA</div>
@@ -454,18 +476,30 @@ footer{padding:48px 80px;display:flex;align-items:center;justify-content:space-b
           <div class="career-logo-pill"><img src="https://favicon.im/jetfuel.agency?larger=true" alt="jetfuel" onerror="this.style.display='none'">jetfuel</div>
           <div class="career-logo-pill"><img src="https://favicon.im/mutesix.com?larger=true" alt="MuteSix" onerror="this.style.display='none'">MuteSix</div>
           <div class="career-logo-pill"><img src="https://favicon.im/dealmaker.tech?larger=true" alt="DealMaker" onerror="this.style.display='none'">DealMaker</div>
+          <div class="work-card-footer">
+            <div class="work-card-stat"></div>
+            <div class="work-card-arrow"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M5 12h14m-7-7 7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
         </div>
+      </div>
         <div class="work-card-arrow"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M5 12h14m-7-7 7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <div class="work-card-stat"><strong>9</strong> companies · VP+ since 2021</div>
       </div>
 
 
-      <div class="work-card" onclick="showPage('aiworkflows')">
-        <div class="work-card-tag"><span>●</span> AI operationalization</div>
-        <h3>AI Workflows</h3>
-        <p>Built and deployed a skills hub, four production Claude skills, a daily standup automation, and a weekly product adoption report — operationalizing AI across a 200-person company, not just using it personally.</p>
-        <div class="work-card-arrow"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M5 12h14m-7-7 7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <div class="work-card-stat"><strong>4</strong> skills deployed org-wide · used weekly</div>
+            <div class="work-card" onclick="showPage('aiworkflows')">
+        <div class="work-card-head">
+          <div class="work-card-tag"><span>●</span> AI operationalization</div>
+          <h3>AI Workflows</h3>
+        </div>
+        <div class="work-card-body">
+          <p>Built and deployed a skills hub, four production Claude skills, a daily standup automation, and a weekly product adoption report — operationalizing AI across a 200-person company, not just using it personally.</p>
+          
+          <div class="work-card-footer">
+            <div class="work-card-stat"><strong>4</strong> skills deployed org-wide · used weekly</div>
+            <div class="work-card-arrow"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M5 12h14m-7-7 7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -1360,6 +1394,13 @@ document.addEventListener('DOMContentLoaded', () => {
 .cs-tag-en{color:#F59E0B;}
 /* Note */
 .cs-note{font-size:13px;color:var(--dim);line-height:1.65;padding:14px 18px;background:#F7F7F7;border-radius:8px;border-left:2px solid var(--rule2);}
+
+
+.work-card-footer{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:12px;border-top:1px solid var(--rule);}
+.work-card-stat{font-size:13px;color:var(--mid);}
+.work-card-stat strong{color:var(--text);font-weight:700;}
+.work-card-arrow{width:28px;height:28px;border-radius:50%;background:#EEF4FF;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.work-card-arrow svg{width:14px;height:14px;stroke:#0066FF;fill:none;}
 
 </style>
 <nav class="mobile-nav" id="mobile-nav">
