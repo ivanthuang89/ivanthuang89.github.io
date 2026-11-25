@@ -373,6 +373,10 @@ footer{padding:48px 80px;border-top:1px solid var(--rule);display:flex;align-ite
 .nav-icon{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;color:var(--mid);transition:color .15s,background .15s;text-decoration:none;}
 .nav-icon:hover{color:var(--ink);background:var(--blue-light);}
 
+
+.cs-sheet-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:500;color:var(--blue);text-decoration:none;margin-top:12px;}
+.cs-sheet-link:hover{text-decoration:underline;}
+
 </style>
 </head>
 <body>
@@ -381,7 +385,7 @@ footer{padding:48px 80px;border-top:1px solid var(--rule);display:flex;align-ite
   <div class="nav-links">
     <button class="nav-link active" onclick="showPage('home')" id="nav-home">Home</button>
     <button class="nav-link" onclick="showPage('morpheus')" id="nav-morpheus">morpheus</button>
-    <button class="nav-link" onclick="showPage('models')" id="nav-models">Revenue Modeling</button>
+    <button class="nav-link" onclick="showPage('models')" id="nav-models">Modeling</button>
     <button class="nav-link" onclick="showPage('aiworkflows')" id="nav-aiworkflows">AI Operationalization</button>
     <button class="nav-link" onclick="showPage('resume')" id="nav-resume">Resume</button>
   </div>
@@ -705,7 +709,7 @@ footer{padding:48px 80px;border-top:1px solid var(--rule);display:flex;align-ite
       Back
     </button>
     <h2>Revenue Models</h2>
-    <p>Three models built from scratch and adopted as planning baselines. Each one solved a problem that spreadsheets and intuition couldn't.</p>
+    <p>Four models built from scratch and adopted as planning baselines. Each one solved a problem that spreadsheets and intuition couldn't.</p>
   </div>
 
   <div style="padding:14px 80px;background:#EEF4FF;border-bottom:2px solid #CCE0FF;display:flex;align-items:center;gap:10px;">
@@ -718,6 +722,7 @@ footer{padding:48px 80px;border-top:1px solid var(--rule);display:flex;align-ite
     <div class="cs-label">Case study 01</div>
     <h3 class="cs-h">Media Fee Scenario Planner</h3>
     <p class="cs-p">Built in response to a quarterly fee shortfall — the existing model had no way to stress-test alternatives. Models four fee structures against a configurable goal, spend mix, and deal count.</p>
+    <a class="cs-sheet-link" href="https://docs.google.com/spreadsheets/d/1WTek4kdDjaDCuJMPzgYRkBtM21WIIRe1eRg3W2fjXs8" target="_blank" rel="noopener">See the sheet →</a>
 
     <div class="cs-layout">
       <div class="cs-left">
@@ -756,6 +761,7 @@ footer{padding:48px 80px;border-top:1px solid var(--rule);display:flex;align-ite
     <div class="cs-label">Case study 02</div>
     <h3 class="cs-h">Revenue Forecasting</h3>
     <p class="cs-p">Dual-view forecast — top-down (strategy target) and bottom-up (confirmed client budgets) — with a weekly pacing log tracking changes Monday to Monday. Built when no planning baseline existed. Data below uses fictional names and scaled figures.</p>
+    <a class="cs-sheet-link" href="https://docs.google.com/spreadsheets/d/10a7ERWbIE97sR5p55d-zUq65sO2U14BulPMdLgurf-I" target="_blank" rel="noopener">See the sheet →</a>
 
     <div class="cs-layout">
       <div class="cs-left">
@@ -800,6 +806,32 @@ footer{padding:48px 80px;border-top:1px solid var(--rule);display:flex;align-ite
       </div>
     </div>
   </section>
+  <!-- ── CASE STUDY 04 ── -->
+  <section class="section fi">
+    <div class="cs-label">Case study 04</div>
+    <h3 class="cs-h">Org Capacity Model</h3>
+    <p class="cs-p">Built to answer a question leadership kept asking informally: do we have enough people? Pulled 8 weeks of Toggl time-tracking data across three teams, extracted overhead rates and hours-per-deal by deal tier, and built a live calculator — enter deal counts and current headcount, it outputs whether each team is short, at capacity, or has room.</p>
+    <a class="cs-sheet-link" href="https://docs.google.com/spreadsheets/d/1mLvC6SF6-tmQmzGmpF3hp5Ot4IBk0HxH8Gugzfz_a30" target="_blank" rel="noopener">See the sheet →</a>
+
+    <div class="cs-layout" style="margin-top:28px;">
+      <div class="cs-left">
+        <p style="font-size:13px;font-weight:600;color:var(--ink);margin:0 0 14px;">Active deals by tier</p>
+        <div class="sc-row"><label class="sc-label">XL Reg A</label><div class="sc-input-wrap"><input class="sc-input" id="cap-xla" type="number" value="4" min="0" oninput="calcCapacity()"></div></div>
+        <div class="sc-row"><label class="sc-label">XL Reg CF + Other Reg A</label><div class="sc-input-wrap"><input class="sc-input" id="cap-xlcf" type="number" value="19" min="0" oninput="calcCapacity()"></div></div>
+        <div class="sc-row"><label class="sc-label">Other Reg CF</label><div class="sc-input-wrap"><input class="sc-input" id="cap-cf" type="number" value="33" min="0" oninput="calcCapacity()"></div></div>
+        <div class="sc-row"><label class="sc-label">Consulting</label><div class="sc-input-wrap"><input class="sc-input" id="cap-cons" type="number" value="22" min="0" oninput="calcCapacity()"></div></div>
+        <p style="font-size:13px;font-weight:600;color:var(--ink);margin:20px 0 14px;">Current headcount</p>
+        <div class="sc-row"><label class="sc-label">Paid Media</label><div class="sc-input-wrap"><input class="sc-input" id="cap-pm" type="number" value="6" min="0" oninput="calcCapacity()"></div></div>
+        <div class="sc-row"><label class="sc-label">Comms</label><div class="sc-input-wrap"><input class="sc-input" id="cap-comms" type="number" value="4" min="0" oninput="calcCapacity()"></div></div>
+      </div>
+      <div class="cs-right">
+        <p style="font-size:13px;font-weight:600;color:var(--ink);margin:0 0 14px;">Staffing result</p>
+        <div id="cap-results"></div>
+        <p style="font-size:11px;color:var(--dim);margin-top:16px;">Based on 8-week Toggl sample (Jul–Sep 2026). Paid Media: 22.4 eff. hrs/person. Comms: 26.8 eff. hrs/person.</p>
+      </div>
+    </div>
+  </section>
+
 
   <footer>
     <div class="footer-left">
@@ -1288,6 +1320,58 @@ document.addEventListener('DOMContentLoaded', () => {
   calcScenario();
   renderForecast();
 });
+
+// ── CAPACITY MODEL ──
+function calcCapacity() {
+  var xla  = parseFloat(document.getElementById('cap-xla').value)  || 0;
+  var xlcf = parseFloat(document.getElementById('cap-xlcf').value) || 0;
+  var cf   = parseFloat(document.getElementById('cap-cf').value)   || 0;
+  var cons = parseFloat(document.getElementById('cap-cons').value) || 0;
+  var pmH  = parseFloat(document.getElementById('cap-pm').value)   || 0;
+  var coH  = parseFloat(document.getElementById('cap-comms').value)|| 0;
+
+  // Hours per deal per week (from Toggl)
+  var pmDemand  = xla*4.2 + xlcf*3.2 + cf*2.1 + cons*0.5;
+  var coDemand  = xla*1.6 + xlcf*1.6 + cf*1.6 + cons*0.5;
+
+  // Effective hrs/person/week
+  var pmEff = 22.4;
+  var coEff = 26.8;
+
+  var pmNeeded = pmDemand / pmEff;
+  var coNeeded = coDemand / coEff;
+  var pmCushion = pmH - pmNeeded;
+  var coCushion = coH - coNeeded;
+
+  function statusColor(c) { return c < -0.1 ? '#D94F3D' : c < 0.5 ? '#D97706' : '#059669'; }
+  function statusLabel(c, needed) {
+    if (c < -0.1) return 'Hire ' + Math.ceil(Math.abs(c));
+    if (c < 0.5)  return 'At capacity';
+    return 'Has room';
+  }
+
+  var rows = [
+    ['Paid Media', pmDemand.toFixed(0), pmEff, pmNeeded.toFixed(1), pmH, pmCushion.toFixed(1), statusLabel(pmCushion), statusColor(pmCushion)],
+    ['Comms',      coDemand.toFixed(0), coEff, coNeeded.toFixed(1), coH, coCushion.toFixed(1), statusLabel(coCushion), statusColor(coCushion)],
+  ];
+
+  var html = '<table style="width:100%;border-collapse:collapse;font-size:13px;">';
+  html += '<tr style="border-bottom:1px solid var(--rule);"><th style="text-align:left;padding:6px 8px;color:var(--dim);font-weight:500;">Team</th><th style="padding:6px 8px;color:var(--dim);font-weight:500;">Hrs demanded</th><th style="padding:6px 8px;color:var(--dim);font-weight:500;">People needed</th><th style="padding:6px 8px;color:var(--dim);font-weight:500;">Current</th><th style="padding:6px 8px;color:var(--dim);font-weight:500;">Cushion</th><th style="text-align:left;padding:6px 8px;color:var(--dim);font-weight:500;">Action</th></tr>';
+  rows.forEach(function(r) {
+    html += '<tr style="border-bottom:1px solid var(--rule);">';
+    html += '<td style="padding:8px;font-weight:500;color:var(--ink);">' + r[0] + '</td>';
+    html += '<td style="padding:8px;text-align:center;color:var(--mid);">' + r[1] + '</td>';
+    html += '<td style="padding:8px;text-align:center;color:var(--mid);">' + r[3] + '</td>';
+    html += '<td style="padding:8px;text-align:center;color:var(--mid);">' + r[4] + '</td>';
+    html += '<td style="padding:8px;text-align:center;color:var(--mid);">' + r[5] + '</td>';
+    html += '<td style="padding:8px;font-weight:600;color:' + r[7] + ';">' + r[6] + '</td>';
+    html += '</tr>';
+  });
+  html += '</table>';
+  document.getElementById('cap-results').innerHTML = html;
+}
+document.addEventListener('DOMContentLoaded', calcCapacity);
+
 </script>
 
 <style>
